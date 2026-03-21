@@ -1,0 +1,29 @@
+{
+  "name": "presentation-boilerplate",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate-pdfs": "node generate-pdfs.js",
+    "merge-pdfs": "node merge-pdfs.js"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "framer-motion": "^11.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.183.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.40.0",
+    "vite": "^5.0.0"
+  }
+}

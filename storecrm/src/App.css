@@ -1,0 +1,604 @@
+/* ========================================
+   PRESENTATION BOILERPLATE STYLES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f2847;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --accent: #4fc3f7;
+  --accent-secondary: #29b6f6;
+  --danger: #f44336;
+  --warning: #ff9800;
+  --success: #4caf50;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* ========================================
+   PRESENTATION CONTAINER
+   ======================================== */
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #ffffff;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Logo - Top Right */
+.slide-logo {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  height: 45px;
+  width: auto;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.slide-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.slide-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.slide-footer {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-top: auto;
+  opacity: 0.6;
+}
+
+/* ========================================
+   LISTS & GRIDS
+   ======================================== */
+
+.benefits-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  min-width: 150px;
+}
+
+.benefit-item span:first-child {
+  font-size: 1.5rem;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+/* ========================================
+   SLIDE COUNTER
+   ======================================== */
+
+.slide-counter {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.logo {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  height: 35px;
+  opacity: 0.7;
+}
+
+/* ========================================
+   FLOW DIAGRAM STYLES
+   ======================================== */
+
+.flow-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.flow-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.flow-node {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 15px 20px;
+  min-width: 140px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.flow-node:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(79, 195, 247, 0.3);
+}
+
+.flow-node.primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+  border: none;
+}
+
+.flow-node.secondary {
+  border-color: var(--success);
+}
+
+.flow-node.warning {
+  border-color: var(--warning);
+}
+
+.flow-node.danger {
+  border-color: var(--danger);
+}
+
+.flow-node-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.flow-node-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.flow-node-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.flow-arrow {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.flow-arrow-down {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin: 8px 0;
+}
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.channel-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.channel-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 25px rgba(79, 195, 247, 0.2);
+}
+
+.channel-number {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.channel-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.channel-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Two column layout */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.col-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.col-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+/* Step flow */
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.step-num {
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Full width flow */
+.full-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.full-flow-node {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 15px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.full-flow-arrow {
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+/* Summary grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.summary-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.summary-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   INFOGRAPHIC STYLES
+   ======================================== */
+
+.infographic-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.infographic-box {
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.15) 0%, rgba(41, 182, 246, 0.1) 100%);
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  border-radius: 16px;
+  padding: 20px 30px;
+  text-align: center;
+  min-width: 160px;
+}
+
+.infographic-box.highlight {
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.25) 0%, rgba(41, 182, 246, 0.2) 100%);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.infographic-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.infographic-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.infographic-sublabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Process flow with icons */
+.process-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.process-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(79, 195, 247, 0.15);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.process-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  max-width: 80px;
+}
+
+.process-arrow {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+/* Stats cards */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px 30px;
+  text-align: center;
+  min-width: 140px;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Horizontal stepper */
+.horizontal-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.horizontal-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.horizontal-step-num {
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.horizontal-step-text {
+  font-size: 0.85rem;
+}
+
+.horizontal-arrow {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* ========================================
+   RESPONSIVE - 14 inch screen
+   ======================================== */
+
+@media (max-width: 1400px) {
+  .slide {
+    padding: 40px 50px;
+  }
+
+  .slide-title {
+    font-size: 2.2rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .channels-grid {
+    gap: 12px;
+  }
+
+  .channel-card {
+    padding: 15px;
+  }
+
+  .two-col {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slide {
+    padding: 30px 40px;
+  }
+
+  .slide-title {
+    font-size: 1.8rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1rem;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}

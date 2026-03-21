@@ -1,0 +1,308 @@
+/* ========================================
+   PRESSTO ENTERPRISE PRESENTATION
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Pressto Brand Colors */
+  --primary: #E63946;
+  --primary-dark: #B82D38;
+  --secondary: #1D3557;
+  --accent: #457B9D;
+  --accent-light: #A8DADC;
+
+  /* Dark Theme */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-card: #1f1f1f;
+  --bg-elevated: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+
+  /* Accent Colors */
+  --brand: #E63946;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3B82F6;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* ========================================
+   PRESENTATION CONTAINER
+   ======================================== */
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+}
+
+.slide {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  max-height: 850px;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  position: relative;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.slide-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.slide-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.slide-tagline {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* ========================================
+   LOGO & HEADER
+   ======================================== */
+
+.slide-logo {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  height: 40px;
+}
+
+.slide-number {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.05);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* ========================================
+   GRID LAYOUTS
+   ======================================== */
+
+.pressto-grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.pressto-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 25px;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pressto-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.pressto-card.accent {
+  border-top: 3px solid var(--brand);
+}
+
+.pressto-card.info {
+  border-top: 3px solid var(--info);
+}
+
+.pressto-card.success {
+  border-top: 3px solid var(--success);
+}
+
+.pressto-card.warning {
+  border-top: 3px solid var(--warning);
+}
+
+/* ========================================
+   ICONS & BADGES
+   ======================================== */
+
+.icon-large {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.icon-medium {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.icon-small {
+  font-size: 1.2rem;
+}
+
+/* ========================================
+   FLOW ARROWS
+   ======================================== */
+
+.flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.flow-item {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 20px 25px;
+  text-align: center;
+  min-width: 140px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.flow-item.highlight {
+  background: linear-gradient(135deg, var(--brand), var(--primary-dark));
+}
+
+.flow-arrow {
+  font-size: 1.8rem;
+  color: var(--brand);
+}
+
+/* ========================================
+   STATS
+   ======================================== */
+
+.stat-box {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+/* ========================================
+   PROCESS STEPS
+   ======================================== */
+
+.process-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  margin-top: 30px;
+}
+
+.process-step {
+  flex: 1;
+  max-width: 180px;
+  background: var(--bg-card);
+  padding: 25px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.process-step:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+.process-step:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.process-step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--brand);
+  font-size: 1.5rem;
+  z-index: 1;
+}
+
+/* ========================================
+   SLIDE COUNTER
+   ======================================== */
+
+.slide-counter {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .slide {
+    padding: 30px 40px;
+  }
+
+  .slide-title {
+    font-size: 2.2rem;
+  }
+
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}

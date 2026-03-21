@@ -1,0 +1,324 @@
+/* ========================================
+   PRESENTATION BOILERPLATE STYLES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f2847;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --accent: #4fc3f7;
+  --accent-secondary: #29b6f6;
+  --danger: #f44336;
+  --warning: #ff9800;
+  --success: #4caf50;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* ========================================
+   PRESENTATION CONTAINER
+   ======================================== */
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.slide {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 800px;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.slide-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.slide-title-only {
+  padding: 60px 80px;
+}
+
+.slide-subtitle {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.slide-footer {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-top: auto;
+  opacity: 0.6;
+}
+
+/* ========================================
+   LISTS & GRIDS
+   ======================================== */
+
+.benefits-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  min-width: 200px;
+}
+
+.benefit-item span:first-child {
+  font-size: 2rem;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+/* ========================================
+   SLIDE COUNTER
+   ======================================== */
+
+.slide-counter {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.logo {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  height: 40px;
+  opacity: 0.7;
+}
+
+/* ========================================
+   3D EFFECTS & ANIMATIONS
+   ======================================== */
+
+/* Perspective container for 3D effects */
+.perspective-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* 3D Card with depth */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: translateZ(20px) rotateX(5deg) rotateY(-5deg);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotateX(2deg) rotateY(5deg);
+  }
+  50% {
+    transform: translateY(-25px) rotateX(0deg) rotateY(0deg);
+  }
+  75% {
+    transform: translateY(-15px) rotateX(-2deg) rotateY(-5deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-rotate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+}
+
+@keyframes pulse-3d {
+  0%, 100% {
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    transform: scale(1.05) translateZ(10px);
+  }
+}
+
+@keyframes tilt {
+  0%, 100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateX(5deg) rotateY(5deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(10deg);
+  }
+  75% {
+    transform: rotateX(-5deg) rotateY(5deg);
+  }
+}
+
+/* 3D Shadow utilities */
+.shadow-3d {
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-3d-hover:hover {
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 3D Layer depth */
+.layer-back { transform: translateZ(-50px); }
+.layer-mid { transform: translateZ(0px); }
+.layer-front { transform: translateZ(50px); }
+.layer-front-more { transform: translateZ(80px); }
+
+/* 3D Scene container */
+.scene-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slide-3d {
+  position: relative;
+  z-index: 1;
+}
+
+/* 3D Orb */
+.orb-3d {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.orb-3d-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(102,126,234,0.4) 0%, transparent 70%);
+  top: -150px;
+  left: -150px;
+}
+
+.orb-3d-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(233,30,99,0.3) 0%, transparent 70%);
+  bottom: -100px;
+  right: -100px;
+  animation-delay: -4s;
+}
+
+/* Glass morphism 3D card */
+.glass-3d {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .slide {
+    padding: 40px;
+  }
+
+  .slide-title {
+    font-size: 2.5rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1.4rem;
+  }
+}
