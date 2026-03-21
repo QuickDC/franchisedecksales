@@ -90,7 +90,7 @@ const Slide5 = () => {
           paddingLeft: '0'
         }}
       >
-        One System Controlling Every Order, Store, and Customer in Real Time
+        One Unified System Managing Orders, Stores, and Customers in Real Time
       </motion.p>
 
       <div className="platform-visual-container" style={{ width: '100%', maxWidth: '100%' }}>
@@ -407,7 +407,7 @@ const Slide5 = () => {
           width: '100%'
         }}
       >
-        From customer request to delivery and HQ control — every step is connected and visible.
+        From request to delivery and centralized control — every step is seamlessly connected and fully visible.
       </motion.p>
     </div>
   )
