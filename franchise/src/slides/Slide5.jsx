@@ -2,19 +2,19 @@ import { motion } from 'framer-motion'
 
 const Slide5 = () => {
   const storeNodes = [
-    { id: 'store1', x: 150, y: 200, name: 'Store 1' },
-    { id: 'store2', x: 280, y: 200, name: 'Store 2' },
-    { id: 'store3', x: 410, y: 200, name: 'Store 3' },
-    { id: 'store4', x: 540, y: 200, name: 'Store 4' },
-    { id: 'store5', x: 670, y: 200, name: 'Store 5' },
+    { id: 'store1', x: 100, y: 300, name: 'Store 1' },
+    { id: 'store2', x: 230, y: 300, name: 'Store 2' },
+    { id: 'store3', x: 360, y: 300, name: 'Store 3' },
+    { id: 'store4', x: 490, y: 300, name: 'Store 4' },
+    { id: 'store5', x: 620, y: 300, name: 'Store 5' },
   ]
 
   const customerNodes = [
-    { id: 'app', x: 150, y: 400, icon: '📱', name: 'Mobile App' },
-    { id: 'whatsapp', x: 280, y: 400, icon: '💬', name: 'WhatsApp' },
-    { id: 'web', x: 410, y: 400, icon: '🌐', name: 'Website' },
-    { id: 'pay', x: 540, y: 400, icon: '💳', name: 'Online Pay' },
-    { id: 'growth', x: 670, y: 400, icon: '📈', name: 'Growth' },
+    { id: 'mobile', x: 100, y: 400, icon: '📱', name: 'Mobile Apps' },
+    { id: 'whatsapp', x: 230, y: 400, icon: '💬', name: 'WhatsApp' },
+    { id: 'omni', x: 360, y: 400, icon: '🌐', name: 'Website' },
+    { id: 'call', x: 490, y: 400, icon: '📞', name: 'Call' },
+    { id: 'walkin', x: 620, y: 400, icon: '🚶', name: 'Walk Ins' },
   ]
 
   return (
@@ -156,6 +156,25 @@ const Slide5 = () => {
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ delay: 12 + i * 0.5, duration: 1.5 }}
+              />
+            ))}
+            {/* Particles: Plant → Stores */}
+            {storeNodes.map((store, i) => (
+              <motion.circle
+                key={`p-ps-${i}`}
+                r="3"
+                fill="#22c55e"
+                initial={{ cx: 410, cy: 220 }}
+                animate={{
+                  cx: [410, store.x + 20, store.x],
+                  cy: [220, 280, store.y - 32]
+                }}
+                transition={{
+                  delay: 14 + i * 0.5,
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
               />
             ))}
           </g>
