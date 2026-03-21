@@ -1,21 +1,65 @@
 import { motion } from 'framer-motion'
 
 const Slide5 = () => {
-  const storeNodes = [
-    { id: 'store1', x: 100, y: 300, name: 'Store 1' },
-    { id: 'store2', x: 230, y: 300, name: 'Store 2' },
-    { id: 'store3', x: 360, y: 300, name: 'Store 3' },
-    { id: 'store4', x: 490, y: 300, name: 'Store 4' },
-    { id: 'store5', x: 620, y: 300, name: 'Store 5' },
+  // Increased width by 20%
+  const centerX = 1150
+  const width = 2304
+  const height = 1080
+
+  // Layer positions
+  const layerY = {
+    hq: 40,
+    plant: 200,
+    store: 460,
+    rider: 750,
+    customer: 980
+  }
+
+  // Bigger circles (scaled up)
+  const hq = { x: centerX, y: layerY.hq, r: 120 }
+  const plant = { x: centerX, y: layerY.plant, r: 85 }
+
+  // 5 stores - spread across wider area
+  const storeWidth = width * 0.75
+  const storeSpacing = storeWidth / 4
+  const storeStartX = centerX - (storeWidth / 2)
+
+  const stores = [
+    { id: 'store1', x: storeStartX, y: layerY.store, name: 'Store 1' },
+    { id: 'store2', x: storeStartX + storeSpacing, y: layerY.store, name: 'Store 2' },
+    { id: 'store3', x: storeStartX + storeSpacing * 2, y: layerY.store, name: 'Store 3' },
+    { id: 'store4', x: storeStartX + storeSpacing * 3, y: layerY.store, name: 'Store 4' },
+    { id: 'store5', x: storeStartX + storeSpacing * 4, y: layerY.store, name: 'Store 5' },
   ]
 
-  const customerNodes = [
-    { id: 'mobile', x: 100, y: 400, icon: '📱', name: 'Mobile Apps' },
-    { id: 'whatsapp', x: 230, y: 400, icon: '💬', name: 'WhatsApp' },
-    { id: 'omni', x: 360, y: 400, icon: '🌐', name: 'Website' },
-    { id: 'call', x: 490, y: 400, icon: '📞', name: 'Call' },
-    { id: 'walkin', x: 620, y: 400, icon: '🚶', name: 'Walk Ins' },
-  ]
+  const riders = stores.map((store) => ({
+    id: `rider-${store.id}`,
+    x: store.x,
+    y: layerY.rider
+  }))
+
+  const customers = stores.map((store, i) => ({
+    id: `customer-${store.id}`,
+    x: store.x,
+    y: layerY.customer,
+    icon: ['📱', '💬', '🌐', '📞', '🚶'][i],
+    name: ['Mobile Apps', 'WhatsApp', 'Website', 'Call', 'Walk Ins'][i]
+  }))
+
+  const colors = {
+    hq: '#7c3aed',
+    plant: '#059669',
+    store: '#2563eb',
+    rider: '#dc2626',
+    customer: '#ea580c',
+    storeToPlant: '#2563eb',
+    plantToStore: '#22c55e',
+    storeToHQ: '#2563eb',
+    hqToStore: '#7c3aed',
+    customerToStore: '#f59e0b',
+    storeToRider: '#2563eb',
+    riderToCustomer: '#dc2626',
+  }
 
   return (
     <div className="slide">
@@ -24,6 +68,7 @@ const Slide5 = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        style={{ fontSize: '56px', fontWeight: 800, marginBottom: '8px', textAlign: 'center', width: '100%' }}
       >
         Introducing <span className="highlight">QDC OS</span>
       </motion.h2>
@@ -33,322 +78,337 @@ const Slide5 = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
+        style={{
+          fontSize: '28px',
+          fontWeight: 400,
+          opacity: 0.85,
+          marginBottom: '20px',
+          whiteSpace: 'nowrap',
+          textAlign: 'center',
+          width: '100%',
+          maxWidth: '100%',
+          paddingLeft: '0'
+        }}
       >
-        Your Complete Laundry Business Operating System
+        One System Controlling Every Order, Store, and Customer in Real Time
       </motion.p>
 
-      <div className="platform-visual-container">
-        <svg width="820" height="550" viewBox="0 0 820 550" className="platform-svg">
-          <defs>
-            <linearGradient id="hqGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#a855f7" />
-              <stop offset="100%" stopColor="#6366f1" />
-            </linearGradient>
-            <linearGradient id="storeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#00d4ff" />
-              <stop offset="100%" stopColor="#0ea5e9" />
-            </linearGradient>
-            <linearGradient id="plantGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#22c55e" />
-              <stop offset="100%" stopColor="#16a34a" />
-            </linearGradient>
-            <linearGradient id="custGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#fb923c" />
-              <stop offset="100%" stopColor="#f59e0b" />
-            </linearGradient>
-            <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ec4899" />
-              <stop offset="100%" stopColor="#db2777" />
-            </linearGradient>
-            <filter id="glowHQ" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
+      <div className="platform-visual-container" style={{ width: '100%', maxWidth: '100%' }}>
+        <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} className="platform-svg">
+          {/* ==================== CONNECTION LINES ==================== */}
 
-          {/* ==================== FLOW ANIMATIONS ==================== */}
-
-          {/* Customer → Stores */}
-          <g>
-            {customerNodes.map((node, i) => (
-              <motion.path
-                key={`cust-${i}`}
-                d={`M${node.x} 370 Q${node.x + 80} 300 ${storeNodes[i]?.x || 200} ${storeNodes[i]?.y || 200}`}
-                stroke="#fb923c"
-                strokeWidth="1.5"
-                strokeDasharray="4,3"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ delay: 0.5 + i * 0.5, duration: 1.5 }}
-              />
-            ))}
-            {/* Particles: Customer → Stores */}
-            {customerNodes.map((cust, i) => (
-              <motion.circle
-                key={`p-cust-${i}`}
-                r="3"
-                fill="#fb923c"
-                initial={{ cx: cust.x, cy: 370 }}
-                animate={{
-                  cx: [cust.x, cust.x + 50, storeNodes[i]?.x || 200],
-                  cy: [370, 300, storeNodes[i]?.y || 200]
-                }}
-                transition={{
-                  delay: 2 + i * 0.5,
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-            ))}
-          </g>
-
-          {/* Stores → Plant */}
-          <g>
-            {storeNodes.map((store, i) => (
-              <motion.path
-                key={`store-plant-${i}`}
-                d={`M${store.x} ${store.y + 32} Q${store.x + 20} 280 410 180`}
-                stroke="#00d4ff"
-                strokeWidth="1.5"
-                strokeDasharray="4,3"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ delay: 6 + i * 0.5, duration: 1.5 }}
-              />
-            ))}
-            {/* Particles: Store → Plant */}
-            {storeNodes.map((store, i) => (
-              <motion.circle
-                key={`p-sp-${i}`}
-                r="3"
-                fill="#00d4ff"
-                initial={{ cx: store.x, cy: store.y + 32 }}
-                animate={{
-                  cx: [store.x, store.x + 20, 410],
-                  cy: [store.y + 32, 280, 180]
-                }}
-                transition={{
-                  delay: 8 + i * 0.5,
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-            ))}
-          </g>
-
-          {/* Plant → Stores */}
-          <g>
-            {storeNodes.map((store, i) => (
-              <motion.path
-                key={`plant-store-${i}`}
-                d={`M410 220 Q${store.x + 20} 280 ${store.x} ${store.y - 32}`}
-                stroke="#22c55e"
-                strokeWidth="1.5"
-                strokeDasharray="4,3"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ delay: 12 + i * 0.5, duration: 1.5 }}
-              />
-            ))}
-            {/* Particles: Plant → Stores */}
-            {storeNodes.map((store, i) => (
-              <motion.circle
-                key={`p-ps-${i}`}
-                r="3"
-                fill="#22c55e"
-                initial={{ cx: 410, cy: 220 }}
-                animate={{
-                  cx: [410, store.x + 20, store.x],
-                  cy: [220, 280, store.y - 32]
-                }}
-                transition={{
-                  delay: 14 + i * 0.5,
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-            ))}
-          </g>
-
-          {/* Stores → HQ */}
-          <g>
-            {storeNodes.map((store, i) => (
-              <motion.path
-                key={`store-hq-${i}`}
-                d={`M${store.x} ${store.y - 32} Q${store.x} 80 410 100`}
-                stroke="#00d4ff"
-                strokeWidth="2"
-                strokeDasharray="4,3"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ delay: 18 + i * 0.5, duration: 1.5 }}
-              />
-            ))}
-            {/* Particles: Store → HQ */}
-            {storeNodes.map((store, i) => (
-              <motion.circle
-                key={`p-sh-${i}`}
-                r="3"
-                fill="#00d4ff"
-                initial={{ cx: store.x, cy: store.y - 32 }}
-                animate={{
-                  cx: [store.x, store.x, 410],
-                  cy: [store.y - 32, 80, 100]
-                }}
-                transition={{
-                  delay: 20 + i * 0.5,
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-            ))}
-          </g>
-
-          {/* Plant → HQ */}
-          <g>
-            <motion.path
-              d="M410 140 L410 100"
-              stroke="#22c55e"
+          {/* HQ → Store */}
+          {stores.map((store) => (
+            <line
+              key={`hq-store-${store.id}`}
+              x1={hq.x} y1={hq.y + hq.r}
+              x2={store.x} y2={store.y - 60}
+              stroke={colors.hq}
               strokeWidth="2"
-              strokeDasharray="4,3"
-              fill="none"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 24, duration: 1.5 }}
+              opacity="0.25"
             />
+          ))}
+
+          {/* Plant → Store */}
+          {stores.map((store) => (
+            <line
+              key={`plant-store-${store.id}`}
+              x1={plant.x} y1={plant.y + plant.r}
+              x2={store.x} y2={store.y - 60}
+              stroke={colors.plant}
+              strokeWidth="2.5"
+              opacity="0.4"
+            />
+          ))}
+
+          {/* Customer → Store */}
+          {customers.map((cust, i) => (
+            <line
+              key={`customer-store-${i}`}
+              x1={cust.x} y1={cust.y + 45}
+              x2={stores[i].x} y2={stores[i].y - 60}
+              stroke={colors.customer}
+              strokeWidth="2.5"
+              opacity="0.4"
+            />
+          ))}
+
+          {/* Store → Rider */}
+          {stores.map((store, i) => (
+            <line
+              key={`store-rider-${i}`}
+              x1={store.x} y1={store.y + 60}
+              x2={riders[i].x} y2={riders[i].y - 45}
+              stroke={colors.store}
+              strokeWidth="2.5"
+              opacity="0.4"
+            />
+          ))}
+
+          {/* Rider → Customer */}
+          {riders.map((rider, i) => (
+            <line
+              key={`rider-customer-${i}`}
+              x1={rider.x} y1={rider.y + 45}
+              x2={customers[i].x} y2={customers[i].y - 45}
+              stroke={colors.rider}
+              strokeWidth="2"
+              opacity="0.3"
+            />
+          ))}
+
+          {/* ==================== FLOW LABELS - CENTERED ==================== */}
+
+          {/* HQ Labels */}
+          <text x={hq.x - 200} y={hq.y + 5} textAnchor="end" fontSize="16" fontWeight="700" fill="#7c3aed">DATA</text>
+          <text x={hq.x + 200} y={hq.y + 5} textAnchor="start" fontSize="16" fontWeight="700" fill="#7c3aed">CONTROL</text>
+
+          {/* Order Request - CENTERED between Customer and Store (moved up) */}
+          <text x={centerX} y={(layerY.customer + layerY.store) / 2 - 50} textAnchor="middle" fontSize="24" fontWeight="700" fill="#f59e0b">ORDER REQUEST</text>
+
+          {/* Pickup Assigned - CENTERED between Store and Rider (moved up) */}
+          <text x={centerX} y={(layerY.store + layerY.rider) / 2 - 50} textAnchor="middle" fontSize="24" fontWeight="700" fill="#2563eb">PICKUP ASSIGNED</text>
+
+          {/* Delivery - CENTERED between Rider and Customer (moved down) */}
+          <text x={centerX} y={(layerY.rider + layerY.customer) / 2 + 30} textAnchor="middle" fontSize="22" fontWeight="700" fill="#dc2626">DELIVERY</text>
+
+          {/* Garment Processing - FAR LEFT */}
+          <text x="30" y={(plant.y + layerY.store) / 2 - 10} textAnchor="start" fontSize="20" fontWeight="700" fill="#2563eb">GARMENT</text>
+          <text x="30" y={(plant.y + layerY.store) / 2 + 18} textAnchor="start" fontSize="20" fontWeight="700" fill="#2563eb">PROCESSING →</text>
+
+          {/* QC Complete - FAR RIGHT */}
+          <text x={width - 30} y={(plant.y + layerY.store) / 2 - 10} textAnchor="end" fontSize="20" fontWeight="700" fill="#22c55e">← QC</text>
+          <text x={width - 30} y={(plant.y + layerY.store) / 2 + 18} textAnchor="end" fontSize="20" fontWeight="700" fill="#22c55e">COMPLETE</text>
+
+          {/* Control & Rules - FAR RIGHT */}
+          <text x={width - 30} y={(hq.y + layerY.store) / 2 - 10} textAnchor="end" fontSize="20" fontWeight="700" fill="#7c3aed">← CONTROL</text>
+          <text x={width - 30} y={(hq.y + layerY.store) / 2 + 18} textAnchor="end" fontSize="20" fontWeight="700" fill="#7c3aed">& RULES</text>
+
+          {/* ==================== LAYER LABELS - FAR LEFT ==================== */}
+          <g fontSize="24" fontWeight="800" fill="#94a3b8">
+            <text x="30" y={hq.y + 18} textAnchor="start">LAYER 1</text>
+            <text x="30" y={hq.y + 48} textAnchor="start" fontSize="18" fontWeight="600">HQ CONTROL</text>
+
+            <text x="30" y={plant.y + 18} textAnchor="start">LAYER 2</text>
+            <text x="30" y={plant.y + 48} textAnchor="start" fontSize="18" fontWeight="600">PROCESSING</text>
+
+            <text x="30" y={layerY.store + 18} textAnchor="start">LAYER 3</text>
+            <text x="30" y={layerY.store + 48} textAnchor="start" fontSize="18" fontWeight="600">STORE OPERATIONS</text>
+
+            <text x="30" y={layerY.rider + 18} textAnchor="start">LAYER 4</text>
+            <text x="30" y={layerY.rider + 48} textAnchor="start" fontSize="18" fontWeight="600">DELIVERY</text>
+
+            <text x="30" y={layerY.customer + 18} textAnchor="start">LAYER 5</text>
+            <text x="30" y={layerY.customer + 48} textAnchor="start" fontSize="18" fontWeight="600">CUSTOMER</text>
+          </g>
+
+          {/* ==================== ANIMATED DATA FLOW ==================== */}
+
+          {/* Customer → Store (ORANGE) */}
+          {customers.map((cust, i) => (
             <motion.circle
-              r="3"
-              fill="#22c55e"
-              initial={{ cx: 410, cy: 140 }}
-              animate={{ cx: [410, 410], cy: [140, 100] }}
+              key={`cust-store-${i}`}
+              r="6"
+              fill={colors.customerToStore}
+              initial={{ cx: cust.x, cy: cust.y + 45 }}
+              animate={{ cx: cust.x, cy: [cust.y + 45, stores[i].y - 60] }}
               transition={{
-                delay: 25,
-                duration: 3,
+                duration: 2,
                 repeat: Infinity,
-                ease: "linear"
+                ease: "linear",
+                delay: i * 0.3
               }}
             />
-          </g>
+          ))}
+
+          {/* Store → Rider (BLUE) */}
+          {stores.map((store, i) => (
+            <motion.circle
+              key={`store-rider-${i}`}
+              r="6"
+              fill={colors.storeToRider}
+              initial={{ cx: store.x, cy: store.y + 60 }}
+              animate={{ cx: store.x, cy: [store.y + 60, riders[i].y - 45] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 0.5 + i * 0.3
+              }}
+            />
+          ))}
+
+          {/* Rider → Customer (RED) */}
+          {riders.map((rider, i) => (
+            <motion.circle
+              key={`rider-customer-${i}`}
+              r="5"
+              fill={colors.riderToCustomer}
+              initial={{ cx: rider.x, cy: rider.y + 45 }}
+              animate={{ cx: rider.x, cy: [rider.y + 45, customers[i].y - 45] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 1 + i * 0.3
+              }}
+            />
+          ))}
+
+          {/* Store → Plant (BLUE) */}
+          {stores.map((store, i) => (
+            <motion.circle
+              key={`store-plant-${i}`}
+              r="6"
+              fill={colors.storeToPlant}
+              initial={{ cx: store.x, cy: store.y - 60 }}
+              animate={{ cx: [store.x, centerX], cy: [store.y - 60, plant.y + plant.r] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 1.5 + i * 0.3
+              }}
+            />
+          ))}
+
+          {/* Plant → Store (GREEN) */}
+          {stores.map((store, i) => (
+            <motion.circle
+              key={`plant-store-${i}`}
+              r="5"
+              fill={colors.plantToStore}
+              initial={{ cx: centerX, cy: plant.y + plant.r }}
+              animate={{ cx: [centerX, store.x], cy: [plant.y + plant.r, store.y - 60] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 2.5 + i * 0.3
+              }}
+            />
+          ))}
+
+          {/* Store → HQ (BLUE) */}
+          {stores.map((store, i) => (
+            <motion.circle
+              key={`store-hq-${i}`}
+              r="5"
+              fill={colors.storeToHQ}
+              initial={{ cx: store.x, cy: store.y - 60 }}
+              animate={{ cx: [store.x, hq.x], cy: [store.y - 60, hq.y + hq.r] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 3 + i * 0.3
+              }}
+            />
+          ))}
+
+          {/* HQ → Store (PURPLE) */}
+          {stores.map((store, i) => (
+            <motion.circle
+              key={`hq-store-anim-${i}`}
+              r="5"
+              fill={colors.hqToStore}
+              initial={{ cx: hq.x, cy: hq.y + hq.r }}
+              animate={{ cx: [hq.x, store.x], cy: [hq.y + hq.r, store.y - 60] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 4 + i * 0.3
+              }}
+            />
+          ))}
 
           {/* ==================== NODES ==================== */}
 
-          {/* Brand Level */}
+          {/* HQ Node */}
           <motion.g
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <rect x="355" y="0" width="110" height="25" rx="12" fill="url(#brandGrad)" />
-            <text x="410" y="16" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="bold">BRAND LEVEL</text>
-          </motion.g>
-
-          {/* HQ Capabilities */}
-          <g transform="translate(330, 10)">
-            <rect x="0" y="0" width="160" height="55" rx="8" fill="#1a2540" stroke="#a855f7" strokeWidth="1" />
-            <text x="80" y="18" textAnchor="middle" fill="#a855f7" fontSize="8" fontWeight="bold">HQ CAPABILITIES</text>
-            <rect x="10" y="28" width="35" height="18" rx="4" fill="#a855f7" opacity="0.2" />
-            <text x="27" y="40" textAnchor="middle" fill="#fff" fontSize="7">Offers</text>
-            <rect x="50" y="28" width="35" height="18" rx="4" fill="#a855f7" opacity="0.2" />
-            <text x="67" y="40" textAnchor="middle" fill="#fff" fontSize="7">Royalty</text>
-            <rect x="90" y="28" width="35" height="18" rx="4" fill="#a855f7" opacity="0.2" />
-            <text x="107" y="40" textAnchor="middle" fill="#fff" fontSize="7">Access</text>
-            <rect x="130" y="28" width="25" height="18" rx="4" fill="#a855f7" opacity="0.2" />
-            <text x="142" y="40" textAnchor="middle" fill="#fff" fontSize="7">Data</text>
-          </g>
-
-          {/* HQ Control */}
-          <motion.g
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6, type: "spring" }}
-          >
-            <circle cx="410" cy="100" r="45" fill="url(#hqGrad)" filter="url(#glowHQ)" />
-            <text x="410" y="95" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="800">HQ CONTROL</text>
-            <text x="410" y="110" textAnchor="middle" fill="#fff" fontSize="8">Command Center</text>
+            <circle cx={hq.x} cy={hq.y} r={hq.r + 18} fill="none" stroke={colors.hq} strokeWidth="2" opacity="0.2"/>
+            <circle cx={hq.x} cy={hq.y} r={hq.r} fill={colors.hq} stroke="#fff" strokeWidth="3"/>
+            <text x={hq.x} y={hq.y} textAnchor="middle" fill="#fff" fontSize="36" fontWeight="800">HQ</text>
+            <text x={hq.x} y={hq.y + 35} textAnchor="middle" fill="#fff" fontSize="22" fontWeight="600">CONTROL</text>
           </motion.g>
 
           {/* Plant Node */}
           <motion.g
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.35, duration: 0.5 }}
           >
-            <circle cx="410" cy="180" r="40" fill="url(#plantGrad)" />
-            <text x="410" y="175" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">PLANT</text>
-            <text x="410" y="190" textAnchor="middle" fill="#fff" fontSize="8">Processing & QC</text>
+            <circle cx={plant.x} cy={plant.y} r={plant.r} fill={colors.plant} stroke="#fff" strokeWidth="3"/>
+            <text x={plant.x} y={plant.y} textAnchor="middle" fill="#fff" fontSize="24" fontWeight="800">PLANT</text>
+            <text x={plant.x} y={plant.y + 28} textAnchor="middle" fill="#fff" fontSize="18" fontWeight="600">QC</text>
           </motion.g>
 
           {/* Store Nodes */}
-          {storeNodes.map((store, i) => (
+          {stores.map((store, i) => (
             <motion.g
               key={store.id}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.4 + i * 0.08, duration: 0.5, type: "spring" }}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.5 + i * 0.08, duration: 0.5 }}
             >
-              <circle cx={store.x} cy={store.y} r="32" fill="url(#storeGrad)" />
-              <text x={store.x} y={store.y - 5} textAnchor="middle" fill="#0a0f1a" fontSize="8" fontWeight="bold">{store.name}</text>
-              <text x={store.x} y={store.y + 10} textAnchor="middle" fill="#0a0f1a" fontSize="6">Operations</text>
+              <circle cx={store.x} cy={store.y} r="60" fill={colors.store} stroke="#fff" strokeWidth="2.5"/>
+              <text x={store.x} y={store.y - 3} textAnchor="middle" fill="#fff" fontSize="20" fontWeight="700">{store.name}</text>
+              <text x={store.x} y={store.y + 20} textAnchor="middle" fill="#fff" fontSize="14" fontWeight="500">Operations</text>
             </motion.g>
           ))}
 
-          {/* Customer Touchpoint Nodes */}
-          {customerNodes.map((node, i) => (
+          {/* Rider Nodes */}
+          {riders.map((rider, i) => (
             <motion.g
-              key={node.id}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.5 + i * 0.08, duration: 0.5, type: "spring" }}
+              key={rider.id}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.8 + i * 0.06, duration: 0.5 }}
             >
-              <circle cx={node.x} cy={node.y} r="30" fill="url(#custGrad)" />
-              <text x={node.x} y={node.y - 3} textAnchor="middle" fontSize="18">{node.icon}</text>
-              <text x={node.x} y={node.y + 18} textAnchor="middle" fill="#0a0f1a" fontSize="7" fontWeight="bold">{node.name}</text>
+              <circle cx={rider.x} cy={rider.y} r="45" fill={colors.rider} stroke="#fff" strokeWidth="2.5"/>
+              <text x={rider.x} y={rider.y - 5} textAnchor="middle" fill="#fff" fontSize="12" fontWeight="700">RIDER</text>
+              <text x={rider.x} y={rider.y + 14} textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">{i + 1}</text>
             </motion.g>
           ))}
 
-          {/* Customer Box */}
-          <motion.g
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-          >
-            <rect x="100" y="450" width="620" height="45" rx="8" fill="#1a2540" stroke="#fb923c" strokeWidth="2" />
-            <text x="410" y="480" textAnchor="middle" fill="#fb923c" fontSize="14" fontWeight="bold">CUSTOMER</text>
-            {/* Arrows to each channel */}
-            <motion.path d="M150 450 L150 430" stroke="#fb923c" strokeWidth="2"
-              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-              transition={{ delay: 1, duration: 1 }}
-            />
-            <motion.path d="M280 450 L280 430" stroke="#fb923c" strokeWidth="2"
-              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-              transition={{ delay: 1.2, duration: 1 }}
-            />
-            <motion.path d="M410 450 L410 430" stroke="#fb923c" strokeWidth="2"
-              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-              transition={{ delay: 1.4, duration: 1 }}
-            />
-            <motion.path d="M540 450 L540 430" stroke="#fb923c" strokeWidth="2"
-              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-              transition={{ delay: 1.6, duration: 1 }}
-            />
-            <motion.path d="M670 450 L670 430" stroke="#fb923c" strokeWidth="2"
-              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-              transition={{ delay: 1.8, duration: 1 }}
-            />
-          </motion.g>
+          {/* Customer Nodes */}
+          {customers.map((cust, i) => (
+            <motion.g
+              key={cust.id}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1 + i * 0.06, duration: 0.5 }}
+            >
+              <circle cx={cust.x} cy={cust.y} r="45" fill={colors.customer} stroke="#fff" strokeWidth="2.5"/>
+              <text x={cust.x} y={cust.y - 2} textAnchor="middle" fontSize="24">{cust.icon}</text>
+              <text x={cust.x} y={cust.y + 24} textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600">{cust.name}</text>
+            </motion.g>
+          ))}
+
         </svg>
       </div>
+
+      {/* Explanation line */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        style={{
+          fontSize: '20px',
+          fontWeight: 400,
+          color: '#94a3b8',
+          textAlign: 'center',
+          marginTop: '15px',
+          width: '100%'
+        }}
+      >
+        From customer request to delivery and HQ control — every step is connected and visible.
+      </motion.p>
     </div>
   )
 }
