@@ -20,7 +20,7 @@ const Slide18 = () => {
         transition={{ delay: 0.3, duration: 0.6 }}
         style={{ fontSize: '22px', maxWidth: '900px' }}
       >
-        Standardize operations, enforce business rules, and enable every franchise location to perform with consistency, control, and profitability—driven centrally through QDC.
+        Operate every location with precision, consistency, and real-time oversight—no matter how fast you grow.
       </motion.p>
 
       {/* Key Points */}
