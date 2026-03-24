@@ -70,7 +70,7 @@ const Slide18 = () => {
         className="impact-line"
         style={{ marginTop: '50px', fontSize: '22px' }}
       >
-        Let's build a high-performance franchise network with <span className="highlight">QDC</span> at the core.
+        Let's build with <span className="highlight">QDC</span> the system that powers your entire franchise network.
       </motion.p>
 
       {/* Navigation hint */}
