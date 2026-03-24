@@ -112,7 +112,7 @@ export const DisconnectedInfographic = () => (
     {/* Broken Connections */}
     <motion.path
       d="M135,125 L265,80"
-      stroke="#ff6b6b"
+      stroke="#ff4444"
       strokeWidth="2"
       strokeDasharray="8,8"
       fill="none"
@@ -122,7 +122,7 @@ export const DisconnectedInfographic = () => (
     />
     <motion.path
       d="M135,125 L265,170"
-      stroke="#ff6b6b"
+      stroke="#ff4444"
       strokeWidth="2"
       strokeDasharray="8,8"
       fill="none"
@@ -132,7 +132,7 @@ export const DisconnectedInfographic = () => (
     />
     <motion.path
       d="M335,80 L465,125"
-      stroke="#ff6b6b"
+      stroke="#ff4444"
       strokeWidth="2"
       strokeDasharray="8,8"
       fill="none"
@@ -142,7 +142,7 @@ export const DisconnectedInfographic = () => (
     />
     <motion.path
       d="M335,170 L465,125"
-      stroke="#ff6b6b"
+      stroke="#ff4444"
       strokeWidth="2"
       strokeDasharray="8,8"
       fill="none"
@@ -152,10 +152,10 @@ export const DisconnectedInfographic = () => (
     />
 
     {/* X Marks for broken connections - centered on each line */}
-    <text x="200" y="105" textAnchor="middle" fontSize="24" fill="#ff6b6b">✕</text>
-    <text x="200" y="145" textAnchor="middle" fontSize="24" fill="#ff6b6b">✕</text>
-    <text x="400" y="105" textAnchor="middle" fontSize="24" fill="#ff6b6b">✕</text>
-    <text x="400" y="145" textAnchor="middle" fontSize="24" fill="#ff6b6b">✕</text>
+    <text x="200" y="102" textAnchor="middle" fontSize="24" fill="#ff4444">✕</text>
+    <text x="200" y="148" textAnchor="middle" fontSize="24" fill="#ff4444">✕</text>
+    <text x="400" y="102" textAnchor="middle" fontSize="24" fill="#ff4444">✕</text>
+    <text x="400" y="148" textAnchor="middle" fontSize="24" fill="#ff4444">✕</text>
   </svg>
 )
 
