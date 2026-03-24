@@ -1,23 +1,23 @@
 import { motion } from 'framer-motion'
 
 const Slide5 = () => {
-  // Increased width by 20%
-  const centerX = 1150
-  const width = 2304
-  const height = 1080
+  // Increased width to cover 80% of screen
+  const centerX = 1400
+  const width = 2800
+  const height = 1400
 
-  // Layer positions
+  // Layer positions - scaled for larger canvas
   const layerY = {
-    hq: 40,
-    plant: 200,
-    store: 460,
-    rider: 750,
-    customer: 980
+    hq: 60,
+    plant: 280,
+    store: 580,
+    rider: 920,
+    customer: 1220
   }
 
-  // Bigger circles (scaled up)
-  const hq = { x: centerX, y: layerY.hq, r: 120 }
-  const plant = { x: centerX, y: layerY.plant, r: 85 }
+  // Bigger circles (scaled up for larger canvas)
+  const hq = { x: centerX, y: layerY.hq, r: 140 }
+  const plant = { x: centerX, y: layerY.plant, r: 100 }
 
   // 5 stores - spread across wider area
   const storeWidth = width * 0.75
