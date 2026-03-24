@@ -67,11 +67,11 @@ const Slide3 = () => {
               {/* Circle background */}
               <circle cx={problem.x} cy={problem.y} r="65" fill="#1a2540" stroke="#ff6b6b" strokeWidth="3" filter="url(#glowOuter)" />
 
-              {/* Icon centered in circle */}
-              <text x={problem.x} y={problem.y + 5} textAnchor="middle" fontSize="32">{problem.icon}</text>
+              {/* Icon centered in circle - moved up slightly */}
+              <text x={problem.x} y={problem.y - 8} textAnchor="middle" fontSize="32">{problem.icon}</text>
 
-              {/* Label below icon */}
-              <text x={problem.x} y={problem.y + 38} textAnchor="middle" fill="#fff" fontSize="12" fontWeight="700">{problem.label}</text>
+              {/* Label below icon - moved up slightly */}
+              <text x={problem.x} y={problem.y + 28} textAnchor="middle" fill="#fff" fontSize="12" fontWeight="700">{problem.label}</text>
             </motion.g>
           ))}
 
