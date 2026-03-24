@@ -360,16 +360,14 @@ export const JourneyPipelineInfographic = () => (
       }}
     />
 
-    {/* Flow line with dashes */}
-    <motion.path
-      d="M100 60 L685 60"
+    {/* Flow line with dashes - static dashed line */}
+    <line
+      x1="88" y1="60"
+      x2="662" y2="60"
       stroke="#f59e0b"
       strokeWidth="2"
-      strokeDasharray="8,4"
-      fill="none"
-      initial={{ pathLength: 0 }}
-      animate={{ pathLength: 1 }}
-      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+      strokeDasharray="10,6"
+      opacity="0.6"
     />
   </svg>
 )
