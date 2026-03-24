@@ -20,7 +20,7 @@ const Slide18 = () => {
         transition={{ delay: 0.3, duration: 0.6 }}
         style={{ fontSize: '22px', maxWidth: '900px' }}
       >
-        Standardize operations, enforce business rules, and enable every franchise location to perform with consistency, control, and profitability—driven centrally through Apex.
+        Standardize operations, enforce business rules, and enable every franchise location to perform with consistency, control, and profitability—driven centrally through QDC.
       </motion.p>
 
       {/* Key Points */}
@@ -70,7 +70,7 @@ const Slide18 = () => {
         className="impact-line"
         style={{ marginTop: '50px', fontSize: '22px' }}
       >
-        Let's build a high-performance franchise network with <span className="highlight">Apex</span> at the core.
+        Let's build a high-performance franchise network with <span className="highlight">QDC</span> at the core.
       </motion.p>
 
       {/* Navigation hint */}
