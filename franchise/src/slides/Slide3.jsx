@@ -56,60 +56,6 @@ const Slide3 = () => {
             </filter>
           </defs>
 
-          {/* Animated Flow Lines from Outer to Center */}
-          <motion.path
-            d="M175 175 L210 230"
-            stroke="#f59e0b"
-            strokeWidth="3"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1, duration: 0.8, ease: "easeInOut" }}
-          />
-          <motion.path
-            d="M375 175 L290 230"
-            stroke="#f59e0b"
-            strokeWidth="3"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.1, duration: 0.8, ease: "easeInOut" }}
-          />
-          <motion.path
-            d="M175 375 L210 320"
-            stroke="#f59e0b"
-            strokeWidth="3"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.2, duration: 0.8, ease: "easeInOut" }}
-          />
-          <motion.path
-            d="M375 375 L290 320"
-            stroke="#f59e0b"
-            strokeWidth="3"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.3, duration: 0.8, ease: "easeInOut" }}
-          />
-
-          {/* Connection Lines - properly aligned from center to outer circles */}
-          <motion.g
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-          >
-            {/* Line from center (250,250) to top-left (120,120) - straight line */}
-            <line x1="250" y1="250" x2="175" y2="175" stroke="#f59e0b" strokeWidth="2" strokeDasharray="6,4" />
-            {/* Line from center (250,250) to top-right (380,120) - straight line */}
-            <line x1="250" y1="250" x2="375" y2="175" stroke="#f59e0b" strokeWidth="2" strokeDasharray="6,4" />
-            {/* Line from center (250,250) to bottom-left (120,380) - straight line */}
-            <line x1="250" y1="250" x2="175" y2="375" stroke="#f59e0b" strokeWidth="2" strokeDasharray="6,4" />
-            {/* Line from center (250,250) to bottom-right (380,380) - straight line */}
-            <line x1="250" y1="250" x2="375" y2="375" stroke="#f59e0b" strokeWidth="2" strokeDasharray="6,4" />
-          </motion.g>
-
           {/* Problem Circles - Outer */}
           {problems.map((problem, i) => (
             <motion.g
