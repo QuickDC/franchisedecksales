@@ -67,11 +67,11 @@ const Slide3 = () => {
               {/* Circle background */}
               <circle cx={problem.x} cy={problem.y} r="65" fill="#1a2540" stroke="#ff6b6b" strokeWidth="3" filter="url(#glowOuter)" />
 
-              {/* Icon on top */}
-              <text x={problem.x} y={problem.y - 8} textAnchor="middle" fontSize="30">{problem.icon}</text>
+              {/* Icon centered */}
+              <text x={problem.x} y={problem.y + 8} textAnchor="middle" fontSize="30">{problem.icon}</text>
 
-              {/* Label below icon */}
-              <text x={problem.x} y={problem.y + 40} textAnchor="middle" fill="#fff" fontSize="13" fontWeight="700">{problem.label}</text>
+              {/* Label below icon - closer */}
+              <text x={problem.x} y={problem.y + 45} textAnchor="middle" fill="#fff" fontSize="13" fontWeight="700">{problem.label}</text>
             </motion.g>
           ))}
 
@@ -82,8 +82,8 @@ const Slide3 = () => {
             transition={{ delay: 0.8, duration: 0.7, type: "spring" }}
           >
             <circle cx="250" cy="250" r="85" fill="url(#centerGrad)" filter="url(#glowRed)" />
-            <text x="250" y="240" textAnchor="middle" fill="#fff" fontSize="18" fontWeight="800">REVENUE</text>
-            <text x="250" y="268" textAnchor="middle" fill="#fff" fontSize="18" fontWeight="800">LOSS</text>
+            <text x="250" y="240" textAnchor="middle" fill="#fff" fontSize="16" fontWeight="800">REVENUE</text>
+            <text x="250" y="262" textAnchor="middle" fill="#fff" fontSize="16" fontWeight="800">LOSS</text>
           </motion.g>
 
           {/* Animated particles flowing to center */}
