@@ -327,15 +327,49 @@ export const JourneyPipelineInfographic = () => (
       </motion.g>
     ))}
 
-    {/* Flow Arrow */}
+    {/* Animated flow dots - flowing from Customer through all circles to end (orange color) */}
+    <motion.circle
+      r="6"
+      fill="#f59e0b"
+      initial={{ cx: 60, cy: 60 }}
+      animate={{
+        cx: [60, 165, 270, 375, 480, 585, 690, 690],
+        cy: [60, 60, 60, 60, 60, 60, 60, 60]
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+    />
+
+    {/* Second dot for continuous flow */}
+    <motion.circle
+      r="6"
+      fill="#f59e0b"
+      initial={{ cx: 60, cy: 60 }}
+      animate={{
+        cx: [60, 165, 270, 375, 480, 585, 690, 690],
+        cy: [60, 60, 60, 60, 60, 60, 60, 60]
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear",
+        delay: 2
+      }}
+    />
+
+    {/* Flow line with dashes */}
     <motion.path
-      d="M100 60 L125 60"
-      stroke="#00d4ff"
-      strokeWidth="3"
-      strokeDasharray="5,5"
+      d="M100 60 L685 60"
+      stroke="#f59e0b"
+      strokeWidth="2"
+      strokeDasharray="8,4"
       fill="none"
-      animate={{ strokeDashoffset: [0, -20] }}
-      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+      initial={{ pathLength: 0 }}
+      animate={{ pathLength: 1 }}
+      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
     />
   </svg>
 )
