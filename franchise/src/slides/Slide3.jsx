@@ -4,7 +4,7 @@ const Slide3 = () => {
   const problems = [
     { x: 120, y: 120, icon: '👕', label: 'Lost Garments' },
     { x: 380, y: 120, icon: '⏰', label: 'Delayed Orders' },
-    { x: 120, y: 380, icon: '🔄', label: 'No Repeat' },
+    { x: 120, y: 380, icon: '🔄', label: 'No Repeat Orders' },
     { x: 380, y: 380, icon: '📝', label: 'Manual Tracking' },
   ]
 
