@@ -10,7 +10,7 @@ const Slide18 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Let's Build Your <span className="highlight">Scalable Laundry Network</span>
+        Let's <span className="highlight">Partner</span> and <span className="highlight">Grow</span>
       </motion.h2>
 
       <motion.p
@@ -19,7 +19,7 @@ const Slide18 = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
       >
-        Ready to transform your franchise operations?
+        Daoust
       </motion.p>
 
       <motion.div
