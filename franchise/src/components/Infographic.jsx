@@ -151,11 +151,15 @@ export const DisconnectedInfographic = () => (
       transition={{ delay: 1.6, duration: 1 }}
     />
 
-    {/* X Marks for broken connections - centered on each line */}
-    <text x="200" y="102" textAnchor="middle" fontSize="24" fill="#ff4444">✕</text>
-    <text x="200" y="148" textAnchor="middle" fontSize="24" fill="#ff4444">✕</text>
-    <text x="400" y="102" textAnchor="middle" fontSize="24" fill="#ff4444">✕</text>
-    <text x="400" y="148" textAnchor="middle" fontSize="24" fill="#ff4444">✕</text>
+    {/* X Marks for broken connections - exactly centered on each line */}
+    {/* Line 1: (135,125) to (265,80) - center at (200, 102.5) */}
+    <text x="200" y="106" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
+    {/* Line 2: (135,125) to (265,170) - center at (200, 147.5) */}
+    <text x="200" y="151" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
+    {/* Line 3: (335,80) to (465,125) - center at (400, 102.5) */}
+    <text x="400" y="106" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
+    {/* Line 4: (335,170) to (465,125) - center at (400, 147.5) */}
+    <text x="400" y="151" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
   </svg>
 )
 
