@@ -4,8 +4,39 @@ import { motion } from 'framer-motion'
    NETWORK DIAGRAM - For Title Slide
    ======================================== */
 
-export const NetworkInfographic = () => (
-  <svg width="500" height="300" viewBox="0 0 500 300" className="infographic-svg">
+// Configurable positions - tweak these to move all stores together
+const STORE_POSITIONS = {
+  store1: { x: 80, y: 220 },   // left most
+  store4: { x: 150, y: 295 },  // left-center
+  store2: { x: 250, y: 340 },  // center
+  store3: { x: 350, y: 295 }, // right-center
+  store5: { x: 420, y: 220 },  // right most
+}
+
+// Pre-compute edge positions (circle radius = 40)
+const getEdgeY = (y) => y - 40
+
+export const NetworkInfographic = () => {
+  // Compute animation keyframes using store positions
+  const animationPath = [
+    { x: 250, y: 100 },  // HQ
+    { x: STORE_POSITIONS.store1.x, y: getEdgeY(STORE_POSITIONS.store1.y) },
+    { x: 250, y: 100 },  // back to HQ
+    { x: STORE_POSITIONS.store4.x, y: getEdgeY(STORE_POSITIONS.store4.y) },
+    { x: 250, y: 100 },  // back to HQ
+    { x: STORE_POSITIONS.store2.x, y: getEdgeY(STORE_POSITIONS.store2.y) },
+    { x: 250, y: 100 },  // back to HQ
+    { x: STORE_POSITIONS.store3.x, y: getEdgeY(STORE_POSITIONS.store3.y) },
+    { x: 250, y: 100 },  // back to HQ
+    { x: STORE_POSITIONS.store5.x, y: getEdgeY(STORE_POSITIONS.store5.y) },
+    { x: 250, y: 100 },  // back to HQ
+  ]
+
+  const cxValues = animationPath.map(p => p.x)
+  const cyValues = animationPath.map(p => p.y)
+
+  return (
+    <svg width="500" height="400" viewBox="0 0 500 400" className="infographic-svg">
     <defs>
       <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stopColor="#00d4ff" />
@@ -26,17 +57,17 @@ export const NetworkInfographic = () => (
       animate={{ scale: 1 }}
       transition={{ duration: 0.8, type: "spring" }}
     >
-      <circle cx="250" cy="50" r="40" fill="url(#nodeGradient)" filter="url(#glow)" />
-      <text x="250" y="55" textAnchor="middle" fill="#0a0f1a" fontSize="20" fontWeight="bold">HQ</text>
+      <circle cx="250" cy="50" r="50" fill="url(#nodeGradient)" filter="url(#glow)" />
+      <text x="250" y="58" textAnchor="middle" fill="#0a0f1a" fontSize="24" fontWeight="bold">HQ</text>
     </motion.g>
 
     {/* Store Nodes */}
     {[
-      { x: 100, y: 220, label: 'Store 1' },
-      { x: 250, y: 250, label: 'Store 2' },
-      { x: 400, y: 220, label: 'Store 3' },
-      { x: 175, y: 180, label: 'Store 4' },
-      { x: 325, y: 180, label: 'Store 5' },
+      { x: STORE_POSITIONS.store1.x, y: STORE_POSITIONS.store1.y, label: 'Store 1' },
+      { x: STORE_POSITIONS.store4.x, y: STORE_POSITIONS.store4.y, label: 'Store 4' },
+      { x: STORE_POSITIONS.store2.x, y: STORE_POSITIONS.store2.y, label: 'Store 2' },
+      { x: STORE_POSITIONS.store3.x, y: STORE_POSITIONS.store3.y, label: 'Store 3' },
+      { x: STORE_POSITIONS.store5.x, y: STORE_POSITIONS.store5.y, label: 'Store 5' },
     ].map((store, i) => (
       <motion.g
         key={i}
@@ -44,8 +75,8 @@ export const NetworkInfographic = () => (
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.3 + i * 0.15, duration: 0.5 }}
       >
-        <circle cx={store.x} cy={store.y} r="30" fill="#1a2540" stroke="#00d4ff" strokeWidth="2" />
-        <text x={store.x} y={store.y + 5} textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600">
+        <circle cx={store.x} cy={store.y} r="40" fill="#1a2540" stroke="#00d4ff" strokeWidth="3" />
+        <text x={store.x} y={store.y + 6} textAnchor="middle" fill="#fff" fontSize="16" fontWeight="600">
           {store.label}
         </text>
       </motion.g>
@@ -57,26 +88,32 @@ export const NetworkInfographic = () => (
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 0.8 }}
     >
-      <line x1="250" y1="90" x2="100" y2="190" stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
-      <line x1="250" y1="90" x2="250" y2="220" stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
-      <line x1="250" y1="90" x2="400" y2="190" stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
-      <line x1="250" y1="90" x2="175" y2="150" stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
-      <line x1="250" y1="90" x2="325" y2="150" stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
+      {/* Store 1 - left most */}
+      <line x1="250" y1="100" x2={STORE_POSITIONS.store1.x} y2={STORE_POSITIONS.store1.y - 40} stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
+      {/* Store 4 - left-center */}
+      <line x1="250" y1="100" x2={STORE_POSITIONS.store4.x} y2={STORE_POSITIONS.store4.y - 40} stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
+      {/* Store 2 - center */}
+      <line x1="250" y1="100" x2={STORE_POSITIONS.store2.x} y2={STORE_POSITIONS.store2.y - 40} stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
+      {/* Store 3 - right-center */}
+      <line x1="250" y1="100" x2={STORE_POSITIONS.store3.x} y2={STORE_POSITIONS.store3.y - 40} stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
+      {/* Store 5 - right most */}
+      <line x1="250" y1="100" x2={STORE_POSITIONS.store5.x} y2={STORE_POSITIONS.store5.y - 40} stroke="#00d4ff" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
     </motion.g>
 
     {/* Data Flow Animation */}
     <motion.circle
-      r="6"
+      r="8"
       fill="#ff6b6b"
-      initial={{ cx: 250, cy: 50 }}
+      initial={{ cx: 250, cy: 100 }}
       animate={{
-        cx: [250, 100, 250, 400, 250, 175, 250, 325, 250],
-        cy: [50, 220, 50, 220, 50, 180, 50, 180, 50]
+        cx: cxValues,
+        cy: cyValues
       }}
-      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+      transition={{ duration: 5.5, repeat: Infinity, ease: "linear" }}
     />
   </svg>
-)
+  )
+}
 
 /* ========================================
    DISCONNECTED NODES - For Problem Slide
@@ -153,13 +190,13 @@ export const DisconnectedInfographic = () => (
 
     {/* X Marks for broken connections - exactly centered on each line */}
     {/* Line 1: (135,125) to (265,80) - center at (200, 102.5) */}
-    <text x="200" y="106" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
+    <text x="200" y="112" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
     {/* Line 2: (135,125) to (265,170) - center at (200, 147.5) */}
-    <text x="200" y="151" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
+    <text x="200" y="156" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
     {/* Line 3: (335,80) to (465,125) - center at (400, 102.5) */}
-    <text x="400" y="106" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
+    <text x="385" y="106" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
     {/* Line 4: (335,170) to (465,125) - center at (400, 147.5) */}
-    <text x="400" y="151" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
+    <text x="385" y="162" textAnchor="middle" fontSize="28" fill="#ff4444" fontWeight="bold">✕</text>
   </svg>
 )
 
