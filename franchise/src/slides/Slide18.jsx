@@ -10,7 +10,7 @@ const Slide18 = () => {
         transition={{ duration: 0.6 }}
         style={{ fontSize: '48px' }}
       >
-        Powering Scalable Franchise Growth — <span className="highlight">Together</span>
+        Scale Franchises Without Losing <span className="highlight">Control</span>
       </motion.h2>
 
       <motion.p
