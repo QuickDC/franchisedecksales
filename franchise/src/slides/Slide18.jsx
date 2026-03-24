@@ -10,7 +10,7 @@ const Slide18 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Let's <span className="highlight">Partner</span> and <span className="highlight">Grow</span>
+        Book a <span className="highlight">Demo</span>
       </motion.h2>
 
       <motion.p
@@ -19,7 +19,7 @@ const Slide18 = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
       >
-        Daoust
+        See Your Workflow in Action
       </motion.p>
 
       <motion.div
