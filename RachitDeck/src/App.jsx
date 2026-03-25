@@ -104,7 +104,7 @@ const MarketShift = () => {
   const shifts = [
     { icon: '🔎', title: 'Customers discover businesses online' },
     { icon: '🛵', title: 'They expect pickup and delivery' },
-    { icon: '📲', title: 'They want order updates' },
+    { icon: '🔔', title: 'They want order updates' },
     { icon: '📱', title: 'They prefer digital payments' },
     { icon: '⚡', title: 'They reward consistency and speed' }
   ]
