@@ -1246,9 +1246,9 @@ const WhySystemsMatter = () => {
 }
 
 // ========================================
-// SLIDE 22 - QD SOFTWARE POSITIONING
+// SLIDE 22 - QUICK DRY CLEANING SOFTWARE POSITIONING
 // ========================================
-const QDSoftwarePositioning = () => {
+const QuickDryCleaningSoftwarePositioning = () => {
   const outcomes = [
     { icon: '👥', text: 'Better customer handling' },
     { icon: '🚗', text: 'Pickup & delivery coordination' },
@@ -1276,7 +1276,7 @@ const QDSoftwarePositioning = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          QDSoftware helps drycleaners build a stronger business — not just run software
+          Quick Dry Cleaning Software helps drycleaners build a stronger business — not just run software
         </motion.h2>
         <div className="grid-3 mt-xl" style={{ maxWidth: '900px', margin: '40px auto 0' }}>
           {outcomes.map((outcome, index) => (
@@ -1349,7 +1349,7 @@ const CapabilityEcosystem = () => {
             ))}
           </div>
           <div style={{ width: '140px', height: '140px', background: 'linear-gradient(135deg, var(--accent), var(--accent-secondary))', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem', fontWeight: '700', color: 'var(--bg-primary)' }}>
-            QDSoftware Platform
+            Quick Dry Cleaning Software Platform
           </div>
           <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
             {capabilities.slice(3, 6).map((cap, i) => (
@@ -1507,7 +1507,7 @@ function App() {
     FranchiseControl,
     ModernFramework,
     WhySystemsMatter,
-    QDSoftwarePositioning,
+    QuickDryCleaningSoftwarePositioning,
     CapabilityEcosystem,
     VisionClose,
     CTA
