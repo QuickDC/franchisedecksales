@@ -1,0 +1,923 @@
+/* ========================================
+   PRESENTATION STYLES
+   Pressto Spain - Digital & Compliance Transformation
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a0f1a;
+  --bg-secondary: #0f1a2e;
+  --bg-card: #121a2e;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.3);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* ========================================
+   PRESENTATION CONTAINER
+   ======================================== */
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.slide {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 800px;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide-center-content {
+  justify-content: center;
+  text-align: center;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.slide-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.slide-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* Title Slide */
+.slide-title-slide .main-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slide-title-slide .main-subtitle {
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.slide-title-slide .title-divider {
+  width: 80px;
+  height: 3px;
+  background: var(--accent);
+  margin: 30px auto;
+  border-radius: 2px;
+}
+
+.slide-title-slide .tagline {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.slide-title-slide .title-content {
+  text-align: center;
+}
+
+.navigation-hint {
+  position: absolute;
+  bottom: 40px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ========================================
+   CONTENT GRIDS & LAYOUTS
+   ======================================== */
+
+.content-grid {
+  width: 100%;
+  display: grid;
+  gap: 40px;
+}
+
+.content-grid.two-column {
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+}
+
+.points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.point-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.point-icon {
+  font-size: 1.5rem;
+}
+
+.point-text {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+/* Key Insight Box */
+.key-insight {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+}
+
+.key-insight-box {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin-top: 30px;
+}
+
+.key-insight-box.centered {
+  text-align: center;
+  display: inline-block;
+}
+
+.insight-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.insight-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ========================================
+   CARDS & GRIDS
+   ======================================== */
+
+.challenge-grid,
+.risk-grid,
+.strengths-grid,
+.enables-grid,
+.gaps-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.challenge-card,
+.risk-card,
+.strength-card,
+.enable-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.challenge-number {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.challenge-text,
+.risk-text,
+.strength-text,
+.enable-text {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.risk-icon {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.strength-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* ========================================
+   REGIONS & BADGES
+   ======================================== */
+
+.regions-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.region-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+}
+
+.region-icon {
+  font-size: 1.5rem;
+}
+
+.region-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* ========================================
+   OPPORTUNITIES
+   ======================================== */
+
+.opportunity-section {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.section-label {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.opportunity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.opportunity-list li {
+  padding: 10px 0;
+  padding-left: 24px;
+  position: relative;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.opportunity-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ========================================
+   TRANSFORMATION
+   ======================================== */
+
+.transformation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.transform-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  min-width: 300px;
+  text-align: center;
+}
+
+.transform-box.from-state {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.transform-box.to-state {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.transform-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.transform-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.transform-item.success {
+  color: var(--success);
+}
+
+.transform-icon {
+  font-size: 1.5rem;
+}
+
+.transform-arrow {
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+/* ========================================
+   SPAIN FOCUS
+   ======================================== */
+
+.spain-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.focus-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+}
+
+.focus-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.focus-text {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+/* ========================================
+   COMPLIANCE GRID
+   ======================================== */
+
+.compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.compliance-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+}
+
+.compliance-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.compliance-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ========================================
+   COMPARISON
+   ======================================== */
+
+.comparison-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.comparison-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  min-width: 280px;
+  text-align: center;
+}
+
+.comparison-box.traditional {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.comparison-box.spain-required {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, var(--bg-card) 100%);
+}
+
+.comparison-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.comparison-value {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.comparison-value.highlight {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.comparison-cross,
+.comparison-check {
+  font-size: 1.5rem;
+}
+
+.comparison-divider {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ========================================
+   GAPS LIST
+   ======================================== */
+
+.gaps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gap-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.gap-bullet {
+  color: var(--warning);
+  font-size: 1.25rem;
+}
+
+.gap-text {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+/* ========================================
+   SOLUTION / VISION
+   ======================================== */
+
+.solution-highlight,
+.vision-highlight {
+  background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+  border-radius: 24px;
+  padding: 48px 64px;
+  margin-top: 20px;
+}
+
+.solution-label,
+.vision-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.solution-title,
+.vision-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+/* ========================================
+   ARCHITECTURE
+   ======================================== */
+
+.architecture-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.arch-layer {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 48px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.arch-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.arch-components {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.separator {
+  color: var(--text-muted);
+}
+
+.country-badge {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.arch-arrow {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+/* ========================================
+   PARTNERSHIP
+   ======================================== */
+
+.partnership-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.partner-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  min-width: 220px;
+  text-align: center;
+}
+
+.partner-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.partner-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.partner-item {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.partner-connector {
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.together-outcome {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.outcome-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.outcome-list {
+  list-style: none;
+  padding: 0;
+}
+
+.outcome-list li {
+  padding: 8px 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+/* ========================================
+   TIMELINE
+   ======================================== */
+
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.timeline-phase {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.phase-header {
+  margin-bottom: 16px;
+}
+
+.phase-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.phase-period {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.phase-items {
+  text-align: left;
+}
+
+.phase-item {
+  padding: 6px 0;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   MARKETS
+   ======================================== */
+
+.markets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.market-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+}
+
+.market-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.market-country {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.market-challenge {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   BENEFITS
+   ======================================== */
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.benefit-check {
+  color: var(--success);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.benefit-text {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+/* ========================================
+   FINAL SLIDE
+   ======================================== */
+
+.final-slide {
+  padding: 80px;
+}
+
+.final-tagline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  max-width: 800px;
+}
+
+.final-divider {
+  width: 120px;
+  height: 3px;
+  background: var(--accent);
+  margin: 30px auto;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.final-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ========================================
+   SLIDE COUNTER
+   ======================================== */
+
+.slide-counter {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .slide {
+    padding: 40px;
+  }
+
+  .slide-title {
+    font-size: 2.25rem;
+  }
+
+  .content-grid.two-column,
+  .challenge-grid,
+  .risk-grid,
+  .strengths-grid,
+  .enables-grid,
+  .compliance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spain-focus-grid,
+  .markets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .transformation-container,
+  .comparison-container,
+  .partnership-grid,
+  .timeline-container {
+    flex-direction: column;
+  }
+
+  .slide-title-slide .main-title {
+    font-size: 3rem;
+  }
+
+  .solution-highlight,
+  .vision-highlight {
+    padding: 32px;
+  }
+
+  .solution-title,
+  .vision-title {
+    font-size: 1.75rem;
+  }
+}
