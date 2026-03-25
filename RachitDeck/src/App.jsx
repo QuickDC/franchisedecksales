@@ -1349,7 +1349,7 @@ const CapabilityEcosystem = () => {
             ))}
           </div>
           <div style={{ width: '140px', height: '140px', background: 'linear-gradient(135deg, var(--accent), var(--accent-secondary))', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem', fontWeight: '700', color: 'var(--bg-primary)' }}>
-            Quick Dry Cleaning Software Platform
+            QDC Platform
           </div>
           <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
             {capabilities.slice(3, 6).map((cap, i) => (
