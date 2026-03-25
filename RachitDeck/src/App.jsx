@@ -1479,12 +1479,12 @@ function App() {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+      if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'ArrowRight') {
         e.preventDefault()
         if (currentSection < sections.length - 1) {
           document.querySelectorAll('.slide-section')[currentSection + 1]?.scrollIntoView({ behavior: 'smooth' })
         }
-      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      } else if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'ArrowLeft') {
         e.preventDefault()
         if (currentSection > 0) {
           document.querySelectorAll('.slide-section')[currentSection - 1]?.scrollIntoView({ behavior: 'smooth' })
