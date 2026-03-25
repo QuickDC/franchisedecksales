@@ -1480,24 +1480,18 @@ function App() {
   useEffect(() => {
     const handleKeyDown = (e) => {
       const allSections = document.querySelectorAll('.slide-section')
-      const currentScroll = window.scrollY
+      const windowHeight = window.innerHeight
+      const scrollPos = window.scrollY
+      const currentIndex = Math.round(scrollPos / windowHeight)
 
-      if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'ArrowRight') {
+      if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault()
-        for (let i = 0; i < allSections.length - 1; i++) {
-          if (allSections[i].offsetTop <= currentScroll + 10) {
-            allSections[i + 1].scrollIntoView({ behavior: 'smooth' })
-            break
-          }
-        }
+        const nextIndex = Math.min(currentIndex + 1, allSections.length - 1)
+        allSections[nextIndex]?.scrollIntoView({ behavior: 'smooth' })
       } else if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'ArrowLeft') {
         e.preventDefault()
-        for (let i = allSections.length - 1; i > 0; i--) {
-          if (allSections[i].offsetTop > currentScroll + 10) {
-            allSections[i - 1].scrollIntoView({ behavior: 'smooth' })
-            break
-          }
-        }
+        const prevIndex = Math.max(currentIndex - 1, 0)
+        allSections[prevIndex]?.scrollIntoView({ behavior: 'smooth' })
       }
     }
 
