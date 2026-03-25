@@ -286,9 +286,10 @@ body {
 }
 
 .point-block-text {
+  display: block;
   font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 /* ========================================
