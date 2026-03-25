@@ -1,6 +1,49 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+}
+
+const fadeInDown = {
+  initial: { opacity: 0, y: -40 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+}
+
+const fadeInLeft = {
+  initial: { opacity: 0, x: -50 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+}
+
+const fadeInRight = {
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+}
+
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.5, ease: "easeOut" }
+}
+
+const scaleInBounce = {
+  initial: { opacity: 0, scale: 0.3 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.6, type: "spring", stiffness: 200 }
+}
+
+const rotateIn = {
+  initial: { opacity: 0, rotate: -10 },
+  animate: { opacity: 1, rotate: 0 },
+  transition: { duration: 0.5 }
+}
+
 // ========================================
 // SLIDE 1 - HERO
 // ========================================
@@ -10,32 +53,28 @@ const Hero = () => {
       <div className="slide-content content-center">
         <motion.p
           className="label"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          {...fadeInUp}
           transition={{ duration: 0.6 }}
         >
           Jodhpur | 28 March 2026
         </motion.p>
         <motion.h1
           className="headline headline-lg mt-md"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
+          {...fadeInUp}
+          transition={{ delay: 0.15, duration: 0.8 }}
         >
           The Future of Dry Cleaning & Laundry Business in 2026
         </motion.h1>
         <motion.p
           className="subheadline"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
+          {...fadeInUp}
+          transition={{ delay: 0.3, duration: 0.6 }}
         >
           How modern drycleaners can attract more customers, increase repeat business, and scale with control
         </motion.p>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
+          {...fadeInUp}
+          transition={{ delay: 0.6, duration: 0.5 }}
           style={{ marginTop: '60px', color: 'var(--text-muted)', fontSize: '0.9rem' }}
         >
           Use arrow keys or scroll to navigate
@@ -129,21 +168,37 @@ const MarketShift = () => {
         >
           Customer behavior has changed
         </motion.h2>
-        <div className="flow-horizontal mt-xl">
-          {shifts.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.5 }}
-              className="flow-step"
-            >
-              <div className="flow-box">{item.icon}</div>
-              <span style={{ fontSize: '1rem', color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '140px', lineHeight: '1.4' }}>{item.title}</span>
-              {index < shifts.length - 1 && <span className="flow-arrow">→</span>}
-            </motion.div>
-          ))}
+        <div className="flow-horizontal mt-xl" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}>
+            {shifts.slice(0, 3).map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="flow-step"
+              >
+                <div className="flow-box">{item.icon}</div>
+                <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '140px', lineHeight: '1.4' }}>{item.title}</span>
+              </motion.div>
+            ))}
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}>
+            {shifts.slice(3, 5).map((item, index) => (
+              <motion.div
+                key={index + 3}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index + 3) * 0.1, duration: 0.5 }}
+                className="flow-step"
+              >
+                <div className="flow-box">{item.icon}</div>
+                <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '140px', lineHeight: '1.4' }}>{item.title}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
