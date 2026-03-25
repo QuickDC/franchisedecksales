@@ -50,11 +50,11 @@ const Hero = () => {
 // ========================================
 const Problem = () => {
   const problems = [
-    { icon: '📈', title: 'Customer expectations are rising' },
-    { icon: '⚔️', title: 'Competition is increasing' },
-    { icon: '🔧', title: 'Manual operations break with growth' },
-    { icon: '🔄', title: 'Repeat business is harder than it looks' },
-    { icon: '📊', title: 'Most stores still run without systems' }
+    { icon: '👔', title: 'Customer expectations are rising' },
+    { icon: '🥇', title: 'Competition is increasing' },
+    { icon: '📝', title: 'Manual operations break with growth' },
+    { icon: '🔁', title: 'Repeat business is harder than it looks' },
+    { icon: '📋', title: 'Most stores still run without systems' }
   ]
 
   return (
@@ -102,10 +102,10 @@ const Problem = () => {
 // ========================================
 const MarketShift = () => {
   const shifts = [
-    { icon: '🔍', title: 'Customers discover businesses online' },
-    { icon: '🚗', title: 'They expect pickup and delivery' },
-    { icon: '📱', title: 'They want order updates' },
-    { icon: '💳', title: 'They prefer digital payments' },
+    { icon: '🔎', title: 'Customers discover businesses online' },
+    { icon: '🛵', title: 'They expect pickup and delivery' },
+    { icon: '📲', title: 'They want order updates' },
+    { icon: '📱', title: 'They prefer digital payments' },
     { icon: '⚡', title: 'They reward consistency and speed' }
   ]
 
@@ -220,10 +220,10 @@ const RealityCheck = () => {
 // ========================================
 const Opportunity = () => {
   const pillars = [
-    { icon: '🎯', title: 'Acquire customers better' },
+    { icon: '🧲', title: 'Acquire customers better' },
     { icon: '⚡', title: 'Serve customers faster' },
     { icon: '💎', title: 'Retain customers longer' },
-    { icon: '💰', title: 'Collect payments smarter' },
+    { icon: '💳', title: 'Collect payments smarter' },
     { icon: '📈', title: 'Scale with control' }
   ]
 
@@ -405,9 +405,9 @@ const PickupDelivery = () => {
           {[
             { icon: '👤', label: 'Customer' },
             { icon: '🏪', label: 'Store' },
-            { icon: '🏍️', label: 'Rider' },
-            { icon: '🏭', label: 'Plant' },
-            { icon: '🏍️', label: 'Rider' },
+            { icon: '🏍️', label: 'Pickup' },
+            { icon: '🏭', label: 'Processing' },
+            { icon: '🏍️', label: 'Delivery' },
             { icon: '👤', label: 'Customer' }
           ].map((step, index) => (
             <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
@@ -571,7 +571,7 @@ const ServiceVisibility = () => {
 // ========================================
 const RetentionProblem = () => {
   const issues = [
-    { icon: '1️⃣', title: 'One-time orders', desc: 'No repeat mechanism' },
+    { icon: '🛒', title: 'One-time orders', desc: 'No repeat mechanism' },
     { icon: '📞', title: 'Weak follow-up', desc: 'No structured outreach' },
     { icon: '🎁', title: 'No return incentives', desc: 'No loyalty hooks' },
     { icon: '👁️', title: 'No visibility on drop-off', desc: 'Blind to churn' },
@@ -626,10 +626,10 @@ const RetentionProblem = () => {
 // ========================================
 const LoyaltyEngine = () => {
   const elements = [
-    { icon: '💎', title: 'Loyalty points' },
+    { icon: '✨', title: 'Loyalty points' },
     { icon: '🎫', title: 'Prepaid packages' },
     { icon: '📦', title: 'Subscription plans' },
-    { icon: '🔁', title: 'Repeat campaigns' },
+    { icon: '🔄', title: 'Repeat campaigns' },
     { icon: '↩️', title: 'Win-back communication' }
   ]
 
@@ -678,10 +678,10 @@ const LoyaltyEngine = () => {
 // ========================================
 const BusinessImpact = () => {
   const impacts = [
-    { icon: '🔄', label: 'Higher repeat orders', placeholder: 'XX% increase' },
-    { icon: '🚗', label: 'More pickups', placeholder: 'XX% growth' },
+    { icon: '🔁', label: 'Higher repeat orders', placeholder: 'XX% increase' },
+    { icon: '🚚', label: 'More pickups', placeholder: 'XX% growth' },
     { icon: '💎', label: 'Better retention', placeholder: 'XX% retention' },
-    { icon: '💳', label: 'Better collections', placeholder: 'XX% collected' },
+    { icon: '💰', label: 'Better collections', placeholder: 'XX% collected' },
     { icon: '📊', label: 'Better control', placeholder: 'Full visibility' }
   ]
 
@@ -795,7 +795,7 @@ const DigitalPayments = () => {
 // ========================================
 const CollectionDiscipline = () => {
   const features = [
-    { icon: '⏰', title: 'Automated reminders' },
+    { icon: '🔔', title: 'Automated reminders' },
     { icon: '🔗', title: 'Payment links' },
     { icon: '🏪', title: 'Store-wise visibility' },
     { icon: '📋', title: 'Reconciliation support' },
@@ -847,10 +847,10 @@ const CollectionDiscipline = () => {
 // ========================================
 const MultiStoreChallenge = () => {
   const challenges = [
-    { icon: '👥', title: 'Staff inconsistency' },
-    { icon: '🔒', title: 'Weak process control' },
-    { icon: '📊', title: 'Fragmented customer history' },
-    { icon: '📈', title: 'Unreliable reporting' },
+    { icon: '👷', title: 'Staff inconsistency' },
+    { icon: '🔧', title: 'Weak process control' },
+    { icon: '🗂️', title: 'Fragmented customer history' },
+    { icon: '📉', title: 'Unreliable reporting' },
     { icon: '👁️', title: 'Poor visibility across outlets' }
   ]
 
@@ -1089,11 +1089,11 @@ const FranchiseControl = () => {
 const ModernFramework = () => {
   const engines = [
     { icon: '🎯', title: 'Customer Acquisition' },
-    { icon: '🚗', title: 'Pickup & Delivery' },
+    { icon: '🚚', title: 'Pickup & Delivery' },
     { icon: '💬', title: 'Communication' },
     { icon: '💎', title: 'Retention & Loyalty' },
-    { icon: '💳', title: 'Payments & Collections' },
-    { icon: '🏢', title: 'Multi-store Control' }
+    { icon: '💰', title: 'Payments & Collections' },
+    { icon: '🏪', title: 'Multi-store Control' }
   ]
 
   return (
@@ -1143,10 +1143,10 @@ const ModernFramework = () => {
 const WhySystemsMatter = () => {
   const issues = [
     { icon: '📞', title: 'Missed follow-ups' },
-    { icon: '⏰', title: 'Delayed updates' },
+    { icon: '⏳', title: 'Delayed updates' },
     { icon: '💸', title: 'Collection gaps' },
     { icon: '🏪', title: 'Store inconsistency' },
-    { icon: '📊', title: 'Weak reporting' },
+    { icon: '📉', title: 'Weak reporting' },
     { icon: '📈', title: 'Poor scale readiness' }
   ]
 
@@ -1315,8 +1315,8 @@ const CapabilityEcosystem = () => {
 // ========================================
 const VisionClose = () => {
   const visions = [
-    { icon: '🔍', text: 'More visible' },
-    { icon: '🚗', text: 'More convenient' },
+    { icon: '🔎', text: 'More visible' },
+    { icon: '🛵', text: 'More convenient' },
     { icon: '⚙️', text: 'More systemized' },
     { icon: '👥', text: 'More customer-driven' },
     { icon: '📈', text: 'More scalable' }
