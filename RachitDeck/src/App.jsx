@@ -1480,12 +1480,12 @@ const CTA = () => {
 }
 
 // ========================================
-// MAIN APP
+// MAIN APP - Single slide view with transitions
 // ========================================
 function App() {
-  const [currentSection, setCurrentSection] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0)
 
-  const sections = [
+  const slides = [
     Hero,
     Problem,
     MarketShift,
@@ -1513,59 +1513,46 @@ function App() {
     CTA
   ]
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sectionElements = document.querySelectorAll('.slide-section')
-      const scrollPosition = window.scrollY + window.innerHeight / 2
-
-      sectionElements.forEach((section, index) => {
-        const sectionTop = section.offsetTop
-        const sectionHeight = section.offsetHeight
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setCurrentSection(index)
-        }
-      })
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
-      const allSections = document.querySelectorAll('.slide-section')
-      const windowHeight = window.innerHeight
-      const scrollPos = window.scrollY
-      const currentIndex = Math.round(scrollPos / windowHeight)
-
       if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault()
-        const nextIndex = Math.min(currentIndex + 1, allSections.length - 1)
-        allSections[nextIndex]?.scrollIntoView({ behavior: 'smooth' })
+        setCurrentSlide(prev => Math.min(prev + 1, slides.length - 1))
       } else if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'ArrowLeft') {
         e.preventDefault()
-        const prevIndex = Math.max(currentIndex - 1, 0)
-        allSections[prevIndex]?.scrollIntoView({ behavior: 'smooth' })
+        setCurrentSlide(prev => Math.max(prev - 1, 0))
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  }, [slides.length])
 
-  const CurrentSection = sections[currentSection]
+  const CurrentSlide = slides[currentSlide]
 
   return (
     <div className="presentation">
-      {sections.map((Section, index) => (
-        <div key={index} style={{ position: 'relative' }}>
-          <Section />
-          <div className="slide-counter" style={{ position: 'absolute', bottom: '20px', right: '40px' }}>
-            {index + 1} / {sections.length}
-          </div>
-        </div>
-      ))}
+      <img
+        src="/QDCwhitelogo.png"
+        alt="QDC Logo"
+        className="slide-logo"
+      />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="slide-wrapper"
+        >
+          <CurrentSlide />
+        </motion.div>
+      </AnimatePresence>
+      <div className="slide-counter">
+        {currentSlide + 1} / {slides.length}
+      </div>
     </div>
   )
 }
