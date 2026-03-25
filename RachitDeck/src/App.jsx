@@ -1415,9 +1415,9 @@ const CTA = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          style={{ textAlign: 'center', color: 'var(--text-muted)' }}
+          style={{ textAlign: 'center' }}
         >
-          <p>Scan to connect | Visit booth | Call us today</p>
+          <p style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--accent)' }}>Let's Grow Together</p>
         </motion.div>
       </div>
     </section>
