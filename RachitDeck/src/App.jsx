@@ -1501,11 +1501,13 @@ function App() {
   return (
     <div className="presentation">
       {sections.map((Section, index) => (
-        <Section key={index} />
+        <div key={index} style={{ position: 'relative' }}>
+          <Section />
+          <div className="slide-counter" style={{ position: 'absolute', bottom: '20px', right: '40px' }}>
+            {index + 1} / {sections.length}
+          </div>
+        </div>
       ))}
-      <div className="slide-counter">
-        {currentSection + 1} / {sections.length}
-      </div>
     </div>
   )
 }
