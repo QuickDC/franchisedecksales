@@ -275,7 +275,7 @@ const CustomerAcquisition = () => {
     { icon: '🔎', title: 'Google visibility' },
     { icon: '⭐', title: 'Ratings & reviews' },
     { icon: '📘', title: 'Meta promotions' },
-    { icon: '💬', title: 'WhatsApp enquiry' },
+    { icon: '📱', title: 'WhatsApp enquiry' },
     { icon: '📢', title: 'Campaign-led acquisition' },
     { icon: '📞', title: 'Follow-up discipline' }
   ]
@@ -440,7 +440,7 @@ const PickupDelivery = () => {
 const Omnichannel = () => {
   const channels = [
     { icon: '🏪', label: 'Store' },
-    { icon: '💬', label: 'WhatsApp' },
+    { icon: '📱', label: 'WhatsApp' },
     { icon: '📞', label: 'Phone' },
     { icon: '🌐', label: 'Website' },
     { icon: '📲', label: 'App' },
