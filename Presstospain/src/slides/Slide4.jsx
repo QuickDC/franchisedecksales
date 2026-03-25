@@ -16,7 +16,7 @@ const Slide4 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        What Is At Risk
+        What Is At <span className="risk-highlight">RISK</span>
       </motion.h2>
 
       <div className="risk-grid">

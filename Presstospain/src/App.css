@@ -83,6 +83,10 @@ body {
   font-weight: 400;
 }
 
+.risk-highlight {
+  color: var(--danger);
+}
+
 /* Title Slide */
 .slide-title-slide .main-title {
   font-size: 4.5rem;
