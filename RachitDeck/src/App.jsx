@@ -1479,22 +1479,31 @@ function App() {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
+      const allSections = document.querySelectorAll('.slide-section')
+      const currentScroll = window.scrollY
+
       if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === 'ArrowRight') {
         e.preventDefault()
-        if (currentSection < sections.length - 1) {
-          document.querySelectorAll('.slide-section')[currentSection + 1]?.scrollIntoView({ behavior: 'smooth' })
+        for (let i = 0; i < allSections.length - 1; i++) {
+          if (allSections[i].offsetTop <= currentScroll + 10) {
+            allSections[i + 1].scrollIntoView({ behavior: 'smooth' })
+            break
+          }
         }
       } else if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'ArrowLeft') {
         e.preventDefault()
-        if (currentSection > 0) {
-          document.querySelectorAll('.slide-section')[currentSection - 1]?.scrollIntoView({ behavior: 'smooth' })
+        for (let i = allSections.length - 1; i > 0; i--) {
+          if (allSections[i].offsetTop > currentScroll + 10) {
+            allSections[i - 1].scrollIntoView({ behavior: 'smooth' })
+            break
+          }
         }
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentSection, sections.length])
+  }, [])
 
   const CurrentSection = sections[currentSection]
 
