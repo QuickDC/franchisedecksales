@@ -878,6 +878,24 @@ body {
 }
 
 /* ========================================
+   LOGO
+   ======================================== */
+
+.logo-container {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 100;
+}
+
+.company-logo {
+  max-width: 140px;
+  max-height: 50px;
+  width: auto;
+  height: auto;
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 

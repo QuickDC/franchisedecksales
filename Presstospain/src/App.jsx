@@ -23,6 +23,9 @@ import Slide18 from './slides/Slide18'
 import Slide19 from './slides/Slide19'
 import Slide20 from './slides/Slide20'
 
+// Logo component
+import Logo from './components/Logo'
+
 // Slide registry
 const slides = [
   Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7, Slide8, Slide9, Slide10,
@@ -50,6 +53,7 @@ function App() {
 
   return (
     <div className="presentation">
+      <Logo />
       <CurrentSlideComponent />
       <div className="slide-counter">
         {currentSlide + 1} / {slides.length}
