@@ -1,18 +1,34 @@
 import { motion } from 'framer-motion'
 
 const Slide5 = () => {
+  const advantages = [
+    {
+      icon: '🌍',
+      title: 'Multi-country presence across 4 regions',
+      subtitle: '👉 Few competitors operate at this scale'
+    },
+    {
+      icon: '🚀',
+      title: 'Built-in expansion capability',
+      subtitle: '👉 New markets can be launched faster'
+    },
+    {
+      icon: '📊',
+      title: 'Large operational data footprint',
+      subtitle: '👉 Opportunity to drive insights & optimization'
+    },
+    {
+      icon: '🤝',
+      title: 'Established franchise ecosystem',
+      subtitle: '👉 Ready for standardization and control'
+    }
+  ]
+
   const regions = [
     { name: 'Europe', icon: '🌍' },
     { name: 'Latin America', icon: '🌎' },
     { name: 'Africa', icon: '🌍' },
     { name: 'Asia', icon: '🌏' }
-  ]
-
-  const opportunities = [
-    'Standardize operations globally',
-    'Centralize data & control',
-    'Build a unified customer experience',
-    'Scale faster into new markets'
   ]
 
   return (
@@ -26,15 +42,6 @@ const Slide5 = () => {
         Pressto's Global Advantage
       </motion.h2>
 
-      <motion.p
-        className="slide-subtitle"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        Pressto already operates across multiple countries
-      </motion.p>
-
       <div className="regions-row">
         {regions.map((region, index) => (
           <motion.div
@@ -42,7 +49,7 @@ const Slide5 = () => {
             className="region-badge"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
+            transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
           >
             <span className="region-icon">{region.icon}</span>
             <span className="region-name">{region.name}</span>
@@ -50,35 +57,38 @@ const Slide5 = () => {
         ))}
       </div>
 
-      <motion.div
-        className="opportunity-section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-      >
-        <h3 className="section-label">This creates a unique opportunity</h3>
-        <ul className="opportunity-list">
-          {opportunities.map((opp, index) => (
-            <motion.li
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2 + index * 0.1, duration: 0.4 }}
-            >
-              {opp}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
+      <div className="advantage-list">
+        {advantages.map((item, index) => (
+          <motion.div
+            key={index}
+            className="advantage-item"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5 + index * 0.15, duration: 0.5 }}
+          >
+            <span className="advantage-icon">{item.icon}</span>
+            <div className="advantage-content">
+              <span className="advantage-title">{item.title}</span>
+              <span className="advantage-subtitle">{item.subtitle}</span>
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
       <motion.div
-        className="key-insight-box"
+        className="key-insight"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.8, duration: 0.5 }}
+        transition={{ delay: 1.5, duration: 0.6 }}
       >
-        <p className="insight-label">KEY INSIGHT</p>
-        <p className="insight-text">Growth is now limited by technology standardization</p>
+        <div className="insight-header">
+          <span className="insight-icon">🔥</span>
+          <p className="insight-label">KEY INSIGHT</p>
+        </div>
+        <p className="insight-text">
+          <span className="insight-main">The business is global —</span>
+          <span className="insight-sub">but the technology is not</span>
+        </p>
       </motion.div>
     </div>
   )

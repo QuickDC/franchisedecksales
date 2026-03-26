@@ -474,6 +474,50 @@ body {
   color: var(--text-primary);
 }
 
+/* Advantage List */
+.advantage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 700px;
+  margin: 20px 0;
+}
+
+.advantage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.advantage-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.advantage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.advantage-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.advantage-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 /* ========================================
    OPPORTUNITIES
    ======================================== */
