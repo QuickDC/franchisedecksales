@@ -1179,6 +1179,16 @@ body {
   color: var(--text-secondary);
 }
 
+.together-box {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.together-box .partner-name {
+  margin-bottom: 16px;
+}
+
 .partner-connector {
   font-size: 2rem;
   color: var(--accent);

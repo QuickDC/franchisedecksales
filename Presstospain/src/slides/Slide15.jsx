@@ -50,12 +50,12 @@ const Slide15 = () => {
       </div>
 
       <motion.div
-        className="partner-together"
+        className="partner-box together-box"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
       >
-        <h3 className="together-title">🤝 Together</h3>
+        <h3 className="partner-name">🤝 Together</h3>
         <div className="together-points">
           <p>→ One system across all countries</p>
           <p>→ Compliance built into every operation</p>
