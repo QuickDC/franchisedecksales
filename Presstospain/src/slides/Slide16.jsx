@@ -2,9 +2,35 @@ import { motion } from 'framer-motion'
 
 const Slide16 = () => {
   const phases = [
-    { phase: 'Phase 1', period: 'April–May', items: ['Existing QDC POC', 'Gap identification', 'Workflow validation'] },
-    { phase: 'Phase 2', period: 'June', items: ['Compliance setup', 'Invoice logic', 'VAT validation'] },
-    { phase: 'Phase 3', period: 'After', items: ['Spain rollout', 'Pilot to full deployment'] }
+    {
+      title: 'Phase 1 — Validation',
+      period: 'April–May',
+      points: [
+        '→ Validate workflows with Pressto team',
+        '→ Identify gaps early',
+        '→ Align system with real operations'
+      ],
+      outcome: 'Outcome: No surprises during rollout'
+    },
+    {
+      title: 'Phase 2 — Compliance Build',
+      period: 'June',
+      points: [
+        '→ Configure invoice timing logic',
+        '→ Implement VAT & SII reporting',
+        '→ Validate compliance scenarios'
+      ],
+      outcome: 'Outcome: Compliance-ready system'
+    },
+    {
+      title: 'Phase 3 — Controlled Rollout',
+      period: 'July onwards',
+      points: [
+        '→ Pilot with selected stores',
+        '→ Gradual expansion to full network'
+      ],
+      outcome: 'Outcome: Stable, scalable deployment'
+    }
   ]
 
   return (
@@ -28,14 +54,15 @@ const Slide16 = () => {
             transition={{ delay: 0.3 + index * 0.2, duration: 0.5 }}
           >
             <div className="phase-header">
-              <span className="phase-name">{phase.phase}</span>
+              <span className="phase-name">{phase.title}</span>
               <span className="phase-period">{phase.period}</span>
             </div>
             <div className="phase-items">
-              {phase.items.map((item, i) => (
-                <div key={i} className="phase-item">• {item}</div>
+              {phase.points.map((point, i) => (
+                <div key={i} className="phase-item">{point}</div>
               ))}
             </div>
+            <div className="phase-outcome">{phase.outcome}</div>
           </motion.div>
         ))}
       </div>

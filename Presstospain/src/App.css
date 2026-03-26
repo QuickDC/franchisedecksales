@@ -1266,6 +1266,15 @@ body {
   font-size: 0.95rem;
 }
 
+.phase-outcome {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
 /* ========================================
    MARKETS
    ======================================== */
