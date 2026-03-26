@@ -1,6 +1,20 @@
 import { motion } from 'framer-motion'
 
 const Slide9 = () => {
+  const traditionalPoints = [
+    'Invoice at order creation',
+    '→ Early tax liability',
+    '→ Requires cancellations & credit notes',
+    '→ High compliance risk'
+  ]
+
+  const spainPoints = [
+    'Invoice at payment or delivery',
+    '→ Accurate tax calculation',
+    '→ Clean reporting to authorities',
+    '→ No unnecessary reversals'
+  ]
+
   return (
     <div className="slide">
       <motion.h2
@@ -19,9 +33,12 @@ const Slide9 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <h3 className="comparison-label">Traditional Systems</h3>
-          <p className="comparison-value">Invoice at order creation</p>
-          <div className="comparison-cross">❌</div>
+          <h3 className="comparison-label">❌ Traditional Systems</h3>
+          <div className="comparison-list">
+            {traditionalPoints.map((point, index) => (
+              <p key={index} className="comparison-item">{point}</p>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
@@ -39,19 +56,29 @@ const Slide9 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h3 className="comparison-label">Spain Requirement</h3>
-          <p className="comparison-value highlight">Invoice at payment or delivery</p>
-          <div className="comparison-check">✅</div>
+          <h3 className="comparison-label">✅ Spain Requirement</h3>
+          <div className="comparison-list">
+            {spainPoints.map((point, index) => (
+              <p key={index} className="comparison-item">{point}</p>
+            ))}
+          </div>
         </motion.div>
       </div>
 
       <motion.div
-        className="key-insight-box centered"
+        className="key-insight"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
       >
-        <p className="insight-text">This defines compliance success</p>
+        <div className="insight-header">
+          <span className="insight-icon">💡</span>
+          <p className="insight-label">KEY INSIGHT</p>
+        </div>
+        <p className="insight-text">
+          <span className="insight-main">This is not a feature —</span>
+          <span className="insight-sub">→ this is a compliance requirement</span>
+        </p>
       </motion.div>
     </div>
   )

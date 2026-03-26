@@ -784,7 +784,20 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.comparison-item {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.4;
 }
 
 .comparison-value {
