@@ -44,26 +44,37 @@ const Slide16 = () => {
         Spain Rollout Plan
       </motion.h2>
 
-      <div className="timeline-container">
+      <div className="timeline-wrapper">
         {phases.map((phase, index) => (
-          <motion.div
-            key={index}
-            className="timeline-phase"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 + index * 0.2, duration: 0.5 }}
-          >
-            <div className="phase-header">
-              <span className="phase-name">{phase.title}</span>
-              <span className="phase-period">{phase.period}</span>
-            </div>
-            <div className="phase-items">
-              {phase.points.map((point, i) => (
-                <div key={i} className="phase-item">{point}</div>
-              ))}
-            </div>
-            <div className="phase-outcome">{phase.outcome}</div>
-          </motion.div>
+          <div key={index} className="timeline-phase-wrapper">
+            <motion.div
+              className="timeline-phase"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + index * 0.25, duration: 0.5 }}
+            >
+              <div className="phase-header">
+                <span className="phase-name">{phase.title}</span>
+                <span className="phase-period">{phase.period}</span>
+              </div>
+              <div className="phase-items">
+                {phase.points.map((point, i) => (
+                  <div key={i} className="phase-item">{point}</div>
+                ))}
+              </div>
+              <div className="phase-outcome">{phase.outcome}</div>
+            </motion.div>
+            {index < phases.length - 1 && (
+              <motion.div
+                className="timeline-arrow"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 + index * 0.25, duration: 0.4 }}
+              >
+                →
+              </motion.div>
+            )}
+          </div>
         ))}
       </div>
     </div>

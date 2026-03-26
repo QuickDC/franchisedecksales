@@ -1232,6 +1232,29 @@ body {
   flex-wrap: wrap;
 }
 
+.timeline-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.timeline-phase-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-arrow {
+  font-size: 1.5rem;
+  color: var(--accent);
+  font-weight: bold;
+}
+
 .timeline-phase {
   background: var(--bg-card);
   border: 1px solid var(--border);
