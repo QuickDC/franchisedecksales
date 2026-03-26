@@ -1327,6 +1327,18 @@ body {
   margin-bottom: 16px;
 }
 
+.market-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.market-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
 .market-country {
   font-size: 1.25rem;
   font-weight: 600;
