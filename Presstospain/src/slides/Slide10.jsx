@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 
 const Slide10 = () => {
   const strengths = [
-    { title: 'Multi-store & franchise management', icon: '🏪' },
-    { title: 'Centralized HQ control', icon: '🎯' },
-    { title: 'Configurable workflows', icon: '⚙️' },
-    { title: 'Scalable architecture', icon: '📈' }
+    { icon: '🏬', title: 'Multi-store & franchise management', subtitle: '→ Designed for networks like Pressto' },
+    { icon: '🎯', title: 'Centralized control layer', subtitle: '→ Solve fragmented systems problem' },
+    { icon: '⚙️', title: 'Configurable country workflows', subtitle: '→ Solve compliance variation across countries' },
+    { icon: '📈', title: 'Scalable architecture', subtitle: '→ Enable faster expansion into new markets' }
   ]
 
   return (
@@ -16,7 +16,7 @@ const Slide10 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Platform Strengths
+        Why QDC Fits Pressto's Needs
       </motion.h2>
 
       <div className="strengths-grid">
@@ -29,7 +29,8 @@ const Slide10 = () => {
             transition={{ delay: 0.3 + index * 0.12, duration: 0.5 }}
           >
             <span className="strength-icon">{strength.icon}</span>
-            <p className="strength-text">{strength.title}</p>
+            <h3 className="strength-title">{strength.title}</h3>
+            <p className="strength-subtitle">{strength.subtitle}</p>
           </motion.div>
         ))}
       </div>

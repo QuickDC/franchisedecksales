@@ -440,9 +440,21 @@ body {
 }
 
 .strength-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.strength-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.strength-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 /* ========================================
