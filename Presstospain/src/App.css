@@ -241,6 +241,19 @@ body {
   margin-top: 20px;
 }
 
+.risk-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.risk-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
 .risk-item {
   display: flex;
   align-items: flex-start;

@@ -31,20 +31,18 @@ const Slide4 = () => {
         What Is At <span className="risk-highlight">RISK</span>
       </motion.h2>
 
-      <div className="risk-list">
+      <div className="risk-grid">
         {risks.map((risk, index) => (
           <motion.div
             key={index}
-            className="risk-item"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 + index * 0.15, duration: 0.5 }}
+            className="risk-card"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 + index * 0.12, duration: 0.5 }}
           >
             <div className="risk-icon">⚡</div>
-            <div className="risk-content">
-              <h3 className="risk-title">{risk.title}</h3>
-              <p className="risk-desc">{risk.desc}</p>
-            </div>
+            <h3 className="risk-card-title">{risk.title}</h3>
+            <p className="risk-card-desc">{risk.desc}</p>
           </motion.div>
         ))}
       </div>
