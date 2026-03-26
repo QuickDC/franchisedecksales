@@ -83,10 +83,7 @@ const Slide5 = () => {
           <span className="insight-icon">🔥</span>
           <p className="insight-label">KEY INSIGHT</p>
         </div>
-        <p className="insight-text">
-          <span className="insight-main">The business is global —</span>
-          <span className="insight-sub">but the technology is not</span>
-        </p>
+        <p className="insight-text">The business is global — but the technology is not</p>
       </motion.div>
     </div>
   )
