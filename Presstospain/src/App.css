@@ -1366,8 +1366,8 @@ body {
 
 .benefit-item {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  gap: 8px;
   padding: 20px 24px;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -1383,6 +1383,17 @@ body {
 .benefit-text {
   font-size: 1.1rem;
   color: var(--text-primary);
+}
+
+.benefit-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.benefit-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
 }
 
 /* ========================================

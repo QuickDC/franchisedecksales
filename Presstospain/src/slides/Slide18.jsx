@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 
 const Slide18 = () => {
   const benefits = [
-    'Aligns with global expansion strategy',
-    'Reduces internal IT complexity',
-    'Ensures compliance across countries',
-    'Creates long-term scalable foundation'
+    { title: 'Solves multi-country complexity', subtitle: '→ One system across all operations' },
+    { title: 'Eliminates fragmented technology stack', subtitle: '→ No more country-specific tools' },
+    { title: 'Embeds compliance into workflows', subtitle: '→ No manual intervention or risk' },
+    { title: 'Enables predictable global expansion', subtitle: '→ Scale without operational disruption' }
   ]
 
   return (
@@ -28,8 +28,8 @@ const Slide18 = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 + index * 0.15, duration: 0.5 }}
           >
-            <span className="benefit-check">✓</span>
-            <span className="benefit-text">{benefit}</span>
+            <span className="benefit-title">{benefit.title}</span>
+            <span className="benefit-subtitle">{benefit.subtitle}</span>
           </motion.div>
         ))}
       </div>
