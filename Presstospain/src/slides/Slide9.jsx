@@ -2,15 +2,15 @@ import { motion } from 'framer-motion'
 
 const Slide9 = () => {
   const traditionalPoints = [
-    'Invoice at order creation',
-    'Tax applied before payment',
-    'High risk of adjustments'
+    '• Invoice at order creation',
+    '• Tax applied before payment',
+    '• High risk of adjustments'
   ]
 
   const spainPoints = [
-    'Invoice at payment or delivery',
-    'Tax aligned with actual revenue',
-    'Clean compliance reporting'
+    '• Invoice at payment or delivery',
+    '• Tax aligned with actual revenue',
+    '• Clean compliance reporting'
   ]
 
   return (
@@ -24,7 +24,7 @@ const Slide9 = () => {
         The Critical Difference
       </motion.h2>
 
-      <div className="comparison-container">
+      <div className="comparison-container-wide">
         <motion.div
           className="comparison-box traditional"
           initial={{ opacity: 0, x: -40 }}
@@ -34,7 +34,7 @@ const Slide9 = () => {
           <h3 className="comparison-label">❌ Traditional Systems</h3>
           <div className="comparison-list">
             {traditionalPoints.map((point, index) => (
-              <p key={index} className="comparison-item">• {point}</p>
+              <p key={index} className="comparison-item">{point}</p>
             ))}
           </div>
         </motion.div>
@@ -57,7 +57,7 @@ const Slide9 = () => {
           <h3 className="comparison-label">✅ Spain Requirement</h3>
           <div className="comparison-list">
             {spainPoints.map((point, index) => (
-              <p key={index} className="comparison-item">• {point}</p>
+              <p key={index} className="comparison-item">{point}</p>
             ))}
           </div>
         </motion.div>
