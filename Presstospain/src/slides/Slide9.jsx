@@ -3,16 +3,14 @@ import { motion } from 'framer-motion'
 const Slide9 = () => {
   const traditionalPoints = [
     'Invoice at order creation',
-    '→ Early tax liability',
-    '→ Requires cancellations & credit notes',
-    '→ High compliance risk'
+    'Tax applied before payment',
+    'High risk of adjustments'
   ]
 
   const spainPoints = [
     'Invoice at payment or delivery',
-    '→ Accurate tax calculation',
-    '→ Clean reporting to authorities',
-    '→ No unnecessary reversals'
+    'Tax aligned with actual revenue',
+    'Clean compliance reporting'
   ]
 
   return (
@@ -36,7 +34,7 @@ const Slide9 = () => {
           <h3 className="comparison-label">❌ Traditional Systems</h3>
           <div className="comparison-list">
             {traditionalPoints.map((point, index) => (
-              <p key={index} className="comparison-item">{point}</p>
+              <p key={index} className="comparison-item">• {point}</p>
             ))}
           </div>
         </motion.div>
@@ -59,7 +57,7 @@ const Slide9 = () => {
           <h3 className="comparison-label">✅ Spain Requirement</h3>
           <div className="comparison-list">
             {spainPoints.map((point, index) => (
-              <p key={index} className="comparison-item">{point}</p>
+              <p key={index} className="comparison-item">• {point}</p>
             ))}
           </div>
         </motion.div>
