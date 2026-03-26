@@ -682,19 +682,28 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 32px;
+  padding: 28px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .focus-icon {
-  font-size: 2.5rem;
+  font-size: 2rem;
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
-.focus-text {
+.focus-title {
   font-size: 1.1rem;
+  font-weight: 600;
   color: var(--text-primary);
+}
+
+.focus-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 /* ========================================

@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 
 const Slide7 = () => {
   const points = [
-    { title: 'Core owned store network', icon: '🏪' },
-    { title: 'Complex tax environment', icon: '📊' },
-    { title: 'First step toward global transformation', icon: '🚀' }
+    { icon: '🏬', title: 'Controlled environment', subtitle: '→ Faster implementation, lower risk' },
+    { icon: '📋', title: 'High compliance complexity', subtitle: '→ Build once, reuse globally' },
+    { icon: '🚀', title: 'Pilot for global platform', subtitle: '→ Create a repeatable rollout model' }
   ]
 
   return (
@@ -23,23 +23,28 @@ const Slide7 = () => {
           <motion.div
             key={index}
             className="focus-card"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 + index * 0.15, duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 + index * 0.12, duration: 0.5 }}
           >
             <span className="focus-icon">{point.icon}</span>
-            <p className="focus-text">{point.title}</p>
+            <h3 className="focus-title">{point.title}</h3>
+            <p className="focus-subtitle">{point.subtitle}</p>
           </motion.div>
         ))}
       </div>
 
       <motion.div
-        className="key-insight-box"
+        className="key-insight"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
       >
-        <p className="insight-text">If Spain works → Global rollout becomes predictable</p>
+        <div className="insight-header">
+          <span className="insight-icon">🔥</span>
+          <p className="insight-label">KEY INSIGHT</p>
+        </div>
+        <p className="insight-text">Spain is not just a market —<br />it is the blueprint for global expansion</p>
       </motion.div>
     </div>
   )
