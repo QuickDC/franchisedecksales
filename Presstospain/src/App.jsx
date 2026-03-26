@@ -25,6 +25,7 @@ import Slide20 from './slides/Slide20'
 
 // Logo component
 import Logo from './components/Logo'
+import PresstoLogo from './components/PresstoLogo'
 
 // Slide registry
 const slides = [
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <div className="presentation">
+      <PresstoLogo />
       <Logo />
       <CurrentSlideComponent />
       <div className="slide-counter">

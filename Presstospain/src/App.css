@@ -895,6 +895,20 @@ body {
   height: auto;
 }
 
+.pressto-logo-container {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  z-index: 100;
+}
+
+.pressto-logo {
+  max-width: 120px;
+  max-height: 50px;
+  width: auto;
+  height: auto;
+}
+
 /* ========================================
    RESPONSIVE
    ======================================== */
