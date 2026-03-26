@@ -1460,11 +1460,11 @@ body {
 }
 
 .final-tagline {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .final-divider {
