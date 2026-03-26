@@ -19,14 +19,9 @@ const Slide15 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <div className="partner-logo">
-            <img src="/Presstologo.png" alt="Pressto" className="partner-logo-img" />
-          </div>
+          <span className="partner-icon">🌍</span>
           <h3 className="partner-name">Pressto</h3>
-          <div className="partner-items">
-            <div className="partner-item">Global presence</div>
-            <div className="partner-item">Multi-country operations</div>
-          </div>
+          <p className="partner-tagline">Global brand with multi-country presence</p>
         </motion.div>
 
         <motion.div
@@ -44,39 +39,24 @@ const Slide15 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <div className="partner-logo">
-            <img src="/QDCwhitelogo.png" alt="QDC" className="partner-logo-img" />
-          </div>
+          <span className="partner-icon">⚙️</span>
           <h3 className="partner-name">QDC</h3>
-          <div className="partner-items">
-            <div className="partner-item">Scalable platform</div>
-            <div className="partner-item">Franchise control</div>
-            <div className="partner-item">Configurable architecture</div>
-          </div>
+          <p className="partner-tagline">Technology platform built for global scale</p>
         </motion.div>
       </div>
 
       <motion.div
-        className="together-outcome"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        className="partner-together"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
       >
-        <h3 className="outcome-title">Together</h3>
-        <ul className="outcome-list">
-          <li>One system across all countries</li>
-          <li>Country-specific compliance within one platform</li>
-          <li>Faster expansion into new markets</li>
-        </ul>
-      </motion.div>
-
-      <motion.div
-        className="key-insight-box"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.6, duration: 0.5 }}
-      >
-        <p className="insight-text">From multiple systems → one global platform</p>
+        <h3 className="together-title">🤝 Together</h3>
+        <div className="together-points">
+          <p>→ One system across all countries</p>
+          <p>→ Compliance built into every operation</p>
+          <p>→ Expansion without operational complexity</p>
+        </div>
       </motion.div>
     </div>
   )
