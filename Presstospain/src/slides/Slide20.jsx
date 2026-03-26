@@ -33,22 +33,6 @@ const Slide20 = () => {
       >
         Pressto operates globally — on one system
       </motion.p>
-
-      <motion.div
-        className="final-divider"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-      ></motion.div>
-
-      <motion.p
-        className="final-subtitle"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-      >
-        Precision. Compliance. Control.
-      </motion.p>
     </div>
   )
 }
