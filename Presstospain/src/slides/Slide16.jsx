@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 
 const Slide16 = () => {
   const phases = [
-    { phase: 'Phase 1', period: 'April–May', items: ['Compliance setup', 'Invoice logic', 'VAT validation'] },
-    { phase: 'Phase 2', period: 'June', items: ['Pilot rollout'] },
-    { phase: 'Phase 3', period: 'After', items: ['Full deployment'] }
+    { phase: 'Phase 1', period: 'April–May', items: ['Existing QDC POC', 'Gap identification', 'Workflow validation'] },
+    { phase: 'Phase 2', period: 'June', items: ['Compliance setup', 'Invoice logic', 'VAT validation'] },
+    { phase: 'Phase 3', period: 'After', items: ['Spain rollout', 'Pilot to full deployment'] }
   ]
 
   return (
