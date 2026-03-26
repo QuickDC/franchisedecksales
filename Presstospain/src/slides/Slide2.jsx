@@ -64,7 +64,10 @@ const Slide2 = () => {
             <span className="insight-icon">📈</span>
             <p className="insight-label">KEY INSIGHT</p>
           </div>
-          <p className="insight-text">Growth is no longer limited by operations—<br />it is limited by compliance and technology</p>
+          <p className="insight-text">
+            <span className="insight-main">Growth is no longer limited by operations—</span>
+            <span className="insight-sub">it is limited by compliance and technology</span>
+          </p>
         </motion.div>
       </div>
     </div>
