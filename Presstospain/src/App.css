@@ -961,6 +961,47 @@ body {
   letter-spacing: -0.02em;
 }
 
+.not-software-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.not-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 48px;
+}
+
+.not-label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.final-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+  border-radius: 20px;
+  padding: 32px 48px;
+  margin-top: 40px;
+}
+
+.final-line-icon {
+  font-size: 2rem;
+}
+
+.final-line-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+}
+
 /* ========================================
    ARCHITECTURE
    ======================================== */
