@@ -27,7 +27,7 @@ const Slide19 = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.6, duration: 0.6 }}
       >
-        <h3 className="vision-title">Pressto's Global Operating Platform</h3>
+        <h3 className="vision-title">This is Pressto's Global Operating Platform</h3>
       </motion.div>
     </div>
   )
