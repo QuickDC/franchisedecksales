@@ -31,7 +31,7 @@ const Slide6 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <h3 className="transform-label">FROM</h3>
+          <h3 className="transform-label">❌ FROM</h3>
           <div className="transform-items">
             {fromItems.map((item, index) => (
               <div key={index} className="transform-item">
@@ -57,7 +57,7 @@ const Slide6 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <h3 className="transform-label">TO</h3>
+          <h3 className="transform-label">✅ TO</h3>
           <div className="transform-items">
             {toItems.map((item, index) => (
               <div key={index} className="transform-item success">
