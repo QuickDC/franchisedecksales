@@ -241,7 +241,8 @@ body {
 }
 
 .insight-icon {
-  font-size: 1.25rem;
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
 .insight-text {

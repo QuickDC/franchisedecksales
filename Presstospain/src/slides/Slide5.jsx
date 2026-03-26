@@ -80,7 +80,7 @@ const Slide5 = () => {
         transition={{ delay: 1.5, duration: 0.6 }}
       >
         <div className="insight-header">
-          <span className="insight-icon">🔥</span>
+          <span className="insight-icon">💡</span>
           <p className="insight-label">KEY INSIGHT</p>
         </div>
         <p className="insight-text">The business is global — but the technology is not</p>

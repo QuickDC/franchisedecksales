@@ -61,7 +61,7 @@ const Slide2 = () => {
           transition={{ delay: 1, duration: 0.6 }}
         >
           <div className="insight-header">
-            <span className="insight-icon">📈</span>
+            <span className="insight-icon">💡</span>
             <p className="insight-label">KEY INSIGHT</p>
           </div>
           <p className="insight-text">
