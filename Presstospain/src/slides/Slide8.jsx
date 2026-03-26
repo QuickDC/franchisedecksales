@@ -2,11 +2,11 @@ import { motion } from 'framer-motion'
 
 const Slide8 = () => {
   const requirements = [
-    { title: 'VAT (21% / IGIC Canary)', desc: 'Different rates for mainland and Canary Islands' },
-    { title: 'Invoice at Payment OR Service Completion', desc: 'Not at order creation' },
-    { title: 'Daily reporting (SII)', desc: 'Immediate supply information' },
-    { title: 'VAT validation', desc: 'Real-time verification required' },
-    { title: 'Credit note-based corrections', desc: 'Only credit notes for adjustments' }
+    { icon: '🧾', title: 'Multi-region tax structure', subtitle: '→ Requires dynamic tax engine' },
+    { icon: '📅', title: 'Real-time reporting (SII)', subtitle: '→ Requires automated daily sync' },
+    { icon: '🧮', title: 'Invoice timing constraints', subtitle: '→ Impacts POS and workflow design' },
+    { icon: '🔍', title: 'VAT validation requirement', subtitle: '→ Needs real-time API integration' },
+    { icon: '🔄', title: 'Credit note corrections', subtitle: '→ Requires structured audit trail' }
   ]
 
   return (
@@ -25,12 +25,13 @@ const Slide8 = () => {
           <motion.div
             key={index}
             className="compliance-card"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 + index * 0.12, duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
           >
+            <span className="compliance-icon">{req.icon}</span>
             <h3 className="compliance-title">{req.title}</h3>
-            <p className="compliance-desc">{req.desc}</p>
+            <p className="compliance-subtitle">{req.subtitle}</p>
           </motion.div>
         ))}
       </div>
