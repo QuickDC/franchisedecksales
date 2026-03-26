@@ -280,6 +280,40 @@ body {
   margin-top: 20px;
 }
 
+.gaps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.gap-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gap-icon {
+  font-size: 1.5rem;
+}
+
+.gap-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gap-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 /* Risk List (new layout) */
 .risk-list {
   display: flex;
