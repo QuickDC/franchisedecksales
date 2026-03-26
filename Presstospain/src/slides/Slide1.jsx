@@ -12,7 +12,7 @@ const Slide1 = () => {
         <h1 className="main-title">Pressto Spain</h1>
         <h2 className="main-subtitle">Digital & Compliance Transformation</h2>
         <div className="title-divider"></div>
-        <p className="tagline">Building a Scalable, Compliance-Ready Operating Platform</p>
+        <p className="tagline">Building a Scalable, Compliance-Ready Franchise Operating Platform</p>
       </motion.div>
 
       <motion.p
