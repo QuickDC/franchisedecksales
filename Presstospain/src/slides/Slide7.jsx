@@ -4,7 +4,7 @@ const Slide7 = () => {
   const points = [
     { icon: '🏬', title: 'Controlled environment', subtitle: '→ Faster implementation, lower risk' },
     { icon: '📋', title: 'High compliance complexity', subtitle: '→ Build once, reuse globally' },
-    { icon: '🚀', title: 'Pilot for global platform', subtitle: '→ Create a repeatable rollout model' }
+    { icon: '🚀', title: 'Pilot for global platform', subtitle: '→ Create a repeatable model' }
   ]
 
   return (
@@ -28,7 +28,7 @@ const Slide7 = () => {
             transition={{ delay: 0.3 + index * 0.12, duration: 0.5 }}
           >
             <span className="focus-icon">{point.icon}</span>
-            <h3 className="focus-title">{point.title}</h3>
+            <p className="focus-title">{point.title}</p>
             <p className="focus-subtitle">{point.subtitle}</p>
           </motion.div>
         ))}
@@ -44,7 +44,10 @@ const Slide7 = () => {
           <span className="insight-icon">🔥</span>
           <p className="insight-label">KEY INSIGHT</p>
         </div>
-        <p className="insight-text">Spain is not just a market —<br />it is the blueprint for global expansion</p>
+        <p className="insight-text">
+          <span className="insight-main">Spain is not just a market —</span>
+          <span className="insight-sub">→ it is the blueprint for global expansion</span>
+        </p>
       </motion.div>
     </div>
   )
