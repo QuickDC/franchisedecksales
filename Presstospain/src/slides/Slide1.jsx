@@ -10,7 +10,7 @@ const Slide1 = () => {
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <h1 className="main-title">Pressto Spain</h1>
-        <h2 className="main-subtitle">Scaling without increasing complexity</h2>
+        <h2 className="main-subtitle">Scaling Without Increasing Complexity</h2>
         <div className="title-divider"></div>
         <p className="tagline">Making global expansion predictable, scalable, and compliant</p>
       </motion.div>
