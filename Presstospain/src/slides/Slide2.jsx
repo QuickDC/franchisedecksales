@@ -60,7 +60,10 @@ const Slide2 = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <p className="insight-label">KEY INSIGHT</p>
+          <div className="insight-header">
+            <span className="insight-icon">🔥</span>
+            <p className="insight-label">KEY INSIGHT</p>
+          </div>
           <p className="insight-text">Growth is no longer limited by operations—<br />it is limited by compliance and technology</p>
         </motion.div>
       </div>

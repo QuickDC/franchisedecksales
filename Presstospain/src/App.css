@@ -232,6 +232,17 @@ body {
   margin-bottom: 8px;
 }
 
+.insight-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.insight-icon {
+  font-size: 1.25rem;
+}
+
 .insight-text {
   font-size: 1.25rem;
   font-weight: 600;
