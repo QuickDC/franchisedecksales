@@ -19,6 +19,9 @@ const Slide15 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
+          <div className="partner-logo">
+            <img src="/Presstologo.png" alt="Pressto" className="partner-logo-img" />
+          </div>
           <h3 className="partner-name">Pressto</h3>
           <div className="partner-items">
             <div className="partner-item">Global presence</div>
@@ -41,6 +44,9 @@ const Slide15 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
+          <div className="partner-logo">
+            <img src="/QDCwhitelogo.png" alt="QDC" className="partner-logo-img" />
+          </div>
           <h3 className="partner-name">QDC</h3>
           <div className="partner-items">
             <div className="partner-item">Scalable platform</div>

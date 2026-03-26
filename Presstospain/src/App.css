@@ -666,6 +666,19 @@ body {
   text-align: center;
 }
 
+.partner-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.partner-logo-img {
+  max-width: 100px;
+  max-height: 50px;
+  width: auto;
+  height: auto;
+}
+
 .partner-name {
   font-size: 1.5rem;
   font-weight: 700;
