@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const Slide6 = () => {
   const fromItems = [
-    { icon: '🔗', text: 'Disjointed systems across countries' },
+    { icon: '⛓️‍💥', text: 'Disjointed systems across countries' },
     { icon: '📝', text: 'Manual compliance processes' },
     { icon: '👁️', text: 'Limited visibility & control' }
   ]
