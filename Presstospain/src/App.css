@@ -163,6 +163,30 @@ body {
   border: 1px solid var(--border);
 }
 
+.point-item.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.point-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.point-title {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.point-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 .point-icon {
   font-size: 1.5rem;
 }
