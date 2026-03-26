@@ -467,6 +467,24 @@ body {
   line-height: 1.5;
 }
 
+.enable-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.enable-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.enable-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 .risk-icon {
   font-size: 1.5rem;
   margin-bottom: 12px;

@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 
 const Slide14 = () => {
   const enables = [
-    'Faster country expansion',
-    'Reduced compliance risk',
-    'Centralized control',
-    'Lower dependency on custom development'
+    { icon: '🚀', title: 'Faster expansion', subtitle: '→ Enter new markets with minimal setup' },
+    { icon: '🛡️', title: 'Lower compliance risk', subtitle: '→ Accurate reporting and validation built-in' },
+    { icon: '🎯', title: 'Centralized control', subtitle: '→ Manage data, access, offers, and operations globally' },
+    { icon: '⚙️', title: 'Reduced development overhead', subtitle: '→ Scale without increasing tech complexity' }
   ]
 
   return (
@@ -24,12 +24,13 @@ const Slide14 = () => {
           <motion.div
             key={index}
             className="enable-card"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 + index * 0.12, duration: 0.5 }}
           >
-            <div className="enable-check">✓</div>
-            <p className="enable-text">{item}</p>
+            <span className="enable-icon">{item.icon}</span>
+            <h3 className="enable-title">{item.title}</h3>
+            <p className="enable-subtitle">{item.subtitle}</p>
           </motion.div>
         ))}
       </div>
