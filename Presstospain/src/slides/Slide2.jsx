@@ -66,7 +66,7 @@ const Slide2 = () => {
           </div>
           <p className="insight-text">
             <span className="insight-main">Growth is no longer limited by operations—</span>
-            <span className="insight-sub">it is limited by compliance and technology</span>
+            <span className="insight-sub">👉 it is limited by compliance and technology</span>
           </p>
         </motion.div>
       </div>
