@@ -1,6 +1,18 @@
 import { motion } from 'framer-motion'
 
 const Slide6 = () => {
+  const fromItems = [
+    { icon: '🔗', text: 'Disjointed systems across countries' },
+    { icon: '📝', text: 'Manual compliance processes' },
+    { icon: '👁️', text: 'Limited visibility & control' }
+  ]
+
+  const toItems = [
+    { icon: '🌐', text: 'One global operating platform' },
+    { icon: '✅', text: 'Built-in multi-country compliance' },
+    { icon: '📊', text: 'Centralized data & real-time control' }
+  ]
+
   return (
     <div className="slide">
       <motion.h2
@@ -19,12 +31,14 @@ const Slide6 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <h3 className="transform-label">From</h3>
+          <h3 className="transform-label">FROM</h3>
           <div className="transform-items">
-            <div className="transform-item">
-              <span className="transform-icon">❌</span>
-              <span>Multiple systems across countries</span>
-            </div>
+            {fromItems.map((item, index) => (
+              <div key={index} className="transform-item">
+                <span className="transform-item-icon">{item.icon}</span>
+                <span>{item.text}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -43,12 +57,14 @@ const Slide6 = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <h3 className="transform-label">To</h3>
+          <h3 className="transform-label">TO</h3>
           <div className="transform-items">
-            <div className="transform-item success">
-              <span className="transform-icon">✅</span>
-              <span>One global operating platform</span>
-            </div>
+            {toItems.map((item, index) => (
+              <div key={index} className="transform-item success">
+                <span className="transform-item-icon">{item.icon}</span>
+                <span>{item.text}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
