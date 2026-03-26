@@ -57,20 +57,18 @@ const Slide5 = () => {
         ))}
       </div>
 
-      <div className="advantage-list">
+      <div className="advantage-grid">
         {advantages.map((item, index) => (
           <motion.div
             key={index}
-            className="advantage-item"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 + index * 0.15, duration: 0.5 }}
+            className="advantage-card"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 + index * 0.12, duration: 0.5 }}
           >
-            <span className="advantage-icon">{item.icon}</span>
-            <div className="advantage-content">
-              <span className="advantage-title">{item.title}</span>
-              <span className="advantage-subtitle">{item.subtitle}</span>
-            </div>
+            <span className="advantage-card-icon">{item.icon}</span>
+            <h3 className="advantage-card-title">{item.title}</h3>
+            <p className="advantage-card-subtitle">{item.subtitle}</p>
           </motion.div>
         ))}
       </div>

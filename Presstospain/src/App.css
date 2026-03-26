@@ -518,6 +518,43 @@ body {
   color: var(--text-secondary);
 }
 
+/* Advantage Grid */
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 0;
+}
+
+.advantage-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.advantage-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.advantage-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.advantage-card-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 /* ========================================
    OPPORTUNITIES
    ======================================== */
