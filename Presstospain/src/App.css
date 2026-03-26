@@ -983,17 +983,31 @@ body {
 
 .final-line {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  gap: 12px;
   background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
   border-radius: 20px;
   padding: 32px 48px;
   margin-top: 40px;
 }
 
+.final-line-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .final-line-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.final-line-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .final-line-text {

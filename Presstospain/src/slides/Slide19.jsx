@@ -41,7 +41,10 @@ const Slide19 = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 0.6 }}
       >
-        <span className="final-line-icon">💡</span>
+        <div className="final-line-header">
+          <span className="final-line-icon">💡</span>
+          <span className="final-line-label">KEY INSIGHT</span>
+        </div>
         <span className="final-line-text">Pressto runs on one platform — globally</span>
       </motion.div>
     </div>
