@@ -231,6 +231,48 @@ body {
   margin-top: 20px;
 }
 
+/* Risk List (new layout) */
+.risk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.risk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.risk-item .risk-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.risk-content {
+  text-align: left;
+}
+
+.risk-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.risk-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
 .challenge-card,
 .risk-card,
 .strength-card,
