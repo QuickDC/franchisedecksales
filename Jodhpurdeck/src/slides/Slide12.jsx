@@ -6,12 +6,13 @@ const Slide12 = () => {
     <div className="slide" style={{
       position: 'relative',
       background: 'linear-gradient(135deg, #0a1628 0%, #0f2847 50%, #0a1628 100%)',
-      padding: '45px 70px',
+      padding: '60px 100px',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'flex-start'
+      justifyContent: 'center',
+      overflow: 'hidden'
     }}>
-      {/* Logo - fixed top-right */}
+      {/* Logo */}
       <motion.img
         src={logoImg}
         alt="QDC Logo"
@@ -20,247 +21,240 @@ const Slide12 = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         style={{
           position: 'absolute',
-          top: 35,
-          right: 35,
-          height: 38,
+          top: 40,
+          right: 30,
+          height: 40,
           objectFit: 'contain'
         }}
       />
 
-      {/* Title */}
       <motion.h1
-        initial={{ opacity: 0, y: 15 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
         style={{
-          fontSize: '2.6rem',
-          fontWeight: 800,
+          fontSize: '3rem',
+          fontWeight: 700,
+          marginBottom: 40,
+          lineHeight: 1.2,
           color: '#ffffff',
-          marginBottom: 8,
-          textAlign: 'center',
-          letterSpacing: '0.5px'
+          textAlign: 'center'
         }}
       >
-        Quick Dry Cleaning Software
+        Traditional <span style={{ color: '#64748b' }}>vs</span> Modern<br />
+        <span style={{ color: '#4fc3f7' }}>Laundry Business</span>
       </motion.h1>
 
-      {/* Subtitle */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.35, duration: 0.5 }}
-        style={{
-          fontSize: '1.35rem',
-          color: '#94a3b8',
-          marginBottom: 30,
-          textAlign: 'center',
-          fontWeight: 500
-        }}
-      >
-        The operating system for growth, operations, and retention.
-      </motion.p>
+      {/* Three-zone layout: Left -> Center -> Right */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 30,
+        flex: 1
+      }}>
+        {/* LEFT ZONE - Traditional Model */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          style={{
+            width: '34%',
+            padding: '35px 40px',
+            background: 'linear-gradient(135deg, rgba(20,15,25,0.85) 0%, rgba(25,20,35,0.7) 100%)',
+            borderRadius: '20px 8px 8px 20px',
+            borderRight: '3px solid rgba(252,165,165,0.3)',
+            minHeight: 240
+          }}
+        >
+          <h3 style={{
+            fontSize: '0.95rem',
+            color: '#ef8888',
+            marginBottom: 25,
+            fontWeight: 600,
+            letterSpacing: '2px',
+            textAlign: 'left'
+          }}>
+            TRADITIONAL MODEL
+          </h3>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            {['Walk-in only', 'Call for updates', 'Cash only', 'Paper register', 'Owner memory'].map((item, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 + i * 0.1, duration: 0.4 }}
+                style={{
+                  padding: '14px 0',
+                  borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                  color: '#d4dce8',
+                  fontSize: '1.25rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 12,
+                  textAlign: 'left'
+                }}
+              >
+                <span style={{ color: '#ef8888', fontSize: '0.8rem', opacity: 0.7 }}>●</span>
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
 
-      {/* Main content - SVG-based with viewBox */}
-      <svg
-        viewBox="0 0 800 550"
-        style={{ flex: 1, width: '100%', display: 'block' }}
-      >
-        <defs>
-          <linearGradient id="centerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0f2847" />
-            <stop offset="100%" stopColor="#1e3a5f" />
-          </linearGradient>
-          <filter id="glowBlue" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-
-        {/* Connector lines */}
-        <motion.path
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-          d="M 145 85 L 400 275"
-          fill="none"
-          stroke="#4fc3f7"
-          strokeWidth="1.5"
-          strokeOpacity="0.4"
-          strokeDasharray="5,4"
-          strokeLinecap="round"
-          filter="url(#glowBlue)"
-        />
-
-        <motion.path
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ delay: 1.3, duration: 0.5 }}
-          d="M 655 85 L 400 275"
-          fill="none"
-          stroke="#a855f7"
-          strokeWidth="1.5"
-          strokeOpacity="0.4"
-          strokeDasharray="5,4"
-          strokeLinecap="round"
-          filter="url(#glowBlue)"
-        />
-
-        <motion.path
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ delay: 1.4, duration: 0.5 }}
-          d="M 145 465 L 400 275"
-          fill="none"
-          stroke="#22c55e"
-          strokeWidth="1.5"
-          strokeOpacity="0.4"
-          strokeDasharray="5,4"
-          strokeLinecap="round"
-          filter="url(#glowBlue)"
-        />
-
-        <motion.path
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ delay: 1.5, duration: 0.5 }}
-          d="M 655 465 L 400 275"
-          fill="none"
-          stroke="#f59e0b"
-          strokeWidth="1.5"
-          strokeOpacity="0.4"
-          strokeDasharray="5,4"
-          strokeLinecap="round"
-          filter="url(#glowBlue)"
-        />
-
-        {/* Corner connection dots */}
-        <circle cx="145" cy="85" r="3" fill="#4fc3f7" opacity="0.6" />
-        <circle cx="655" cy="85" r="3" fill="#a855f7" opacity="0.6" />
-        <circle cx="145" cy="465" r="3" fill="#22c55e" opacity="0.6" />
-        <circle cx="655" cy="465" r="3" fill="#f59e0b" opacity="0.6" />
-
-        {/* CENTER - QDC Platform Hub */}
-        <g transform="translate(400, 275)">
-          <motion.g
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            style={{ transformOrigin: '400px 275px' }}
-          >
-            <rect
-              x="-90"
-              y="-90"
-              width="180"
-              height="180"
-              rx="20"
-              fill="url(#centerGrad)"
-              stroke="rgba(79,195,247,0.9)"
-              strokeWidth="3"
-              style={{ filter: 'drop-shadow(0 0 80px rgba(79,195,247,0.35))' }}
+        {/* CENTER ZONE - Dramatic Transition */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          style={{
+            width: '120px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '0 15px'
+          }}
+        >
+          {/* Dramatic glowing arrow with continuous animation */}
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            height: 100,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            {/* Large beam glow */}
+            <div style={{
+              position: 'absolute',
+              width: 120,
+              height: 6,
+              background: 'linear-gradient(90deg, transparent, #f59e0b, #fbbf24, #f59e0b, transparent)',
+              borderRadius: 3,
+              boxShadow: '0 0 30px rgba(245,158,11,0.8), 0 0 60px rgba(245,158,11,0.5), 0 0 90px rgba(245,158,11,0.3)'
+            }} />
+            {/* Glow effect behind */}
+            <div style={{
+              position: 'absolute',
+              width: 140,
+              height: 30,
+              background: 'radial-gradient(ellipse at center, rgba(245,158,11,0.3), transparent)',
+              filter: 'blur(8px)'
+            }} />
+            {/* Moving animated arrow head */}
+            <motion.div
+              animate={{
+                x: [0, 15, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              style={{
+                position: 'absolute',
+                right: 5,
+                width: 0,
+                height: 0,
+                borderTop: '14px solid transparent',
+                borderBottom: '14px solid transparent',
+                borderLeft: '22px solid #fbbf24',
+                filter: 'drop-shadow(0 0 12px rgba(251,191,36,0.9))'
+              }}
             />
-            <text x="0" y="-15" textAnchor="middle" fill="#4fc3f7" fontSize="28" fontWeight="800" letterSpacing="1">QDC</text>
-            <text x="0" y="15" textAnchor="middle" fill="#94a3b8" fontSize="13" fontWeight="600">Platform</text>
-            <line x1="-50" y1="35" x2="50" y2="35" stroke="rgba(79,195,247,0.3)" strokeWidth="1" />
-            <text x="0" y="60" textAnchor="middle" fill="#64748b" fontSize="11" fontWeight="500" lineHeight="1.3">Powers the full</text>
-            <text x="0" y="72" textAnchor="middle" fill="#64748b" fontSize="11" fontWeight="500">business ecosystem</text>
-          </motion.g>
-        </g>
+            {/* Moving beam effect */}
+            <motion.div
+              animate={{
+                opacity: [0.3, 1, 0.3],
+                x: [-20, 20, -20]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              style={{
+                position: 'absolute',
+                width: 60,
+                height: 4,
+                background: 'linear-gradient(90deg, transparent, #fbbf24, #f59e0b)',
+                borderRadius: 2,
+                left: '10%',
+                boxShadow: '0 0 20px rgba(251,191,36,0.8)'
+              }}
+            />
+          </div>
 
-        {/* TOP-LEFT: Customer Acquisition */}
-        <motion.g
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-        >
-          <rect
-            x="40"
-            y="40"
-            width="210"
-            height="130"
-            rx="14"
-            fill="rgba(25,35,55,0.9)"
-            stroke="rgba(79,195,247,0.3)"
-          />
-          <rect x="40" y="40" width="210" height="3" fill="#4fc3f7" rx="1" />
-          <text x="55" y="65" fill="#4fc3f7" fontSize="13" fontWeight="700">Customer Acquisition</text>
-          <text x="55" y="88" fill="#94a3b8" fontSize="10">● Omnichannel Pickup Link</text>
-          <text x="55" y="104" fill="#94a3b8" fontSize="10">● Mobile App</text>
-          <text x="55" y="120" fill="#94a3b8" fontSize="10">● WhatsApp Bot</text>
-          <text x="55" y="136" fill="#94a3b8" fontSize="10">● Call & Walk-in</text>
-        </motion.g>
+          {/* Transition message */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.5 }}
+            style={{
+              fontSize: '1rem',
+              color: '#fbbf24',
+              fontWeight: 600,
+              textAlign: 'center',
+              marginTop: 20,
+              lineHeight: 1.4,
+              textShadow: '0 0 20px rgba(251,191,36,0.5)'
+            }}
+          >
+            Time to<br />modernize
+          </motion.p>
+        </motion.div>
 
-        {/* TOP-RIGHT: Store Operations */}
-        <motion.g
-          initial={{ opacity: 0, x: 30 }}
+        {/* RIGHT ZONE - Modern Model */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
+          transition={{ delay: 1.6, duration: 0.8 }}
+          style={{
+            width: '34%',
+            padding: '35px 40px',
+            background: 'linear-gradient(135deg, rgba(30,50,70,0.5) 0%, rgba(35,60,85,0.4) 100%)',
+            borderRadius: '8px 20px 20px 8px',
+            borderLeft: '3px solid rgba(79,195,247,0.4)',
+            minHeight: 240
+          }}
         >
-          <rect
-            x="550"
-            y="40"
-            width="210"
-            height="130"
-            rx="14"
-            fill="rgba(25,35,55,0.9)"
-            stroke="rgba(168,85,247,0.3)"
-          />
-          <rect x="550" y="40" width="210" height="3" fill="#a855f7" rx="1" />
-          <text x="565" y="65" fill="#a855f7" fontSize="13" fontWeight="700">Store Operations</text>
-          <text x="565" y="88" fill="#94a3b8" fontSize="10">● Billing</text>
-          <text x="565" y="104" fill="#94a3b8" fontSize="10">● Tagging</text>
-          <text x="565" y="120" fill="#94a3b8" fontSize="10">● Garment Tracking</text>
-          <text x="565" y="136" fill="#94a3b8" fontSize="10">● Reporting</text>
-        </motion.g>
-
-        {/* BOTTOM-LEFT: Retention */}
-        <motion.g
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.9, duration: 0.5 }}
-        >
-          <rect
-            x="40"
-            y="380"
-            width="210"
-            height="130"
-            rx="14"
-            fill="rgba(25,35,55,0.9)"
-            stroke="rgba(34,197,94,0.3)"
-          />
-          <rect x="40" y="380" width="210" height="3" fill="#22c55e" rx="1" />
-          <text x="55" y="405" fill="#22c55e" fontSize="13" fontWeight="700">Retention</text>
-          <text x="55" y="428" fill="#94a3b8" fontSize="10">● WhatsApp Campaigns</text>
-          <text x="55" y="444" fill="#94a3b8" fontSize="10">● Customer Segmentation</text>
-          <text x="55" y="460" fill="#94a3b8" fontSize="10">● Packages & Subscriptions</text>
-          <text x="55" y="476" fill="#94a3b8" fontSize="10">● Loyalty & Referrals</text>
-        </motion.g>
-
-        {/* BOTTOM-RIGHT: Remarketing */}
-        <motion.g
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          <rect
-            x="550"
-            y="380"
-            width="210"
-            height="130"
-            rx="14"
-            fill="rgba(25,35,55,0.9)"
-            stroke="rgba(245,158,11,0.3)"
-          />
-          <rect x="550" y="380" width="210" height="3" fill="#f59e0b" rx="1" />
-          <text x="565" y="405" fill="#f59e0b" fontSize="13" fontWeight="700">Remarketing</text>
-          <text x="565" y="428" fill="#94a3b8" fontSize="10">● Re-engagement SMS</text>
-          <text x="565" y="444" fill="#94a3b8" fontSize="10">● Abandoned Cart Recovery</text>
-          <text x="565" y="460" fill="#94a3b8" fontSize="10">● Cross-sell Offers</text>
-          <text x="565" y="476" fill="#94a3b8" fontSize="10">● Referral Programs</text>
-        </motion.g>
-      </svg>
+          <h3 style={{
+            fontSize: '0.95rem',
+            color: '#4fc3f7',
+            marginBottom: 25,
+            fontWeight: 600,
+            letterSpacing: '2px',
+            textAlign: 'left'
+          }}>
+            MODERN MODEL
+          </h3>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            {['Pickup request', 'Timely communication', 'Digital payments', 'Live tracking', 'System control'].map((item, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.0 + i * 0.1, duration: 0.4 }}
+                style={{
+                  padding: '14px 0',
+                  borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                  color: '#ffffff',
+                  fontSize: '1.25rem',
+                  fontWeight: 500,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 12,
+                  textAlign: 'left'
+                }}
+              >
+                <span style={{ color: '#4fc3f7', fontSize: '0.8rem' }}>→</span>
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
     </div>
   )
 }

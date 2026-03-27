@@ -9,8 +9,8 @@ const Slide16 = () => {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      textAlign: 'center',
-      position: 'relative'
+      position: 'relative',
+      overflow: 'hidden'
     }}>
       {/* Logo */}
       <motion.img
@@ -28,14 +28,15 @@ const Slide16 = () => {
         }}
       />
 
-      {/* Ambient glow */}
+      {/* Spotlight effect */}
       <div style={{
         position: 'absolute',
         top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'radial-gradient(circle at 50% 50%, rgba(79,195,247,0.1) 0%, transparent 60%)',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: 600,
+        height: 600,
+        background: 'radial-gradient(ellipse at center, rgba(245,158,11,0.2) 0%, transparent 70%)',
         pointerEvents: 'none'
       }} />
 
@@ -44,103 +45,107 @@ const Slide16 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
         style={{
-          fontSize: '3.5rem',
-          fontWeight: 800,
+          fontSize: '2.8rem',
+          fontWeight: 700,
           color: '#ffffff',
+          marginBottom: 20,
+          textAlign: 'center',
+          position: 'relative'
+        }}
+      >
+        Jo pehle modern banega,<br />
+        <span style={{ color: '#f59e0b' }}>wahi premium position le lega</span>
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        style={{
+          fontSize: '2rem',
+          fontWeight: 600,
+          color: '#a0aec0',
+          textAlign: 'center',
           marginBottom: 50,
           position: 'relative'
         }}
       >
-        Take the <span style={{ color: '#4fc3f7' }}>first step</span> today
-      </motion.h1>
+        Question yeh nahi hai ki market badlega ya nahi.<br />
+        Question yeh hai ki <span style={{ color: '#ffffff' }}>aap kab badloge.</span>
+      </motion.p>
 
-      {/* CTA Buttons */}
+      {/* Visual: Race position metaphor */}
       <div style={{
         display: 'flex',
         justifyContent: 'center',
-        gap: 25,
-        marginBottom: 50,
+        alignItems: 'center',
+        gap: 20,
+        marginBottom: 40,
         position: 'relative'
       }}>
-        {[
-          { title: 'See the Demo', icon: '👁️' },
-          { title: 'Understand the Fit', icon: '📋' },
-          { title: 'Start Your Journey', icon: '🚀' }
-        ].map((cta, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}
-            whileHover={{ scale: 1.05, y: -5 }}
-            style={{
-              padding: '25px 35px',
-              background: i === 2
-                ? 'linear-gradient(135deg, #4fc3f7 0%, #0288d1 100%)'
-                : 'rgba(255,255,255,0.05)',
-              borderRadius: 16,
-              border: i === 2 ? 'none' : '1px solid rgba(79,195,247,0.3)',
-              cursor: 'pointer',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: 10,
-              minWidth: 180
-            }}
-          >
-            <span style={{ fontSize: '2rem' }}>{cta.icon}</span>
-            <span style={{
-              color: i === 2 ? '#0a1628' : '#ffffff',
-              fontWeight: 700,
-              fontSize: '1.1rem'
-            }}>{cta.title}</span>
-          </motion.div>
-        ))}
+        {/* Left - Behind */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 0.5, x: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          style={{
+            padding: '20px 30px',
+            background: 'rgba(100,100,100,0.2)',
+            borderRadius: 12,
+            border: '1px solid rgba(255,255,255,0.1)'
+          }}
+        >
+          <span style={{ fontSize: '2rem', opacity: 0.5 }}>🏪</span>
+          <div style={{ color: '#a0aec0', marginTop: 8, fontSize: '0.9rem' }}>Traditional</div>
+        </motion.div>
+
+        {/* Middle - The leaders */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          style={{
+            padding: '25px 40px',
+            background: 'linear-gradient(135deg, rgba(79,195,247,0.2) 0%, rgba(79,195,247,0.1) 100%)',
+            borderRadius: 16,
+            border: '2px solid #4fc3f7'
+          }}
+        >
+          <span style={{ fontSize: '2.5rem' }}>✨🏪</span>
+          <div style={{ color: '#4fc3f7', marginTop: 8, fontWeight: 600 }}>Modern Leaders</div>
+          <div style={{ color: '#a0aec0', fontSize: '0.8rem' }}>Premium position captured</div>
+        </motion.div>
+
+        {/* Right - You */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.4, duration: 0.5 }}
+          style={{
+            padding: '20px 30px',
+            background: 'rgba(245,158,11,0.15)',
+            borderRadius: 12,
+            border: '1px solid rgba(245,158,11,0.5)'
+          }}
+        >
+          <span style={{ fontSize: '2rem' }}>❓</span>
+          <div style={{ color: '#f59e0b', marginTop: 8, fontWeight: 600 }}>You?</div>
+          <div style={{ color: '#a0aec0', fontSize: '0.8rem' }}>Your decision</div>
+        </motion.div>
       </div>
 
-      {/* Bottom Message */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        style={{
-          position: 'relative',
-          padding: '30px 40px',
-          background: 'rgba(255,255,255,0.03)',
-          borderRadius: 16,
-          border: '1px solid rgba(79,195,247,0.2)',
-          maxWidth: 600,
-          margin: '0 auto'
-        }}
-      >
-        <p style={{
-          fontSize: '1.5rem',
-          color: '#ffffff',
-          fontWeight: 600,
-          lineHeight: 1.5,
-          margin: 0
-        }}>
-          Business aapka hai.<br />
-          Agla version bhi <span style={{ color: '#4fc3f7' }}>aapka hi ho sakta hai.</span>
-        </p>
-      </motion.div>
-
-      {/* Laundry Launchpad branding */}
+      {/* Arrow indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.5 }}
         style={{
-          position: 'absolute',
-          top: 40,
-          right: 80,
-          fontSize: '0.9rem',
+          textAlign: 'center',
           color: '#4fc3f7',
-          letterSpacing: '2px',
-          textTransform: 'uppercase'
+          fontSize: '1.5rem'
         }}
       >
-        Laundry Launchpad • Jodhpur
+        ➜ The market is moving. Be part of it.
       </motion.div>
     </div>
   )
