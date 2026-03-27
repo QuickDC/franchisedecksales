@@ -86,37 +86,6 @@ const Slide10 = () => {
         >
           EXPECTATION
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          style={{
-            position: 'absolute',
-            left: '13%',
-            top: '150px',
-            maxWidth: '220px',
-            zIndex: 10
-          }}
-        >
-          <ul style={{ listStyle: 'none', padding: 0, marginLeft: 40, textAlign: 'left' }}>
-            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 35, marginTop: 155, display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ color: '#4fc3f7', fontSize: '0.7rem' }}>✓</span>
-              <span>Customer's channel</span>
-            </li>
-            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 35, display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ color: '#4fc3f7', fontSize: '0.7rem' }}>✓</span>
-              <span>Customer's place</span>
-            </li>
-            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 35, display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ color: '#4fc3f7', fontSize: '0.7rem' }}>✓</span>
-              <span>Customer's convenience</span>
-            </li>
-            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ color: '#4fc3f7', fontSize: '0.7rem' }}>✓</span>
-              <span>Customer's time</span>
-            </li>
-          </ul>
-        </motion.p>
         <motion.h1
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -132,37 +101,6 @@ const Slide10 = () => {
         >
           REALITY
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          style={{
-            position: 'absolute',
-            right: '13%',
-            top: '150px',
-            maxWidth: '220px',
-            zIndex: 10
-          }}
-        >
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginRight: 40,  textAlign: 'right' }}>
-            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 35, marginTop: 155, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
-              <span>Dry cleaner's channel</span>
-              <span style={{ color: '#ef8888', fontSize: '0.7rem' }}>✗</span>
-            </li>
-            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 35, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
-              <span>Dry cleaner's place</span>
-              <span style={{ color: '#ef8888', fontSize: '0.7rem' }}>✗</span>
-            </li>
-            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 35, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
-              <span>Dry cleaner's convenience</span>
-              <span style={{ color: '#ef8888', fontSize: '0.7rem' }}>✗</span>
-            </li>
-            <li style={{ color: '#ef8888', fontSize: '0.9rem', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
-              <span>Dry cleaner's time</span>
-              <span style={{ color: '#ef8888', fontSize: '0.7rem' }}>✗</span>
-            </li>
-          </ul>
-        </motion.p>
       </div>
 
       {/* SVG layout with lines and circles */}
