@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import logoImg from '../QDCwhitelogo.png'
+import kidImg from '../kid.png'
 
 const Slide11 = () => {
   const expectationItems = [
@@ -77,7 +78,7 @@ const Slide11 = () => {
           marginBottom: 10
         }}
       >
-        The <span style={{ color: '#4fc3f7' }}>Expectation</span> vs <span style={{ color: '#ef8888' }}>Reality</span> Gap
+        The <span style={{ color: '#4fc3f7' }}>Expectation</span> vs <span style={{ color: '#ef8888' }}>Reality</span>
       </motion.h1>
 
       <motion.p
@@ -113,88 +114,49 @@ const Slide11 = () => {
             <stop offset="0%" stopColor="rgba(239,136,136,0.1)" />
             <stop offset="100%" stopColor="rgba(239,136,136,0)" />
           </linearGradient>
+          <clipPath id="circleClip11">
+            <circle cx={centerX} cy={centerY} r="75" />
+          </clipPath>
         </defs>
 
         {/* Background gradients */}
         <rect x="0" y="0" width="600" height="550" fill="url(#leftBgGrad11)" />
         <rect x="600" y="0" width="600" height="550" fill="url(#rightBgGrad11)" />
 
-        {/* Center divider */}
-        <line x1={centerX} y1="30" x2={centerX} y2="520" stroke="rgba(255,255,255,0.15)" strokeWidth="2" strokeDasharray="6,3" />
-
-        {/* Center glow */}
-        <circle cx={centerX} cy={centerY} r="100" fill="rgba(79,195,247,0.06)" />
-
-        {/* Center circle */}
-        <motion.circle
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          cx={centerX}
-          cy={centerY}
-          r="60"
-          fill="#0f2847"
-          stroke="rgba(79,195,247,0.5)"
-          strokeWidth="2"
-        />
-        <text x={centerX} y={centerY - 10} textAnchor="middle" fill="#ffffff" fontSize="22" fontWeight="700">THE GAP</text>
-        <text x={centerX} y={centerY + 15} textAnchor="middle" fill="#fbbf24" fontSize="12" fontWeight="600">Must be bridged</text>
-
-        {/* Left side - EXPECTATION - Cyan */}
+        {/* Left side items - EXPECTATION - Cyan - with tick marks */}
         {leftItems.map((item, i) => {
-          const startX = centerX + Math.cos(item.rad) * 60
-          const startY = centerY + Math.sin(item.rad) * 60
-          const endX = item.endX - Math.cos(item.rad) * 55
-          const endY = item.endY - Math.sin(item.rad) * 55
+          const endX = 120
+          const endY = 150 + i * 90
           return (
           <g key={`left-${i}`}>
-            <motion.line
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 0.3 + i * 0.1, duration: 0.4 }}
-              x1={startX}
-              y1={startY}
-              x2={endX}
-              y2={endY}
-              stroke="url(#cyanGrad11)"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-            <circle cx={item.endX} cy={item.endY} r="55" fill="rgba(79,195,247,0.12)" stroke="rgba(79,195,247,0.5)" strokeWidth="1.5" />
-            <text x={item.endX} y={item.endY - 8} textAnchor="middle" fill="#4fc3f7" fontSize="11" fontWeight="700">{item.name}</text>
-            <text x={item.endX} y={item.endY + 18} textAnchor="middle" fill="#94a3b8" fontSize="10">{item.desc}</text>
+            {/* Tick mark */}
+            <text x={80} y={endY + 5} textAnchor="middle" fill="#4ade80" fontSize="32" fontWeight="700">✓</text>
+            <text x={endX} y={endY - 8} textAnchor="start" fill="#4fc3f7" fontSize="20" fontWeight="700">{item.name}</text>
+            <text x={endX} y={endY + 18} textAnchor="start" fill="#94a3b8" fontSize="16">{item.desc}</text>
           </g>
-        )})}
+        )
+        })}
 
-        {/* Right side - REALITY - Red */}
+        {/* Right side - REALITY - Red - with cross marks */}
         {rightItems.map((item, i) => {
-          const startX = centerX + Math.cos(item.rad) * 60
-          const startY = centerY + Math.sin(item.rad) * 60
-          const endX = item.endX - Math.cos(item.rad) * 55
-          const endY = item.endY - Math.sin(item.rad) * 55
+          const endX = 1080
+          const endY = 150 + i * 90
           return (
           <g key={`right-${i}`}>
-            <motion.line
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
-              x1={startX}
-              y1={startY}
-              x2={endX}
-              y2={endY}
-              stroke="url(#redGrad11)"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-            <circle cx={item.endX} cy={item.endY} r="55" fill="rgba(239,136,136,0.12)" stroke="rgba(239,136,136,0.5)" strokeWidth="1.5" />
-            <text x={item.endX} y={item.endY - 8} textAnchor="middle" fill="#ef8888" fontSize="11" fontWeight="700">{item.name}</text>
-            <text x={item.endX} y={item.endY + 18} textAnchor="middle" fill="#94a3b8" fontSize="10">{item.desc}</text>
+            {/* Cross mark */}
+            <text x={1120} y={endY + 5} textAnchor="middle" fill="#ef4444" fontSize="32" fontWeight="700">✗</text>
+            <text x={endX} y={endY - 8} textAnchor="end" fill="#ef8888" fontSize="20" fontWeight="700">{item.name}</text>
+            <text x={endX} y={endY + 18} textAnchor="end" fill="#94a3b8" fontSize="16">{item.desc}</text>
           </g>
         )})}
 
         {/* Labels */}
         <text x="150" y="50" textAnchor="middle" fill="#4fc3f7" fontSize="24" fontWeight="700">EXPECTATION</text>
         <text x="1050" y="50" textAnchor="middle" fill="#ef8888" fontSize="24" fontWeight="700">REALITY</text>
+
+        {/* Center kid image */}
+        <circle cx={centerX} cy={centerY} r="80" fill="#0f2847" stroke="rgba(79,195,247,0.5)" strokeWidth="2" />
+        <image href={kidImg} x={centerX - 75} y={centerY - 75} width="150" height="150" clipPath="url(#circleClip11)" preserveAspectRatio="xMidYMid meet" />
       </svg>
 
       {/* Bottom message */}
