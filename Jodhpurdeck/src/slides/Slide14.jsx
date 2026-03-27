@@ -1,12 +1,25 @@
 import { motion } from 'framer-motion'
 import logoImg from '../QDCwhitelogo.png'
 
+// Calculate position on circle circumference
+const getPositionOnCircle = (centerX, centerY, radius, angleDeg) => {
+  const angleRad = (angleDeg * Math.PI) / 180
+  return {
+    x: centerX + radius * Math.cos(angleRad),
+    y: centerY + radius * Math.sin(angleRad)
+  }
+}
+
 const Slide14 = () => {
+  const centerX = 400
+  const centerY = 300
+  const circleRadius = 240
+
   const demandNodes = [
-    { label: 'Homes', sublabel: 'Residential', color: '#4fc3f7', angle: -90 },
-    { label: 'Apartments', sublabel: 'Societies', color: '#a855f7', angle: 0 },
-    { label: 'Offices', sublabel: 'Commercial', color: '#f59e0b', angle: 90 },
-    { label: 'Nearby Areas', sublabel: 'Local Reach', color: '#22c55e', angle: 180 }
+    { label: 'Homes', sublabel: 'Residential', color: '#4fc3f7', angle: -90, emoji: '🏠' },
+    { label: 'Apartments', sublabel: 'Societies', color: '#a855f7', angle: 0, emoji: '🏢' },
+    { label: 'Offices', sublabel: 'Commercial', color: '#f59e0b', angle: 90, emoji: '🏛️' },
+    { label: 'Nearby Areas', sublabel: 'Local Reach', color: '#22c55e', angle: 180, emoji: '📍' }
   ]
 
   return (
@@ -15,8 +28,7 @@ const Slide14 = () => {
       background: 'linear-gradient(135deg, #0a1628 0%, #0f2847 50%, #0a1628 100%)',
       padding: '50px 80px',
       display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flex-start'
+      flexDirection: 'column'
     }}>
       {/* Logo */}
       <motion.img
@@ -50,182 +62,20 @@ const Slide14 = () => {
         Pickup & Delivery = <span style={{ color: '#f59e0b' }}>Growth Channel</span>
       </motion.h1>
 
-      {/* Market Expansion Map */}
+      {/* Market Expansion Map - SVG-based */}
       <div style={{
         flex: 1,
-        position: 'relative',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        minHeight: 0,
+        position: 'relative'
       }}>
-        {/* Service radius circle (subtle background) */}
-        <div style={{
-          position: 'absolute',
-          width: 520,
-          height: 520,
-          borderRadius: '50%',
-          border: '1px solid rgba(79,195,247,0.15)',
-          background: 'radial-gradient(circle, rgba(79,195,247,0.05) 0%, transparent 70%)'
-        }} />
-
-        {/* CENTER - Your Store (Premium Hub) */}
-        <motion.div
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
+        <svg
+          viewBox="0 0 800 600"
           style={{
-            position: 'absolute',
-            width: 130,
-            height: 130,
-            borderRadius: 24,
-            background: 'linear-gradient(135deg, #0f2847 0%, #1e3a5f 100%)',
-            border: '3px solid rgba(79,195,247,0.9)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 0 60px rgba(79,195,247,0.5), 0 0 100px rgba(79,195,247,0.2)',
-            zIndex: 10
+            width: '100%',
+            height: '100%',
+            display: 'block'
           }}
         >
-          <span style={{ color: '#4fc3f7', fontSize: '1.5rem', fontWeight: 800 }}>Your Dry Clean Store</span>
-          {/* Small service icon */}
-          <div style={{ marginTop: 8, width: 30, height: 2, background: 'rgba(79,195,247,0.3)', borderRadius: 1 }} />
-        </motion.div>
-
-        {/* TOP Node - Homes */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          style={{
-            position: 'absolute',
-            top: 50,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}
-        >
-          <div style={{
-            width: 90,
-            height: 90,
-            borderRadius: '50%',
-            background: 'rgba(25,35,55,0.9)',
-            border: `2px solid ${demandNodes[0].color}60`,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: `0 0 20px ${demandNodes[0].color}20`
-          }}>
-            <span style={{ color: '#fff', fontSize: '1.4rem' }}>🏠</span>
-          </div>
-          <span style={{ color: demandNodes[0].color, fontSize: '1rem', fontWeight: 700, marginTop: 10 }}>{demandNodes[0].label}</span>
-          <span style={{ color: '#64748b', fontSize: '0.75rem', marginTop: 2 }}>{demandNodes[0].sublabel}</span>
-        </motion.div>
-
-        {/* LEFT Node - Apartments */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          style={{
-            position: 'absolute',
-            left: 10,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}
-        >
-          <div style={{
-            width: 90,
-            height: 90,
-            borderRadius: '50%',
-            background: 'rgba(25,35,55,0.9)',
-            border: `2px solid ${demandNodes[1].color}60`,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: `0 0 20px ${demandNodes[1].color}20`
-          }}>
-            <span style={{ color: '#fff', fontSize: '1.4rem' }}>🏢</span>
-          </div>
-          <span style={{ color: demandNodes[1].color, fontSize: '1rem', fontWeight: 700, marginTop: 10 }}>{demandNodes[1].label}</span>
-          <span style={{ color: '#64748b', fontSize: '0.75rem', marginTop: 2 }}>{demandNodes[1].sublabel}</span>
-        </motion.div>
-
-        {/* BOTTOM Node - Offices */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          style={{
-            position: 'absolute',
-            bottom: 50,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}
-        >
-          <div style={{
-            width: 90,
-            height: 90,
-            borderRadius: '50%',
-            background: 'rgba(25,35,55,0.9)',
-            border: `2px solid ${demandNodes[2].color}60`,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: `0 0 20px ${demandNodes[2].color}20`
-          }}>
-            <span style={{ color: '#fff', fontSize: '1.4rem' }}>🏛️</span>
-          </div>
-          <span style={{ color: demandNodes[2].color, fontSize: '1rem', fontWeight: 700, marginTop: 10 }}>{demandNodes[2].label}</span>
-          <span style={{ color: '#64748b', fontSize: '0.75rem', marginTop: 2 }}>{demandNodes[2].sublabel}</span>
-        </motion.div>
-
-        {/* RIGHT Node - Nearby Areas */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.9, duration: 0.5 }}
-          style={{
-            position: 'absolute',
-            right: 10,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}
-        >
-          <div style={{
-            width: 90,
-            height: 90,
-            borderRadius: '50%',
-            background: 'rgba(25,35,55,0.9)',
-            border: `2px solid ${demandNodes[3].color}60`,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: `0 0 20px ${demandNodes[3].color}20`
-          }}>
-            <span style={{ color: '#fff', fontSize: '1.4rem' }}>📍</span>
-          </div>
-          <span style={{ color: demandNodes[3].color, fontSize: '1rem', fontWeight: 700, marginTop: 10 }}>{demandNodes[3].label}</span>
-          <span style={{ color: '#64748b', fontSize: '0.75rem', marginTop: 2 }}>{demandNodes[3].sublabel}</span>
-        </motion.div>
-
-        {/* Glowing route lines from center to each node */}
-        <svg style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          pointerEvents: 'none'
-        }}>
           <defs>
             <filter id="glowLine" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -234,67 +84,164 @@ const Slide14 = () => {
                 <feMergeNode in="SourceGraphic"/>
               </feMerge>
             </filter>
+            <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <radialGradient id="radialGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgba(79,195,247,0.15)" />
+              <stop offset="100%" stopColor="transparent" />
+            </radialGradient>
+            <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0f2847" />
+              <stop offset="100%" stopColor="#1e3a5f" />
+            </linearGradient>
           </defs>
 
-          {/* Top route - to Homes */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.1, duration: 0.6 }}
-            d="M 400 285 L 400 140"
+          {/* Service radius circle (subtle background) */}
+          <circle
+            cx={centerX}
+            cy={centerY}
+            r={circleRadius}
             fill="none"
-            stroke="#4fc3f7"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="8,5"
-            strokeLinecap="round"
-            filter="url(#glowLine)"
+            stroke="rgba(79,195,247,0.3)"
+            strokeWidth="2"
           />
+          <circle
+            cx={centerX}
+            cy={centerY}
+            r={circleRadius}
+            fill="url(#radialGrad)"
+          >
+            <animate attributeName="r" values={`${circleRadius};${circleRadius + 10};${circleRadius}`} dur="3s" repeatCount="indefinite" />
+          </circle>
 
-          {/* Right route - to Apartments */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
-            d="M 465 350 L 120 320"
-            fill="none"
-            stroke="#a855f7"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="8,5"
-            strokeLinecap="round"
-            filter="url(#glowLine)"
-          />
+          {/* Route lines from center to each node */}
+          {demandNodes.map((node, i) => {
+            const pos = getPositionOnCircle(centerX, centerY, circleRadius, node.angle)
+            return (
+              <motion.path
+                key={`route-${i}`}
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ delay: 1.1 + i * 0.1, duration: 0.6 }}
+                d={`M ${centerX} ${centerY} L ${pos.x} ${pos.y}`}
+                fill="none"
+                stroke={node.color}
+                strokeWidth="2"
+                strokeOpacity="0.5"
+                strokeDasharray="8,5"
+                strokeLinecap="round"
+                filter="url(#glowLine)"
+              />
+            )
+          })}
 
-          {/* Bottom route - to Offices */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.3, duration: 0.6 }}
-            d="M 400 415 L 400 490"
-            fill="none"
-            stroke="#f59e0b"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="8,5"
-            strokeLinecap="round"
-            filter="url(#glowLine)"
-          />
+          {/* CENTER - Your Store (Premium Hub) */}
+          <g>
+            <motion.rect
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              x={centerX - 65}
+              y={centerY - 65}
+              width={130}
+              height={130}
+              rx={24}
+              fill="url(#centerGradient)"
+              stroke="rgba(79,195,247,0.9)"
+              strokeWidth="3"
+              filter="url(#nodeGlow)"
+            />
+            <text
+              x={centerX}
+              y={centerY}
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#4fc3f7"
+              fontSize="1.1rem"
+              fontWeight="800"
+              fontFamily="system-ui"
+            >
+              Your Dry
+            </text>
+            <text
+              x={centerX}
+              y={centerY + 16}
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#4fc3f7"
+              fontSize="1.1rem"
+              fontWeight="800"
+              fontFamily="system-ui"
+            >
+              Clean Store
+            </text>
+            <rect
+              x={centerX - 15}
+              y={centerY + 35}
+              width={30}
+              height={2}
+              fill="rgba(79,195,247,0.3)"
+              rx={1}
+            />
+          </g>
 
-          {/* Left route - to Nearby Areas */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
-            d="M 335 350 L 680 320"
-            fill="none"
-            stroke="#22c55e"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="8,5"
-            strokeLinecap="round"
-            filter="url(#glowLine)"
-          />
+          {/* 4 Demand Nodes on circumference */}
+          {demandNodes.map((node, i) => {
+            const pos = getPositionOnCircle(centerX, centerY, circleRadius, node.angle)
+            return (
+              <g key={node.label}>
+                <motion.circle
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
+                  cx={pos.x}
+                  cy={pos.y}
+                  r={58}
+                  fill="rgba(25,35,55,0.95)"
+                  stroke={`${node.color}`}
+                  strokeWidth="3"
+                  filter="url(#nodeGlow)"
+                />
+                <text
+                  x={pos.x}
+                  y={pos.y - 5}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fontSize="1.8rem"
+                >
+                  {node.emoji}
+                </text>
+                <text
+                  x={pos.x}
+                  y={pos.y + 25}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill={node.color}
+                  fontSize="0.9rem"
+                  fontWeight="700"
+                  fontFamily="system-ui"
+                >
+                  {node.label}
+                </text>
+                <text
+                  x={pos.x}
+                  y={pos.y + 38}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill="#64748b"
+                  fontSize="0.65rem"
+                  fontFamily="system-ui"
+                >
+                  {node.sublabel}
+                </text>
+              </g>
+            )
+          })}
         </svg>
       </div>
 

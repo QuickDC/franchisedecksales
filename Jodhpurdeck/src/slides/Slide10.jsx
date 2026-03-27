@@ -1,13 +1,17 @@
 import { motion } from 'framer-motion'
 import logoImg from '../QDCwhitelogo.png'
 import kidImg from '../kid.png'
+import zomatoImg from '../zomato.jpg'
+import swiggyImg from '../swiggy.webp'
+import amazonImg from '../amazon-png.png'
+import blinkitImg from '../Blinkit-yellow-rounded.svg'
 
 const Slide10 = () => {
   const modernItems = [
-    { name: 'Zomato', desc: 'Food delivery' },
-    { name: 'Swiggy', desc: 'Quick delivery' },
-    { name: 'Amazon', desc: 'Same day' },
-    { name: 'Blinkit', desc: '10-min delivery' }
+    { name: 'Zomato', desc: 'Food delivery', img: zomatoImg },
+    { name: 'Swiggy', desc: 'Quick delivery', img: swiggyImg },
+    { name: 'Amazon', desc: 'Same day', img: amazonImg },
+    { name: 'Blinkit', desc: '10-min delivery', img: blinkitImg }
   ]
 
   const traditionalItems = [
@@ -202,8 +206,14 @@ const Slide10 = () => {
               strokeLinecap="round"
             />
             <circle cx={item.endX} cy={item.endY} r="65" fill="rgba(79,195,247,0.15)" stroke="rgba(79,195,247,0.5)" strokeWidth="1.5" />
-            <text x={item.endX} y={item.endY - 5} textAnchor="middle" fill="#4fc3f7" fontSize="20" fontWeight="700">{item.name}</text>
-            <text x={item.endX} y={item.endY + 16} textAnchor="middle" fill="#94a3b8" fontSize="13">{item.desc}</text>
+            {item.img ? (
+              <image href={item.img} x={item.endX - 40} y={item.endY - 40} width="80" height="80" />
+            ) : (
+              <>
+                <text x={item.endX} y={item.endY - 5} textAnchor="middle" fill="#4fc3f7" fontSize="20" fontWeight="700">{item.name}</text>
+                <text x={item.endX} y={item.endY + 16} textAnchor="middle" fill="#94a3b8" fontSize="13">{item.desc}</text>
+              </>
+            )}
           </g>
         )})}
 

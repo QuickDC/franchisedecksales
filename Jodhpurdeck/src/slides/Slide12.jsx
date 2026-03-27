@@ -101,9 +101,9 @@ const Slide12 = () => {
           transition={{ delay: 0.7, duration: 0.5 }}
           style={{
             position: 'absolute',
-            left: 50,
-            top: 60,
-            width: 200,
+            left: 40,
+            top: 45,
+            width: 210,
             padding: '16px 20px',
             background: 'rgba(25,35,55,0.9)',
             borderRadius: 14,
@@ -126,9 +126,9 @@ const Slide12 = () => {
           transition={{ delay: 0.8, duration: 0.5 }}
           style={{
             position: 'absolute',
-            right: 50,
-            top: 60,
-            width: 200,
+            right: 40,
+            top: 45,
+            width: 210,
             padding: '16px 20px',
             background: 'rgba(25,35,55,0.9)',
             borderRadius: 14,
@@ -144,41 +144,16 @@ const Slide12 = () => {
           ))}
         </motion.div>
 
-        {/* BOTTOM-LEFT: Pickup & Delivery */}
+        {/* BOTTOM-LEFT: Retention */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.9, duration: 0.5 }}
           style={{
             position: 'absolute',
-            left: 50,
-            bottom: 60,
-            width: 200,
-            padding: '16px 20px',
-            background: 'rgba(25,35,55,0.9)',
-            borderRadius: 14,
-            border: '1px solid rgba(245,158,11,0.3)',
-            borderTop: '3px solid #f59e0b'
-          }}
-        >
-          <div style={{ color: '#f59e0b', fontSize: '0.9rem', fontWeight: 700, marginBottom: 10, letterSpacing: '0.5px' }}>Pickup & Delivery</div>
-          {['Rider Management', 'Doorstep Invoicing', 'Digital Payments', 'Delivery Flow'].map((item, i) => (
-            <div key={i} style={{ color: '#94a3b8', fontSize: '0.7rem', padding: '3px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ color: '#f59e0b', fontSize: '0.5rem' }}>●</span>{item}
-            </div>
-          ))}
-        </motion.div>
-
-        {/* BOTTOM-RIGHT: Retention & Remarketing (merged) */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          style={{
-            position: 'absolute',
-            right: 50,
-            bottom: 60,
-            width: 200,
+            left: 40,
+            bottom: 45,
+            width: 210,
             padding: '16px 20px',
             background: 'rgba(25,35,55,0.9)',
             borderRadius: 14,
@@ -186,10 +161,35 @@ const Slide12 = () => {
             borderTop: '3px solid #22c55e'
           }}
         >
-          <div style={{ color: '#22c55e', fontSize: '0.9rem', fontWeight: 700, marginBottom: 10, letterSpacing: '0.5px' }}>Retention & Remarketing</div>
+          <div style={{ color: '#22c55e', fontSize: '0.9rem', fontWeight: 700, marginBottom: 10, letterSpacing: '0.5px' }}>Retention</div>
           {['WhatsApp Campaigns', 'Customer Segmentation', 'Packages & Subscriptions', 'Loyalty & Referrals'].map((item, i) => (
             <div key={i} style={{ color: '#94a3b8', fontSize: '0.7rem', padding: '3px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ color: '#22c55e', fontSize: '0.5rem' }}>●</span>{item}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* BOTTOM-RIGHT: Remarketing */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          style={{
+            position: 'absolute',
+            right: 40,
+            bottom: 45,
+            width: 210,
+            padding: '16px 20px',
+            background: 'rgba(25,35,55,0.9)',
+            borderRadius: 14,
+            border: '1px solid rgba(245,158,11,0.3)',
+            borderTop: '3px solid #f59e0b'
+          }}
+        >
+          <div style={{ color: '#f59e0b', fontSize: '0.9rem', fontWeight: 700, marginBottom: 10, letterSpacing: '0.5px' }}>Remarketing</div>
+          {['Re-engagement SMS', 'Abandoned Cart Recovery', 'Cross-sell Offers', 'Referral Programs'].map((item, i) => (
+            <div key={i} style={{ color: '#94a3b8', fontSize: '0.7rem', padding: '3px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ color: '#f59e0b', fontSize: '0.5rem' }}>●</span>{item}
             </div>
           ))}
         </motion.div>
@@ -211,7 +211,7 @@ const Slide12 = () => {
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ delay: 1.2, duration: 0.5 }}
-            d="M 250 100 L 320 260"
+            d="M 145 85 L 400 275"
             fill="none"
             stroke="#4fc3f7"
             strokeWidth="1.5"
@@ -226,7 +226,7 @@ const Slide12 = () => {
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ delay: 1.3, duration: 0.5 }}
-            d="M 550 100 L 480 260"
+            d="M 655 85 L 400 275"
             fill="none"
             stroke="#a855f7"
             strokeWidth="1.5"
@@ -236,27 +236,12 @@ const Slide12 = () => {
             filter="url(#glowBlue)"
           />
 
-          {/* Bottom-left: Pickup & Delivery → QDC */}
+          {/* Bottom-left: Retention → QDC */}
           <motion.path
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ delay: 1.4, duration: 0.5 }}
-            d="M 250 450 L 320 380"
-            fill="none"
-            stroke="#f59e0b"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="5,4"
-            strokeLinecap="round"
-            filter="url(#glowBlue)"
-          />
-
-          {/* Bottom-right: Retention → QDC */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-            d="M 550 450 L 480 380"
+            d="M 145 425 L 400 275"
             fill="none"
             stroke="#22c55e"
             strokeWidth="1.5"
@@ -266,11 +251,26 @@ const Slide12 = () => {
             filter="url(#glowBlue)"
           />
 
+          {/* Bottom-right: Remarketing → QDC */}
+          <motion.path
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ delay: 1.5, duration: 0.5 }}
+            d="M 655 425 L 400 275"
+            fill="none"
+            stroke="#f59e0b"
+            strokeWidth="1.5"
+            strokeOpacity="0.4"
+            strokeDasharray="5,4"
+            strokeLinecap="round"
+            filter="url(#glowBlue)"
+          />
+
           {/* Corner connection dots */}
-          <circle cx="250" cy="100" r="3" fill="#4fc3f7" opacity="0.6" />
-          <circle cx="550" cy="100" r="3" fill="#a855f7" opacity="0.6" />
-          <circle cx="250" cy="450" r="3" fill="#f59e0b" opacity="0.6" />
-          <circle cx="550" cy="450" r="3" fill="#22c55e" opacity="0.6" />
+          <circle cx="145" cy="85" r="3" fill="#4fc3f7" opacity="0.6" />
+          <circle cx="655" cy="85" r="3" fill="#a855f7" opacity="0.6" />
+          <circle cx="145" cy="425" r="3" fill="#22c55e" opacity="0.6" />
+          <circle cx="655" cy="425" r="3" fill="#f59e0b" opacity="0.6" />
         </svg>
       </div>
     </div>
