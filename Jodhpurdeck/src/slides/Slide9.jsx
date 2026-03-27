@@ -4,13 +4,13 @@ import logoImg from '../QDCwhitelogo.png'
 const Slide9 = () => {
   return (
     <div className="slide" style={{
+      position: 'relative',
       background: 'linear-gradient(135deg, #0a1628 0%, #0f2847 50%, #0a1628 100%)',
-      padding: '60px 80px',
+      padding: '60px 100px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      textAlign: 'center',
-      position: 'relative'
+      textAlign: 'center'
     }}>
       {/* Logo */}
       <motion.img
@@ -31,83 +31,86 @@ const Slide9 = () => {
       {/* Ambient glow */}
       <div style={{
         position: 'absolute',
-        top: '20%',
+        top: '25%',
         left: '50%',
         transform: 'translateX(-50%)',
-        width: 400,
+        width: 500,
         height: 400,
-        background: 'radial-gradient(circle, rgba(79,195,247,0.2) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse at center, rgba(79,195,247,0.15) 0%, transparent 60%)',
         pointerEvents: 'none'
       }} />
 
+      {/* Top line - reduced emphasis */}
       <motion.h1
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
+        transition={{ delay: 0.2, duration: 0.7 }}
         style={{
-          fontSize: '3rem',
-          fontWeight: 700,
+          fontSize: '2.4rem',
+          fontWeight: 500,
           lineHeight: 1.2,
-          color: '#a0aec0',
-          marginBottom: 20,
+          color: '#64748b',
+          marginBottom: 25,
           position: 'relative'
         }}
       >
-        Modern store sirf <span style={{ color: '#f59e0b' }}>bada store</span> nahi hota
+        Modern store sirf <span style={{ color: '#94a3b8' }}>bada store</span> nahi hota
       </motion.h1>
 
+      {/* Hero line - second line */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.7 }}
+        transition={{ delay: 0.5, duration: 0.7 }}
         style={{
-          fontSize: '3.5rem',
+          fontSize: '4rem',
           fontWeight: 800,
-          lineHeight: 1.1,
+          lineHeight: 1.05,
           color: '#ffffff',
-          marginBottom: 30,
-          position: 'relative'
+          marginBottom: 40,
+          position: 'relative',
+          textShadow: '0 0 40px rgba(79,195,247,0.3)'
         }}
       >
         <span style={{ color: '#4fc3f7' }}>Smart</span> store hota hai
       </motion.h2>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        style={{
-          fontSize: '1.6rem',
-          color: '#a0aec0',
-          position: 'relative'
-        }}
-      >
-        Better experience. Better control. Better image.
-      </motion.p>
-
-      {/* Visual: Single premium compact store concept */}
+      {/* Clean premium transformation bar */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.3, duration: 0.7 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: 15,
-          marginTop: 40,
-          padding: '20px 30px',
-          background: 'rgba(79,195,247,0.1)',
+          gap: 20,
+          marginBottom: 40,
+          padding: '22px 35px',
+          background: 'linear-gradient(90deg, rgba(79,195,247,0.1) 0%, rgba(245,158,11,0.1) 100%)',
           borderRadius: 50,
           border: '1px solid rgba(79,195,247,0.3)'
         }}
       >
-        <span style={{ fontSize: '2rem' }}>🏪</span>
-        <span style={{ color: '#4fc3f7', fontWeight: 600, fontSize: '1.2rem' }}>Single Store</span>
-        <span style={{ color: '#a0aec0' }}>→</span>
-        <span style={{ fontSize: '2rem' }}>✨</span>
-        <span style={{ color: '#4fc3f7', fontWeight: 600, fontSize: '1.2rem' }}>Premium Brand</span>
+        <span style={{ color: '#fff', fontWeight: 600, fontSize: '1.1rem' }}>Single Store</span>
+        <span style={{ color: '#4fc3f7', fontSize: '1.4rem' }}>→</span>
+        <span style={{ color: '#fbbf24', fontWeight: 700, fontSize: '1.1rem' }}>Premium Brand</span>
       </motion.div>
+
+      {/* Support line - refined */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        style={{
+          fontSize: '1.5rem',
+          color: '#94a3b8',
+          position: 'relative',
+          letterSpacing: '0.5px'
+        }}
+      >
+        Better customer experience. Better control. Stronger brand image.
+      </motion.p>
     </div>
   )
 }
