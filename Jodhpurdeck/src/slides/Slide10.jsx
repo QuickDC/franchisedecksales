@@ -99,15 +99,15 @@ const Slide10 = () => {
           }}
         >
           <ul style={{ listStyle: 'none', padding: 0, marginLeft: 40, textAlign: 'left' }}>
-            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
+            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 35, marginTop: 155, display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ color: '#4fc3f7', fontSize: '0.7rem' }}>✓</span>
               <span>Customer's channel</span>
             </li>
-            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
+            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 35, display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ color: '#4fc3f7', fontSize: '0.7rem' }}>✓</span>
               <span>Customer's place</span>
             </li>
-            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
+            <li style={{ color: '#4fc3f7', fontSize: '0.9rem', marginBottom: 35, display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ color: '#4fc3f7', fontSize: '0.7rem' }}>✓</span>
               <span>Customer's convenience</span>
             </li>
@@ -145,15 +145,15 @@ const Slide10 = () => {
           }}
         >
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginRight: 40,  textAlign: 'right' }}>
-            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 8, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
+            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 35, marginTop: 155, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
               <span>Dry cleaner's channel</span>
               <span style={{ color: '#ef8888', fontSize: '0.7rem' }}>✗</span>
             </li>
-            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 8, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
+            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 35, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
               <span>Dry cleaner's place</span>
               <span style={{ color: '#ef8888', fontSize: '0.7rem' }}>✗</span>
             </li>
-            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 8, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
+            <li style={{ color: '#ef8888', fontSize: '0.9rem', marginBottom: 35, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
               <span>Dry cleaner's convenience</span>
               <span style={{ color: '#ef8888', fontSize: '0.7rem' }}>✗</span>
             </li>
