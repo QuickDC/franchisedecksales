@@ -18,7 +18,7 @@ const Slide4 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        Laundry business khatam nahi ho raha.<br />
+        Drycleaning business khatam nahi ho raha.<br />
         <span className="text-accent">Purana tareeka khatam ho raha hai.</span>
       </motion.h2>
 

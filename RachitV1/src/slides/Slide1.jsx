@@ -72,7 +72,7 @@ const Slide1 = () => {
           textShadow: '0 0 60px rgba(79, 195, 247, 0.3)'
         }}
       >
-        Laundry Business Ka<br />
+        Drycleaning Business Ka<br />
         <span style={{ color: '#4fc3f7', textShadow: '0 0 40px rgba(79, 195, 247, 0.5)' }}>Agla Zamana</span>
       </motion.h1>
 

@@ -18,7 +18,7 @@ const Slide10 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        Traditional vs <span className="highlight-line">Modern Laundry Business</span>
+        Traditional vs <span className="highlight-line">Modern Drycleaning Business</span>
       </motion.h2>
 
       <div className="comparison-table">
