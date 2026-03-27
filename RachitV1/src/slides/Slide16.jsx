@@ -8,10 +8,10 @@ import blinkitImg from '../Blinkit-yellow-rounded.svg'
 
 const Slide16 = () => {
   const modernItems = [
-    { name: 'Zomato', desc: 'Food delivery', img: zomatoImg },
-    { name: 'Swiggy', desc: 'Quick delivery', img: swiggyImg },
-    { name: 'Amazon', desc: 'Same day', img: amazonImg },
-    { name: 'Blinkit', desc: '10-min delivery', img: blinkitImg }
+    { name: 'Zomato', img: zomatoImg },
+    { name: 'Swiggy', img: swiggyImg },
+    { name: 'Amazon', img: amazonImg },
+    { name: 'Blinkit', img: blinkitImg }
   ]
 
   const traditionalItems = [
@@ -159,9 +159,7 @@ const Slide16 = () => {
               strokeLinecap="round"
             />
             <circle cx={item.endX} cy={item.endY} r="65" fill="rgba(79,195,247,0.15)" stroke="rgba(79,195,247,0.5)" strokeWidth="1.5" />
-            {item.img && <image href={item.img} x={item.endX - 35} y={item.endY - 50} width="70" height="50" preserveAspectRatio="xMidYMid meet" />}
-            {/* <text x={item.endX} y={item.endY + (item.img ? 10 : -5)} textAnchor="middle" fill="#ffffff" fontSize="14" fontWeight="600">{item.name}</text> */}
-            <text x={item.endX} y={item.endY + (item.img ? 25 : 16)} textAnchor="middle" fill="#94a3b8" fontSize="11">{item.desc}</text>
+            {item.img && <image href={item.img} x={item.endX - 35} y={item.endY - 25} width="70" height="50" preserveAspectRatio="xMidYMid meet" />}
           </g>
         )})}
 

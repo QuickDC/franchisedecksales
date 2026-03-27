@@ -158,22 +158,6 @@ const Slide17 = () => {
         <circle cx={centerX} cy={centerY} r="80" fill="#0f2847" stroke="rgba(79,195,247,0.5)" strokeWidth="2" />
         <image href={kidImg} x={centerX - 75} y={centerY - 75} width="150" height="150" clipPath="url(#circleClip11)" preserveAspectRatio="xMidYMid meet" />
       </svg>
-
-      {/* Bottom message */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
-        style={{
-          fontSize: '1.4rem',
-          color: '#fbbf24',
-          fontWeight: 600,
-          textAlign: 'center',
-          marginTop: 10
-        }}
-      >
-        QDC Platform bridges this gap
-      </motion.p>
     </div>
   )
 }
