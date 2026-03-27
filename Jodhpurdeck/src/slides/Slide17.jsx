@@ -133,7 +133,6 @@ const Slide17 = () => {
         style={{
           position: 'absolute',
           top: 40,
-          right: 80,
           fontSize: '0.9rem',
           color: '#4fc3f7',
           letterSpacing: '2px',
