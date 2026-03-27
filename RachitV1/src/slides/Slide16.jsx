@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
-import logoImg from '../QDCwhitelogo.png'
+// import logoImg from '../QDCwhitelogo.png'
 import kidImg from '../kid.png'
 import zomatoImg from '../zomato.jpg'
 import swiggyImg from '../swiggy.webp'
 import amazonImg from '../amazon-png.png'
 import blinkitImg from '../Blinkit-yellow-rounded.svg'
 
-const Slide10 = () => {
+const Slide16 = () => {
   const modernItems = [
     { name: 'Zomato', desc: 'Food delivery', img: zomatoImg },
     { name: 'Swiggy', desc: 'Quick delivery', img: swiggyImg },
@@ -53,21 +53,6 @@ const Slide10 = () => {
       justifyContent: 'center',
       overflow: 'hidden'
     }}>
-      {/* Logo */}
-      <motion.img
-        src={logoImg}
-        alt="QDC Logo"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.8 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        style={{
-          position: 'absolute',
-          top: 30,
-          right: 30,
-          height: 35,
-          objectFit: 'contain'
-        }}
-      />
 
       {/* Title - Middle of each side */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, padding: '0 120px' }}>
@@ -101,7 +86,7 @@ const Slide10 = () => {
             marginBottom: '20px'
           }}
         >
-          Dry Cleaning Industries
+          Dry Cleaning Industry
         </motion.h1>
       </div>
 
@@ -223,10 +208,10 @@ const Slide10 = () => {
           marginTop: 15
         }}
       >
-        People today expect convenience. Are you delivering?
+        Why do we expect customer to behave differently only for dry cleaning?
       </motion.p>
     </div>
   )
 }
 
-export default Slide10
+export default Slide16
