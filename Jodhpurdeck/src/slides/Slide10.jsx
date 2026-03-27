@@ -84,7 +84,7 @@ const Slide10 = () => {
             left: '15%'
           }}
         >
-          EXPECTATION
+          Other Business Experience
         </motion.h1>
         <motion.h1
           initial={{ opacity: 0, x: 30 }}
@@ -99,7 +99,7 @@ const Slide10 = () => {
             right: '15%'
           }}
         >
-          REALITY
+          Dry Cleaning Experience
         </motion.h1>
       </div>
 

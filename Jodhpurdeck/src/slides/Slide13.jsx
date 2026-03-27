@@ -41,24 +41,24 @@ const Slide13 = () => {
           letterSpacing: '0.5px'
         }}
       >
-        Quick Dry Cleaning Software
+        Modern Businesses Powered By
       </motion.h1>
 
-      {/* Subtitle */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.35, duration: 0.5 }}
+      <motion.h1
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
         style={{
-          fontSize: '1.35rem',
-          color: '#94a3b8',
-          marginBottom: 30,
+          fontSize: '2.6rem',
+          fontWeight: 800,
+          color: '#4fc3f7',
+          marginBottom: 8,
           textAlign: 'center',
-          fontWeight: 500
+          letterSpacing: '0.5px'
         }}
       >
-        The operating system for growth, operations, and retention.
-      </motion.p>
+        Quick Dry Cleaning Software
+      </motion.h1>
 
       {/* Main content - SVG-based with viewBox */}
       <svg
@@ -261,6 +261,21 @@ const Slide13 = () => {
           <text x="565" y="476" fill="#94a3b8" fontSize="10">● Referral Programs</text>
         </motion.g>
       </svg>
+      {/* Subtitle */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.35, duration: 0.5 }}
+        style={{
+          fontSize: '1.35rem',
+          color: '#94a3b8',
+          marginBottom: 30,
+          textAlign: 'center',
+          fontWeight: 500
+        }}
+      >
+        The operating system for growth, operations, and retention.
+      </motion.p>
     </div>
   )
 }

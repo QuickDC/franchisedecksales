@@ -256,22 +256,19 @@ const Slide15 = () => {
         }}
       >
         <p style={{
-          fontSize: '1.4rem',
-          fontWeight: 500,
-          color: '#94a3b8',
-          marginBottom: 8,
-          margin: 0
-        }}>
-          Aap customer ka wait nahi karte.
-        </p>
-        <p style={{
           fontSize: '1.65rem',
           fontWeight: 700,
           color: '#4fc3f7',
           margin: 0,
           textShadow: '0 0 25px rgba(79,195,247,0.5)'
         }}>
-          Aap customer tak pahuchte ho.
+          <span style={{
+          fontSize: '1.65rem',
+          fontWeight: 500,
+          color: '#94a3b8',
+          marginBottom: 8,
+          margin: 0
+        }}>Aap customer ka wait nahi karte,</span> Aap customer tak pahuchte ho.
         </p>
       </motion.div>
     </div>
