@@ -18,6 +18,7 @@ import Slide12 from './slides/Slide12'
 import Slide13 from './slides/Slide13'
 import Slide14 from './slides/Slide14'
 import Slide15 from './slides/Slide15'
+import Slide16 from './slides/Slide16'
 
 // SLIDE REGISTRY - Add your slide components here
 const slides = [
@@ -36,6 +37,7 @@ const slides = [
   Slide13,
   Slide14,
   Slide15,
+  Slide16,
 ]
 
 function App() {

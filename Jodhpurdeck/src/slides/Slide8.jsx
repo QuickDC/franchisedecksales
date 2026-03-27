@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 import logoImg from '../QDCwhitelogo.png'
+import ownerImg from '../owner.svg'
 
 const Slide8 = () => {
   return (
     <div className="slide" style={{
       position: 'relative',
       background: 'linear-gradient(135deg, #0a1628 0%, #0f2847 50%, #0a1628 100%)',
-      padding: '50px 100px',
+      padding: '40px 60px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-start',
@@ -21,9 +22,9 @@ const Slide8 = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         style={{
           position: 'absolute',
-          top: 40,
+          top: 30,
           right: 30,
-          height: 40,
+          height: 35,
           objectFit: 'contain',
           zIndex: 30
         }}
@@ -35,11 +36,11 @@ const Slide8 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
         style={{
-          fontSize: '3rem',
+          fontSize: '2.8rem',
           fontWeight: 700,
           lineHeight: 1.1,
           color: '#ffffff',
-          marginBottom: 6,
+          marginBottom: 4,
           textAlign: 'center'
         }}
       >
@@ -51,301 +52,281 @@ const Slide8 = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.35, duration: 0.5 }}
         style={{
-          fontSize: '1.4rem',
+          fontSize: '1.2rem',
           color: '#94a3b8',
           textAlign: 'center',
-          marginBottom: 50,
+          marginBottom: 20,
           letterSpacing: '1px'
         }}
       >
         Connected. Convenient. Controlled.
       </motion.p>
 
-      {/* Full layout */}
-      <div style={{ flex: 1, position: 'relative' }}>
-        {/* TOP-RIGHT: CXO Control */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            padding: '14px 20px',
-            background: 'rgba(15,23,41,0.95)',
-            borderRadius: 10,
-            border: '2px solid rgba(245,158,11,0.5)',
-            zIndex: 20
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-            <div style={{ width: 6, height: 6, background: '#22c55e', borderRadius: '50%' }} />
-            <span style={{ color: '#fbbf24', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '1px' }}>CXO CONTROL</span>
-          </div>
-          <div style={{ display: 'flex', gap: 16 }}>
-            {[
-              { label: 'Customers', value: '1,247', color: '#fff' },
-              { label: 'Revenue', value: '₹8.5L', color: '#4fc3f7' },
-              { label: 'Orders', value: '342', color: '#fff' },
-              { label: 'In Process', value: '28', color: '#fbbf24' }
-            ].map((m, i) => (
-              <div key={i}>
-                <div style={{ color: '#64748b', fontSize: '0.5rem', marginBottom: 1 }}>{m.label}</div>
-                <div style={{ color: m.color, fontSize: '0.95rem', fontWeight: 700 }}>{m.value}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+      {/* Full SVG layout */}
+      <svg
+        viewBox="0 0 1200 600"
+        style={{
+          flex: 1,
+          width: '100%',
+          height: '100%'
+        }}
+      >
+        <defs>
+          {/* Gradients */}
+          <linearGradient id="centerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1a2744" />
+            <stop offset="100%" stopColor="#0f1729" />
+          </linearGradient>
+          <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1e293b" />
+            <stop offset="100%" stopColor="#0f1729" />
+          </linearGradient>
+          <linearGradient id="pathGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#4fc3f7" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#4fc3f7" stopOpacity="0.1" />
+          </linearGradient>
+          <linearGradient id="pathGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#a855f7" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#a855f7" stopOpacity="0.1" />
+          </linearGradient>
+          <linearGradient id="pathGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.1" />
+          </linearGradient>
+          <linearGradient id="pathGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#22c55e" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#22c55e" stopOpacity="0.1" />
+          </linearGradient>
 
-        {/* LEFT: App, WhatsApp, Website row */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          style={{
-            position: 'absolute',
-            left: '5%',
-            top: '10%'
-          }}
-        >
-          {/* Booking channels - horizontal row */}
-          <div style={{ display: 'flex', gap: 8, marginBottom: 30 }}>
-            {[
-              { name: 'App', color: '#4fc3f7' },
-              { name: 'WhatsApp', color: '#22c55e' },
-              { name: 'Website', color: '#a855f7' }
-            ].map((ch, i) => (
-              <motion.div
-                key={ch.name}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 + i * 0.1, duration: 0.4 }}
-                style={{
-                  padding: '8px 14px',
-                  background: 'rgba(30,40,55,0.6)',
-                  borderRadius: 18,
-                  border: `1px solid ${ch.color}40`
-                }}
-              >
-                <span style={{ color: ch.color, fontSize: '0.75rem', fontWeight: 600 }}>{ch.name}</span>
-              </motion.div>
-            ))}
-          </div>
+          {/* Glow filter */}
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
 
-          {/* Customer directly below */}
-          <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            style={{
-              width: 110,
-              height: 110,
-              borderRadius: 22,
-              background: 'linear-gradient(135deg, #1e293b 0%, #0f1729 100%)',
-              border: '2px solid rgba(79,195,247,0.5)',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-          >
-            <span style={{ color: '#4fc3f7', fontSize: '2rem', fontWeight: 700 }}>C</span>
-            <span style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 600 }}>Customer</span>
-          </motion.div>
-        </motion.div>
-
-        {/* CENTER: Store */}
-        <motion.div
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 1.4, duration: 0.6 }}
-          style={{
-            position: 'absolute',
-            left: '50%',
-            top: '45%',
-            transform: 'translate(-50%, -50%)'
-          }}
-        >
-          <div style={{
-            width: 140,
-            height: 140,
-            borderRadius: 26,
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f1729 100%)',
-            border: '3px solid rgba(79,195,247,0.7)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 15px 50px rgba(0,0,0,0.5), 0 0 50px rgba(79,195,247,0.15)'
-          }}>
-            <span style={{ color: '#4fc3f7', fontSize: '2.8rem', fontWeight: 700 }}>S</span>
-            <span style={{ color: '#fff', fontSize: '1rem', fontWeight: 700 }}>Store</span>
-          </div>
-        </motion.div>
-
-        {/* RIGHT: Workshop */}
-        <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.8, duration: 0.6 }}
-          style={{
-            position: 'absolute',
-            right: '10%',
-            top: '25%'
-          }}
-        >
-          <div style={{
-            width: 120,
-            height: 120,
-            borderRadius: 22,
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f1729 100%)',
-            border: '2px solid rgba(168,85,247,0.5)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <span style={{ color: '#a855f7', fontSize: '2.2rem', fontWeight: 700 }}>W</span>
-            <span style={{ color: '#a855f7', fontSize: '0.9rem', fontWeight: 600 }}>Workshop</span>
-          </div>
-        </motion.div>
-
-        {/* Rider on lower path */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 0.4 }}
-          style={{
-            position: 'absolute',
-            left: '22%',
-            top: '68%'
-          }}
-        >
-          <div style={{
-            width: 55,
-            height: 55,
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 6px 20px rgba(245,158,11,0.4)'
-          }}>
-            <span style={{ color: '#fbbf24', fontSize: '1.4rem', fontWeight: 700 }}>R</span>
-          </div>
-          <div style={{
-            marginTop: 4,
-            padding: '4px 12px',
-            background: 'rgba(245,158,11,0.2)',
-            borderRadius: 12,
-            textAlign: 'center'
-          }}>
-            <span style={{ color: '#fbbf24', fontSize: '0.7rem', fontWeight: 600 }}>Rider</span>
-          </div>
-        </motion.div>
-
-        {/* Delivered beside Customer at end */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 4, duration: 0.4 }}
-          style={{
-            position: 'absolute',
-            left: '10%',
-            top: '52%',
-            padding: '10px 20px',
-            background: 'rgba(34,197,94,0.15)',
-            borderRadius: 24,
-            border: '2px solid rgba(34,197,94,0.4)'
-          }}
-        >
-          <span style={{ color: '#22c55e', fontSize: '0.9rem', fontWeight: 700 }}>✓ Delivered</span>
-        </motion.div>
-
-        {/* Connection paths */}
-        <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
-          <defs>
-            <linearGradient id="c1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(79,195,247,0)" />
-              <stop offset="100%" stopColor="rgba(79,195,247,0.5)" />
-            </linearGradient>
-            <linearGradient id="c2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(245,158,11,0)" />
-              <stop offset="50%" stopColor="rgba(245,158,11,0.5)" />
-              <stop offset="100%" stopColor="rgba(245,158,11,0)" />
-            </linearGradient>
-            <linearGradient id="c3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(168,85,247,0)" />
-              <stop offset="100%" stopColor="rgba(168,85,247,0.4)" />
-            </linearGradient>
-            <linearGradient id="c4" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(34,197,94,0)" />
-              <stop offset="100%" stopColor="rgba(34,197,94,0.5)" />
-            </linearGradient>
-          </defs>
-
-          {/* Booking: App/WhatsApp/Website → Customer → Store */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            d="M 135 145 Q 280 165 450 160"
-            fill="none"
-            stroke="url(#c1)"
+        {/* CENTER: Circular Owner Image */}
+        <g transform="translate(600, 320)">
+          <circle
+            r="130"
+            fill="url(#centerGrad)"
+            stroke="#fbbf24"
             strokeWidth="3"
-            strokeDasharray="8,4"
+            strokeOpacity="0.5"
+            filter="url(#glow)"
           />
+          {/* Owner SVG */}
+          <image
+            href={ownerImg}
+            x="-100"
+            y="-100"
+            width="200"
+            height="200"
+            preserveAspectRatio="xMidYMid meet"
+          />
+          <text
+            x="0"
+            y="145"
+            textAnchor="middle"
+            fill="#fbbf24"
+            fontSize="14"
+            fontWeight="700"
+            letterSpacing="2"
+          >SMART OWNER</text>
+          <text
+            x="0"
+            y="158"
+            textAnchor="middle"
+            fill="#94a3b8"
+            fontSize="12"
+          >Everything on phone</text>
+        </g>
 
-          {/* Pickup: Customer ← Rider ← Store (lower path) */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 2, duration: 1 }}
-            d="M 450 310 Q 350 370 280 390 Q 180 410 135 370"
-            fill="none"
-            stroke="url(#c2)"
-            strokeWidth="2"
-            strokeDasharray="6,4"
-          />
+        {/* SEMICIRCLE ELEMENTS AROUND THE CENTER */}
 
-          {/* Processing: Store → Workshop */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 2.6, duration: 0.8 }}
-            d="M 500 160 Q 620 140 800 130"
-            fill="none"
-            stroke="url(#c3)"
+        {/* TOP: CXO CONTROL */}
+        <g transform="translate(600, 80)">
+          <rect
+            x="-90"
+            y="-35"
+            width="180"
+            height="70"
+            rx="12"
+            fill="rgba(15,23,41,0.95)"
+            stroke="#f59e0b"
             strokeWidth="2"
-            strokeDasharray="6,4"
+            strokeOpacity="0.5"
           />
+          <circle cx="-70" cy="-12" r="4" fill="#22c55e" />
+          <text x="-60" y="-8" fill="#fbbf24" fontSize="10" fontWeight="700" letterSpacing="1">CXO CONTROL</text>
+          <text x="-70" y="15" fill="#64748b" fontSize="8">Customers</text>
+          <text x="-70" y="28" fill="#fff" fontSize="14" fontWeight="700">1,247</text>
+          <text x="0" y="15" fill="#64748b" fontSize="8">Revenue</text>
+          <text x="0" y="28" fill="#4fc3f7" fontSize="14" fontWeight="700">₹8.5L</text>
+          <text x="50" y="15" fill="#64748b" fontSize="8">Orders</text>
+          <text x="50" y="28" fill="#fff" fontSize="14" fontWeight="700">342</text>
+        </g>
 
-          {/* Return: Workshop → Store */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 3.2, duration: 0.8 }}
-            d="M 800 170 Q 620 200 500 230"
-            fill="none"
-            stroke="url(#c3)"
-            strokeWidth="2"
-            strokeDasharray="6,4"
-          />
+        {/* TOP LEFT: Booking Channels */}
+        <g transform="translate(280, 160)">
+          {/* App */}
+          <rect x="-130" y="-20" width="60" height="40" rx="20" fill="rgba(30,40,55,0.8)" stroke="#4fc3f7" strokeWidth="1" strokeOpacity="0.4" />
+          <text x="-100" y="5" fill="#4fc3f7" fontSize="11" fontWeight="600" textAnchor="middle">App</text>
+          {/* WhatsApp */}
+          <rect x="-60" y="-20" width="80" height="40" rx="20" fill="rgba(30,40,55,0.8)" stroke="#22c55e" strokeWidth="1" strokeOpacity="0.4" />
+          <text x="-20" y="5" fill="#22c55e" fontSize="11" fontWeight="600" textAnchor="middle">WhatsApp</text>
+          {/* Website */}
+          <rect x="30" y="-20" width="75" height="40" rx="20" fill="rgba(30,40,55,0.8)" stroke="#a855f7" strokeWidth="1" strokeOpacity="0.4" />
+          <text x="67" y="5" fill="#a855f7" fontSize="11" fontWeight="600" textAnchor="middle">Website</text>
+        </g>
 
-          {/* Delivery: Store → Rider → Customer */}
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 3.8, duration: 0.8 }}
-            d="M 280 410 Q 200 420 135 400"
-            fill="none"
-            stroke="url(#c4)"
-            strokeWidth="2"
-            strokeDasharray="6,4"
-          />
-        </svg>
-      </div>
+        {/* LEFT: Customer */}
+        <g transform="translate(180, 320)">
+          <rect x="-55" y="-55" width="110" height="110" rx="20" fill="url(#boxGrad)" stroke="#4fc3f7" strokeWidth="2" strokeOpacity="0.5" />
+          <text x="0" y="-10" fill="#4fc3f7" fontSize="36" fontWeight="700" textAnchor="middle">C</text>
+          <text x="0" y="25" fill="#fff" fontSize="14" fontWeight="600" textAnchor="middle">Customer</text>
+        </g>
+
+        {/* BOTTOM LEFT: Delivered */}
+        <g transform="translate(280, 480)">
+          <rect x="-70" y="-22" width="140" height="44" rx="22" fill="rgba(34,197,94,0.15)" stroke="#22c55e" strokeWidth="2" strokeOpacity="0.4" />
+          <text x="0" y="5" fill="#22c55e" fontSize="14" fontWeight="700" textAnchor="middle">✓ Delivered</text>
+        </g>
+
+        {/* BOTTOM: Rider */}
+        <g transform="translate(600, 530)">
+          <circle r="30" fill="url(#boxGrad)" stroke="#f59e0b" strokeWidth="2" strokeOpacity="0.5" />
+          <text x="0" y="5" fill="#fbbf24" fontSize="22" fontWeight="700" textAnchor="middle">R</text>
+          <rect x="-35" y="35" width="70" height="25" rx="12" fill="rgba(245,158,11,0.2)" />
+          <text x="0" y="50" fill="#fbbf24" fontSize="10" fontWeight="600" textAnchor="middle">Rider</text>
+        </g>
+
+        {/* BOTTOM RIGHT: Workshop */}
+        <g transform="translate(1020, 480)">
+          <rect x="-50" y="-50" width="100" height="100" rx="18" fill="url(#boxGrad)" stroke="#a855f7" strokeWidth="2" strokeOpacity="0.5" />
+          <text x="0" y="-5" fill="#a855f7" fontSize="32" fontWeight="700" textAnchor="middle">W</text>
+          <text x="0" y="28" fill="#a855f7" fontSize="12" fontWeight="600" textAnchor="middle">Workshop</text>
+        </g>
+
+        {/* RIGHT: Store */}
+        <g transform="translate(1020, 320)">
+          <rect x="-60" y="-60" width="120" height="120" rx="22" fill="url(#boxGrad)" stroke="#4fc3f7" strokeWidth="3" strokeOpacity="0.6" filter="url(#glow)" />
+          <text x="0" y="-10" fill="#4fc3f7" fontSize="42" fontWeight="700" textAnchor="middle">S</text>
+          <text x="0" y="30" fill="#fff" fontSize="14" fontWeight="700" textAnchor="middle">Store</text>
+        </g>
+
+        {/* TOP RIGHT: Customer */}
+        <g transform="translate(1020, 160)">
+          <rect x="-50" y="-50" width="100" height="100" rx="16" fill="url(#boxGrad)" stroke="#4fc3f7" strokeWidth="2" strokeOpacity="0.5" />
+          <text x="0" y="-5" fill="#4fc3f7" fontSize="32" fontWeight="700" textAnchor="middle">C</text>
+          <text x="0" y="28" fill="#fff" fontSize="12" fontWeight="600" textAnchor="middle">Customer</text>
+        </g>
+
+        {/* CURVED PATHS IN SEMICIRCLE */}
+
+        {/* Top left booking to left customer */}
+        <path
+          d="M 280 185 Q 200 250 180 290"
+          fill="none"
+          stroke="url(#pathGrad1)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Left customer to center */}
+        <path
+          d="M 180 350 Q 350 340 500 320"
+          fill="none"
+          stroke="url(#pathGrad1)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Left customer to delivered */}
+        <path
+          d="M 180 390 Q 200 440 280 460"
+          fill="none"
+          stroke="url(#pathGrad1)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Delivered to rider */}
+        <path
+          d="M 280 500 Q 450 520 570 530"
+          fill="none"
+          stroke="url(#pathGrad4)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Rider to workshop */}
+        <path
+          d="M 630 530 Q 800 520 970 470"
+          fill="none"
+          stroke="url(#pathGrad3)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Workshop to store */}
+        <path
+          d="M 1020 430 Q 1030 380 1020 350"
+          fill="none"
+          stroke="url(#pathGrad2)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Store to top right customer */}
+        <path
+          d="M 1020 280 Q 1020 220 1020 190"
+          fill="none"
+          stroke="url(#pathGrad1)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Top right customer to center */}
+        <path
+          d="M 980 160 Q 800 200 680 280"
+          fill="none"
+          stroke="url(#pathGrad1)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Top right customer to CXO control */}
+        <path
+          d="M 980 140 Q 850 100 680 100"
+          fill="none"
+          stroke="url(#pathGrad1)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* CXO to booking channels */}
+        <path
+          d="M 510 80 Q 400 100 320 150"
+          fill="none"
+          stroke="url(#pathGrad1)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+        />
+
+        {/* Store to center (closing) */}
+        <path
+          d="M 960 320 Q 780 300 700 310"
+          fill="none"
+          stroke="url(#pathGrad1)"
+          strokeWidth="2"
+          strokeDasharray="6,4"
+          strokeOpacity="0.3"
+        />
+      </svg>
     </div>
   )
 }
