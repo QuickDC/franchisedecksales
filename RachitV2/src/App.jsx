@@ -21,6 +21,7 @@ import Slide16 from './slides/Slide16'
 import Slide17 from './slides/Slide17'
 import Slide18 from './slides/Slide18'
 import Slide19 from './slides/Slide19'
+import Slide20 from './slides/Slide20'
 
 // SLIDE REGISTRY
 const slides = [
@@ -32,10 +33,11 @@ const slides = [
   Slide16,
   Slide17,
   Slide6,
+  Slide20,
   Slide18,
   Slide7,
   Slide14,
-  Slide19,
+  // Slide19,
   // Slide8,
   // Slide9,
   Slide10,

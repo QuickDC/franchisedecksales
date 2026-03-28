@@ -1,113 +1,92 @@
 import { motion } from 'framer-motion'
 
-// ========================================
-// CONFIG - All sizes derived from base scale
-// ========================================
-const SCALE = 1.0 // Global scale multiplier
-
-// Base values (original)
-const BASE_STORE_TITLE = 26
-const TARGET_STORE_TITLE = 47
-
-// Calculate scaling factor from store title
-const RATIO = TARGET_STORE_TITLE / BASE_STORE_TITLE // 1.81
-
 const config = {
-  // Base circle radii (scaled proportionally)
+  // Base circle radii (reduced to fit screen)
   radii: {
-    hq: Math.round(180 * RATIO),      // 325
-    plant: Math.round(140 * RATIO),   // 253
-    store: Math.round(85 * RATIO),    // 154
-    rider: Math.round(60 * RATIO),    // 108
-    customer: Math.round(60 * RATIO),  // 108
-    flowSmall: Math.round(8 * RATIO),  // 22
-    flowMedium: Math.round(7 * RATIO), // 18
-    glow: Math.round(18 * RATIO)      // 33
+    hq: 55,
+    plant: 40,
+    store: 28,
+    rider: 22,
+    customer: 22,
+    flowSmall: 4,
+    flowMedium: 3,
+    glow: 8
   },
 
-  // Font sizes - all scaled from storeTitle=47
+  // Font sizes - reduced to fit screen
   fonts: {
-    hqTitle: Math.round(46 * RATIO),      // 87
-    hqSubtitle: Math.round(28 * RATIO),  // 51
-    plantTitle: Math.round(32 * RATIO),  // 58
-    plantSubtitle: Math.round(22 * RATIO), // 40
-    storeTitle: 47,  // Target: 47px
-    storeSubtitle: Math.round(18 * RATIO), // 33
-    riderTitle: Math.round(16 * RATIO),  // 29
-    riderNumber: Math.round(18 * RATIO), // 33
-    customerIcon: Math.round(32 * RATIO), // 58
-    customerName: Math.round(16 * RATIO), // 29
-    flowLabel: Math.round(24 * RATIO),   // 43
-    flowLabelLarge: Math.round(30 * RATIO), // 54
-    layerLabel: Math.round(28 * RATIO), // 51
-    layerLabelSub: Math.round(22 * RATIO) // 40
+    hqTitle: 23,
+    hqSubtitle: 16,
+    plantTitle: 15,
+    plantSubtitle: 14,
+    storeTitle: 12,
+    storeSubtitle: 8,
+    riderTitle: 12,
+    riderNumber: 10,
+    customerIcon: 16,
+    customerName: 6,
+    flowLabel: 12,
+    flowLabelLarge: 14,
+    layerLabel: 12,
+    layerLabelSub: 10
   },
 
-  // Vertical offsets for text within circles (scaled)
+  // Vertical offsets for text within circles (reduced)
   offsets: {
-    hqSubtitle: Math.round(45 * RATIO),   // 81
-    plantSubtitle: Math.round(36 * RATIO), // 65
-    storeSubtitle: Math.round(26 * RATIO), // 47
-    riderTitle: Math.round(-6 * RATIO),   // -11
-    riderNumber: Math.round(18 * RATIO),  // 33
-    customerIcon: Math.round(-2 * RATIO), // -4
-    customerName: Math.round(30 * RATIO), // 54
-    layerLabelMain: Math.round(22 * RATIO), // 40
-    layerLabelSub: Math.round(56 * RATIO), // 101
-    flowLabelOffset: Math.round(5 * RATIO),  // 9
-    flowLabelUpper: Math.round(-50 * RATIO),  // -90
-    flowLabelLower: Math.round(30 * RATIO),   // 54
-    flowLabelSmall: Math.round(-10 * RATIO),  // -18
-    flowLabelSmall2: Math.round(22 * RATIO), // 40
-    storeTitleAdjust: Math.round(-3 * RATIO)  // -5
+    hqSubtitle: 18,
+    plantSubtitle: 14,
+    storeSubtitle: 12,
+    riderTitle: -3,
+    riderNumber: 10,
+    customerIcon: -1,
+    customerName: 14,
+    layerLabelMain: 10,
+    layerLabelSub: 24,
+    flowLabelOffset: 3,
+    flowLabelUpper: -20,
+    flowLabelLower: 8,
+    flowLabelSmall: -5,
+    flowLabelSmall2: 8,
+    storeTitleAdjust: -1
   },
 
-  // Text Y positions
+  // Text Y positions (reduced)
   textY: {
     hqTitle: 0,
-    hqSubtitle: Math.round(45 * RATIO),   // 81
+    hqSubtitle: 18,
     plantTitle: 0,
-    plantSubtitle: Math.round(36 * RATIO), // 65
-    storeTitle: Math.round(-3 * RATIO),  // -5
-    storeSubtitle: Math.round(26 * RATIO), // 47
-    riderTitle: Math.round(-6 * RATIO),   // -11
-    riderNumber: Math.round(18 * RATIO),  // 33
-    customerIcon: Math.round(-2 * RATIO), // -4
-    customerName: Math.round(30 * RATIO), // 54
-    layerLabelMain: Math.round(22 * RATIO), // 40
-    layerLabelSub: Math.round(56 * RATIO)  // 101
+    plantSubtitle: 14,
+    storeTitle: -1,
+    storeSubtitle: 12,
+    riderTitle: -3,
+    riderNumber: 10,
+    customerIcon: -1,
+    customerName: 14,
+    layerLabelMain: 10,
+    layerLabelSub: 24
   },
 
-  // SVG dimensions (original values before config)
+  // SVG dimensions (scaled down to fit screen)
   svg: {
     width: 500,
-    height: 500
+    height: 750
   },
 
-  // Y positions for each layer
+  // Y positions for each layer - scaled down to fit screen
   centers: {
-    hq: 60,
-    plant: 500,
-    store: 1000,
-    rider: 1500,
-    customer: 1950
+    hq: 70,
+    plant: 220,
+    store: 380,
+    rider: 540,
+    customer: 700
   }
 }
 
-// Apply scale factor to all numeric values
-const s = SCALE
-const radii = Object.fromEntries(
-  Object.entries(config.radii).map(([k, v]) => [k, Math.round(v * s)])
-)
-const fonts = Object.fromEntries(
-  Object.entries(config.fonts).map(([k, v]) => [k, Math.round(v * s)])
-)
-const offsets = Object.fromEntries(
-  Object.entries(config.offsets).map(([k, v]) => [k, Math.round(v * s)])
-)
-const textY = Object.fromEntries(
-  Object.entries(config.textY).map(([k, v]) => [k, Math.round(v * s)])
-)
+// Use config values directly (no SCALE needed)
+const radii = config.radii
+const fonts = config.fonts
+const offsets = config.offsets
+const textY = config.textY
 
 const Slide19 = () => {
   const centerX = config.svg.width / 2
@@ -180,31 +159,12 @@ const Slide19 = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ fontSize: '56px', fontWeight: 800, marginBottom: '8px', textAlign: 'center', width: '100%' }}
-      >
-        Introducing <span className="highlight">QDC OS</span>
-      </motion.h2>
-
-      <motion.p
-        className="slide-subtitle"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        style={{
-          fontSize: '28px',
-          fontWeight: 400,
-          opacity: 0.85,
-          marginBottom: '20px',
-          whiteSpace: 'nowrap',
-          textAlign: 'center',
-          width: '100%',
-          maxWidth: '100%',
-          paddingLeft: '0'
-        }}
+        style={{ fontSize: '25px', fontWeight: 800, marginBottom: '6px', textAlign: 'center', width: '100%' }}
       >
         One Unified System Managing Orders, Stores, and Customers in Real Time
-      </motion.p>
+      </motion.h2>
 
+      
       <div className="platform-visual-container" style={{ width: '100%', maxWidth: '100%' }}>
         <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} className="platform-svg">
           {/* ==================== CONNECTION LINES ==================== */}
@@ -303,39 +263,39 @@ const Slide19 = () => {
           <text x={centerX} y={(layerY.customer + layerY.store - 20) / 2 + offsets.flowLabelUpper} textAnchor="middle" fontSize={fonts.flowLabelLarge} fontWeight="700" fill="#dc2626">ORDER REQUEST</text>
 
           {/* Pickup Assigned */}
-          <text x={centerX} y={(layerY.store + layerY.rider+90) / 2 + offsets.flowLabelUpper} textAnchor="middle" fontSize={fonts.flowLabelLarge} fontWeight="700" fill="#2563eb">PICKUP ASSIGNED</text>
+          <text x={centerX} y={(layerY.store + layerY.rider+30) / 2 + offsets.flowLabelUpper} textAnchor="middle" fontSize={fonts.flowLabelLarge} fontWeight="700" fill="#2563eb">PICKUP ASSIGNED</text>
 
           {/* Delivery */}
           <text x={centerX} y={(layerY.rider + layerY.customer) / 2 + offsets.flowLabelLower} textAnchor="middle" fontSize={fonts.flowLabel} fontWeight="700" fill="#f59e0b">DELIVERY</text>
 
           {/* Garment Processing - FAR LEFT */}
-          <text x="30" y={(plant.y + layerY.store) / 2 + offsets.flowLabelSmall} textAnchor="start" fontSize={fonts.flowLabel} fontWeight="700" fill="#2563eb">GARMENT</text>
-          <text x="30" y={(plant.y + layerY.store) / 2 + offsets.flowLabelSmall2} textAnchor="start" fontSize={fonts.flowLabel} fontWeight="700" fill="#2563eb">PROCESSING →</text>
+          <text x="3" y={(plant.y + layerY.store) / 2 + offsets.flowLabelSmall} textAnchor="start" fontSize={fonts.flowLabel} fontWeight="700" fill="#2563eb">GARMENT</text>
+          <text x="3" y={(plant.y + layerY.store) / 2 + offsets.flowLabelSmall2} textAnchor="start" fontSize={fonts.flowLabel} fontWeight="700" fill="#2563eb">PROCESSING →</text>
 
           {/* QC Complete - FAR RIGHT */}
-          <text x={width - 30} y={(plant.y + layerY.store) / 2 + offsets.flowLabelSmall} textAnchor="end" fontSize={fonts.flowLabel} fontWeight="700" fill="#22c55e">← QC</text>
-          <text x={width - 30} y={(plant.y + layerY.store) / 2 + offsets.flowLabelSmall2} textAnchor="end" fontSize={fonts.flowLabel} fontWeight="700" fill="#22c55e">COMPLETE</text>
+          <text x={width - 3} y={(plant.y + layerY.store) / 2 + offsets.flowLabelSmall} textAnchor="end" fontSize={fonts.flowLabel} fontWeight="700" fill="#22c55e">← QC</text>
+          <text x={width - 3} y={(plant.y + layerY.store) / 2 + offsets.flowLabelSmall2} textAnchor="end" fontSize={fonts.flowLabel} fontWeight="700" fill="#22c55e">COMPLETE</text>
 
           {/* Control & Rules - FAR RIGHT */}
-          <text x={width - 30} y={(hq.y + layerY.store) / 2 + offsets.flowLabelSmall} textAnchor="end" fontSize={fonts.flowLabel} fontWeight="700" fill="#7c3aed">← CONTROL</text>
-          <text x={width - 30} y={(hq.y + layerY.store) / 2 + offsets.flowLabelSmall2} textAnchor="end" fontSize={fonts.flowLabel} fontWeight="700" fill="#7c3aed">& RULES</text>
+          <text x={width - 3} y={(hq.y + layerY.store) / 2 + offsets.flowLabelSmall} textAnchor="end" fontSize={fonts.flowLabel} fontWeight="700" fill="#7c3aed">← CONTROL</text>
+          <text x={width - 3} y={(hq.y + layerY.store) / 2 + offsets.flowLabelSmall2} textAnchor="end" fontSize={fonts.flowLabel} fontWeight="700" fill="#7c3aed">& RULES</text>
 
           {/* ==================== LAYER LABELS ==================== */}
           <g fontSize={fonts.layerLabel} fontWeight="800" fill="#94a3b8">
-            <text x="0" y={hq.y + textY.layerLabelMain} textAnchor="start">LAYER 1</text>
-            <text x="0" y={hq.y + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">HQ CONTROL</text>
+            <text x="3" y={hq.y + textY.layerLabelMain} textAnchor="start">LAYER 1</text>
+            <text x="3" y={hq.y + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">HQ CONTROL</text>
 
-            <text x="0" y={plant.y + textY.layerLabelMain} textAnchor="start">LAYER 2</text>
-            <text x="0" y={plant.y + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">PROCESSING</text>
+            <text x="3" y={plant.y + textY.layerLabelMain} textAnchor="start">LAYER 2</text>
+            <text x="3" y={plant.y + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">PROCESSING</text>
 
-            <text x="0" y={layerY.store + textY.layerLabelMain} textAnchor="start">LAYER 3</text>
-            <text x="0" y={layerY.store + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">STORES</text>
+            <text x="3" y={layerY.store + textY.layerLabelMain} textAnchor="start">LAYER 3</text>
+            <text x="3" y={layerY.store + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">STORES</text>
 
-            <text x="0" y={layerY.rider + textY.layerLabelMain} textAnchor="start">LAYER 4</text>
-            <text x="0" y={layerY.rider + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">DELIVERY</text>
+            <text x="3" y={layerY.rider + textY.layerLabelMain} textAnchor="start">LAYER 4</text>
+            <text x="3" y={layerY.rider + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">DELIVERY</text>
 
-            <text x="0" y={layerY.customer + textY.layerLabelMain} textAnchor="start">LAYER 5</text>
-            <text x="0" y={layerY.customer + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">CUSTOMER</text>
+            <text x="3" y={layerY.customer + textY.layerLabelMain} textAnchor="start">LAYER 5</text>
+            <text x="3" y={layerY.customer + textY.layerLabelSub} textAnchor="start" fontSize={fonts.layerLabelSub} fontWeight="600">CUSTOMER</text>
           </g>
 
           {/* ==================== ANIMATED DATA FLOW ==================== */}

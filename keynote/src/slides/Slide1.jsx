@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import logo from '../logo.jpeg'
 
 const Slide1 = () => {
   return (
@@ -9,7 +10,14 @@ const Slide1 = () => {
         transition={{ duration: 1 }}
         style={{ marginBottom: '30px' }}
       >
-        <span style={{ fontSize: '4rem' }}>🏠</span>
+        <motion.img
+        src={logo}
+        alt="Logo"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+        style={{ marginBottom: '30px', width: '150px', height: '150px', objectFit: 'contain' }}
+      />
       </motion.div>
 
       <motion.h1
