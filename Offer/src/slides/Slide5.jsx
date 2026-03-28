@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import offer2Image from '../offer2.png'
 
 const Slide5 = () => {
   const [revealed, setRevealed] = useState(false)
@@ -21,38 +22,52 @@ const Slide5 = () => {
         transition={{ duration: 0.6 }}
         style={{ marginBottom: '30px' }}
       >
-        {/* <span style={{ fontSize: '1rem', color: '#4fc3f7', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
-          Tier 3 Offer
-        </span> */}
         <h2 className="slide-title" style={{ fontSize: '2.2rem', textAlign: 'left', marginTop: '10px' }}>
           Premium Software + Stylish POS Setup
         </h2>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        style={{ marginBottom: '30px' }}
-      >
-        <p style={{ fontSize: '1.2rem', color: '#a0aec0', textAlign: 'left', marginBottom: '20px' }}>
-          This includes:
-        </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          {includes.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
-              style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
-            >
-              <span style={{ color: '#4fc3f7', fontSize: '1.2rem' }}>✓</span>
-              <span style={{ fontSize: '1.1rem', color: '#e0e0e0' }}>{item}</span>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+      <div style={{ display: 'flex', gap: '40px', width: '100%', alignItems: 'flex-start' }}>
+        {/* Left side - Content */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          style={{ flex: 1, marginBottom: '30px' }}
+        >
+          <p style={{ fontSize: '1.2rem', color: '#a0aec0', textAlign: 'left', marginBottom: '20px' }}>
+            This includes:
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {includes.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
+                style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
+              >
+                <span style={{ color: '#4fc3f7', fontSize: '1.2rem' }}>✓</span>
+                <span style={{ fontSize: '1.1rem', color: '#e0e0e0' }}>{item}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Right side - Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        >
+          <img
+            src={offer2Image}
+            alt="Premium POS Setup"
+            style={{ maxWidth: '100%', maxHeight: '350px', objectFit: 'contain' }}
+          />
+        </motion.div>
+      </div>
 
       {!revealed ? (
         <motion.button
