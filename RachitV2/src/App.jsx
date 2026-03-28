@@ -19,25 +19,29 @@ import Slide14 from './slides/Slide14'
 import Slide15 from './slides/Slide15'
 import Slide16 from './slides/Slide16'
 import Slide17 from './slides/Slide17'
+import Slide18 from './slides/Slide18'
+import Slide19 from './slides/Slide19'
 
 // SLIDE REGISTRY
 const slides = [
   Slide1,
   Slide2,
-  Slide3,
+  // Slide3,
   Slide4,
   Slide5,
   Slide16,
   Slide17,
   Slide6,
+  Slide18,
   Slide7,
-  Slide8,
-  Slide9,
-  Slide10,
-  Slide11,
-  Slide12,
-  Slide13,
   Slide14,
+  Slide19,
+  // Slide8,
+  // Slide9,
+  Slide10,
+  // Slide11,
+  Slide12,
+  // Slide13,
   Slide15,
 ]
 
