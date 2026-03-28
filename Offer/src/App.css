@@ -1,0 +1,267 @@
+/* ========================================
+   PRESENTATION BOILERPLATE STYLES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f2847;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --accent: #4fc3f7;
+  --accent-secondary: #29b6f6;
+  --danger: #f44336;
+  --warning: #ff9800;
+  --success: #4caf50;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* ========================================
+   PRESENTATION CONTAINER
+   ======================================== */
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.slide {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 800px;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.slide-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.slide-subtitle {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.slide-footer {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-top: auto;
+  opacity: 0.6;
+}
+
+/* ========================================
+   LISTS & GRIDS
+   ======================================== */
+
+.benefits-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  min-width: 200px;
+}
+
+.benefit-item span:first-child {
+  font-size: 2rem;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+/* ========================================
+   SLIDE COUNTER
+   ======================================== */
+
+.slide-counter {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.logo {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  height: 40px;
+  opacity: 0.7;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .slide {
+    padding: 40px;
+  }
+
+  .slide-title {
+    font-size: 2.5rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+/* ========================================
+   SLIDE 6 - COMPARISON TABLE (LIGHT)
+   ======================================== */
+
+.slide-light {
+  background: #f8f9fa;
+  color: #1a1a2e;
+}
+
+.slide-title-dark {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: left;
+  margin-bottom: 50px;
+  line-height: 1.2;
+}
+
+.comparison-table {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 1.5fr 1fr;
+  gap: 0;
+  padding: 24px 30px;
+  background: #e9ecef;
+  border-radius: 12px 12px 0 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 1.5fr 1fr;
+  gap: 0;
+  padding: 28px 30px;
+  border-bottom: 1px solid #dee2e6;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #2d3436;
+}
+
+.table-row:last-child {
+  border-radius: 0 0 12px 12px;
+  border-bottom: none;
+}
+
+.col-tier {
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.col-ideal {
+  color: #495057;
+  line-height: 1.4;
+}
+
+.col-includes {
+  color: #495057;
+}
+
+.col-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #1a1a2e;
+}
+
+/* Decision Section */
+.decision-section {
+  margin-top: 60px;
+  text-align: left;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.decision-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #868e96;
+  margin-bottom: 12px;
+}
+
+.decision-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.4;
+}
