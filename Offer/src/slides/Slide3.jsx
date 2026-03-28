@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import offer2Image from '../offer2.png'
+import offer2Image from '../hii.png'
 
 const Slide3 = () => {
   const [revealed, setRevealed] = useState(false)
